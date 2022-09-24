@@ -44,28 +44,23 @@ class Test_ratsql_extension_parser(unittest.TestCase):
     
     def test_selection(self):
         for query in examples.selection_queries:
-            print(query)
             self._test_query(query)
     
     def test_groupby(self):
         for query in examples.groupby_queries:
-            print(query)
             self._test_query(query)
     
     def test_having(self):
         for query in examples.having_queries:
-            print(query)
             self._test_query(query)
 
     def test_orderby(self):
         for query in examples.orderby_queries:
-            print(query)
             self._test_query(query)
 
     # Test join queries
     def test_join(self):
         for query in examples.join_queries:
-            print(query)
             self._test_query(query)
 
 if __name__ == "__main__":

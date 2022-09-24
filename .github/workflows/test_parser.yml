@@ -1,0 +1,59 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Parser unittest
+
+# Controls when the workflow will run
+on:
+    # Triggers the workflow on push or pull request events but only for the "master" branch
+    push:
+        branches: ["main", "dev"]
+    pull_request:
+        branches: ["main", "dev"]
+
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        env:
+            working-directory: ./
+
+        strategy:
+            matrix:
+                python-version: [3.9]
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v3
+
+            - name: Install dependecy
+              working-directory: ${{ env.working-directory }}
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+
+            # Runs a set of commands using the runners shell
+            - name: Run unittest
+              working-directory: ${{ env.working-directory }}
+              run: python -m xmlrunner
+
+            - name: Report test results
+              uses: dorny/test-reporter@v1.5.0
+              if: success() || failure()
+              with:
+                  name: Python Unittest
+                  path: ./*.xml
+                  reporter: java-junit
+
+            - name: Run Coverage Test
+              run: coverage run -m unittest
+
+            - name: Upload Coverage to Codecov
+              uses: codecov/codecov-action@v3
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
