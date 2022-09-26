@@ -46,3 +46,18 @@ join_queries = ["SELECT * FROM tab1 a, tab2 b where a.c1 = b.c2",
                 "SELECT * FROM tab1 AS a FULL JOIN tab2 AS b ON a.c1 = b.c2",
                 "SELECT * FROM tab1 AS a CROSS JOIN tab2 AS b",
                 "SELECT * FROM tab1 AS a NATURAL JOIN tab2 AS b"]
+
+
+nested_queries = ["SELECT song_name FROM singer WHERE age  >  (SELECT avg(age) FROM singer)",
+                  "SELECT title FROM film WHERE length >= ANY( SELECT MAX( length ) FROM film NATURAL JOIN film_category GROUP BY  category_id )",
+                  "SELECT title FROM film WHERE length2 < ALL( SELECT MAX( length2 ) FROM film NATURAL JOIN film_category GROUP BY category_id2 )",
+                  "SELECT song_name FROM singer WHERE EXISTS (SELECT * FROM singer WHERE name = 'Mike')",
+                  "SELECT song_name FROM singer WHERE NOT EXISTS (SELECT * FROM singer WHERE name = 'Mike')",
+                  "SELECT song_name FROM singer WHERE age IN (SELECT age FROM singer WHERE name = 'Mike')",]
+
+set_queries = ["SELECT a from tab1 UNION SELECT b from tab2",
+               "SELECT a from tab1 UNION ALL SELECT b from tab2",
+               "SELECT a from tab1 INTERSECT SELECT b from tab2",
+               "SELECT a from tab1 EXCEPT SELECT b from tab2",
+               "SELECT a from tab1 UNION SELECT b from tab2 UNION SELECT c from tab3"]
+

@@ -1,178 +1,87 @@
-module RATSQL_extended
+-- Assumptions:
+--   1. sql is correct
+--   2. only table name has alias
+--   3. only one intersect/union/except
+
+module RATSQL
 {
-    sql = (
-        select select,
-        from_ from_,
-        sql_where sql_where,
-        sql_groupby sql_groupby,
-        sql_orderby sql_orderby,
-        sql_ieu sql_ieu,
-    )
+    sql = (select_stmt select_stmt)
 
-    select = (
-        distinct_on? distinct_on,
-        agg* aggs
-    )
+    select_stmt = NoSetOp(select select,
+                        from_ from_,
+                        sql_where sql_where,
+                        sql_groupby sql_groupby,
+                        sql_orderby sql_orderby)
+    | Intersect(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
+    | Union(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
+    | Except(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
 
-    -- if distinct_on is not none, but aggs is empty, ordinary distinct
-    distinct_on = (
-        agg* aggs
-    )
-    
-    agg = (
-        agg_type agg_type,
-        cond cond, 
-        string? alias, 
-    )
+    select = (bool is_distinct, agg* aggs)
+    agg = (agg_type agg_type, expr expr)
 
-    agg_type = Max | Min | Count | Sum | Avg
-        | CustomFunc (string s)
+    from_ = (table_unit* table_units, join_cond* join_conds)
 
-    from_ = (
-        table_unit table_unit, 
-        cond? conds
-    )
+    table_unit = TableUnitSql(select_stmt select_stmt, string alias)
+               | Table(table table)
 
-    table_unit = 
-        Table(table table, string? alias)
-        | JoinedTable(joined_table joined_table, string? alias)
-        | TableUnitSql(sql s, string? alias)
-        | RangeTable(table_unit table_unit, rts_method method, int arg, int? seed)
+    join_cond = (join_type join_type, expr expr)
 
-    rts_method = 
-        SYSTEM
-        | BERNOULLI
-
-    joined_table = (
-        join_type join_type,
-        table_unit l, 
-        table_unit r
-    )
-
-    join_type = 
-        NATURAL_JOIN
+    join_type = NATURAL_JOIN
         | INNER_JOIN
         | LEFT_OUTER_JOIN
         | RIGHT_OUTER_JOIN
         | FULL_OUTER_JOIN
         | CROSS_JOIN
 
-    func_call = (
-        agg_type funcname, 
-        singleton agg_distinct, 
-        cond* args, 
-        sql_orderby? agg_order, 
-        singleton agg_within_group, 
-        cond? agg_filter, 
+    expr = And(expr expr1, expr expr2)
+         | Or(expr expr1, expr expr2)
+         | Not(expr expr1)
+         | All(expr expr1)
+         | Any(expr expr1)
+         | Between(expr expr1, expr expr2, expr expr3)
+         | Eq(expr expr1, expr expr2)
+         | Gt(expr expr1, expr expr2)
+         | Lt(expr expr1, expr expr2)
+         | Ge(expr expr1, expr expr2)
+         | Le(expr expr1, expr expr2)
+         | Ne(expr expr1, expr expr2)
+         | In(expr expr1, expr expr2)
+         | Like(expr expr1, expr expr2)
+         | Exists(expr expr1)
+         | Minus(expr expr1, expr expr2)
+         | Plus(expr expr1, expr expr2)
+         | Times(expr expr1, expr expr2)
+         | Divide(expr expr1, expr expr2)
+         | ValSql(select_stmt select_stmt)
+         | ValCol(col_unit col_unit)
+         | ValStr(string string)
+         | ValNum(float number)
+         | Terminal
+
+    col_unit = (
+      agg_type agg_type,
+      column column,
+      bool is_distinct
     )
-
-    cond = 
-        Value           (val val)
-        | Column        (column col)
-        | FuncCall      (func_call func_call)
-        | Indirection   (cond arg, indirection* indirection)
-        | Array         (cond* elements)
-        | MinMax        (min_max c)
-        | Case          (cond? arg, case_when* args, cond defresult)
-        | BooleanTest   (bt_type type, cond c)
-        | Grouping      (cond* args)
-        | Row           (singleton is_explicit, cond* args)
-        | Not           (cond c)
-        | IsNull        (cond c)
-        | IsNotNull     (cond c)
-        | Exists        (cond c)
-        | And           (cond l, cond r)
-        | Or            (cond l, cond r)
-        | In            (cond l, cond r)
-        | NotIn         (cond l, cond r)
-        | IsDistinctFrom    (cond l, cond r)
-        | IsNotDistinctFrom (cond l, cond r)
-        | Like          (cond l, cond r)
-        | NotLike       (cond l, cond r)
-        | ILike         (cond l, cond r)
-        | NotILike      (cond l, cond r)
-        | Similar       (cond l, cond r)
-        | NotSimilar    (cond l, cond r)
-        | NullIf        (cond l, cond r)
-        | Plus          (cond l, cond r)
-        | Minus         (cond l, cond r)
-        | Times         (cond l, cond r)
-        | Divide        (cond l, cond r)
-        | Concat        (cond l, cond r)
-        | Contains      (cond l, cond r)
-        | ContainedBy   (cond l, cond r)
-        | Overlap       (cond l, cond r)
-        | Between       (cond l, cond r, cond m)
-        | NotBetween    (cond l, cond r, cond m)
-        | BetweenSym    (cond l, cond r, cond m)
-        | NotBetweenSym (cond l, cond r, cond m)
-        | Eq            (cond l, cond r, sub_type? s)
-        | Gt            (cond l, cond r, sub_type? s)
-        | Lt            (cond l, cond r, sub_type? s)
-        | Ge            (cond l, cond r, sub_type? s)
-        | Le            (cond l, cond r, sub_type? s)
-        | Ne            (cond l, cond r, sub_type? s)
-
-    indirection = 
-        Indices(singleton is_slice, int? lidx, int? uidx)
-        | IndStr(string val)
-    
-    min_max = 
-        Greatest(cond* args)
-        | Least(cond* args)
-
-    case_when = (
-        cond expr,
-        cond result
-    )
-
-    bt_type = 
-        IS_FALSE
-        | IS_NOT_FALSE
-        | IS_NOT_TRUE
-        | IS_NOT_UNKNOWN
-        | IS_TRUE
-        | IS_UNKNOWN
-
-    sub_type = ANY | ALL
-
-    val = 
-        Terminal
-        | String(string s)
-        | ValSql(sql s)
-        | Number(object f)
 
     sql_where = (
-        cond? where,
+      expr? where,
     )
 
     sql_groupby = (
-        group_by* group_by,
-        cond? having,
+      col_unit* group_by,
+      expr? having,
     )
-
-    group_by = 
-        GB_Cond       (cond cond)
-        | CUBE          (group_by* sets)
-        | ROLLUP        (group_by* sets)
-        | GROUPING_SETS (group_by* sets)
-        | EMPTY
 
     sql_orderby = (
-        order_by* order_bys,
-        int? limitCount,
-        int? limitOffset,
+      order_by* order_by,
+      int? limit,
     )
 
-    sql_ieu = (
-        sql? intersect,
-        sql? except_,
-        sql? union,
-    )
-
-    order_by = (order order, cond cond)
+    order_by = (order order, expr expr)
+    agg_type = NoAggFunc | Max | Min | Count | Sum | Avg
     order = Asc | Desc | Default
 
-    column = (int col_id, string? fields)
-    table = (int table_id)
+    column = (string col_str)
+    table = (string tab_str)
 }

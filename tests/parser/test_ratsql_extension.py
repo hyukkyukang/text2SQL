@@ -1,3 +1,5 @@
+import os
+import json
 import unittest
 
 from src.grammar.parser import SQLParser
@@ -8,26 +10,30 @@ class Test_ratsql_extension_parser(unittest.TestCase):
         super(Test_ratsql_extension_parser, self).__init__(*args, **kwargs)
         self.parser = SQLParser("./src/grammar/ratsql_extended.asdl")
 
-    
-    def _test_query(self, sql):
-        # Convert query to parse tree
-        parse_tree = self.parser.sql2pt(sql)
-        normalized_sql = self.parser.pt2sql(parse_tree)
-        
-        # Convert parse tree to ASDL format
-        asdl_tree = self.parser.pt2ast(parse_tree)
-        
-        # Convert ASDL format to parse tree
-        back_parse_tree = self.parser.ast2pt(asdl_tree)
 
-        # Convert parse tree to query
-        back_sql = self.parser.pt2sql(back_parse_tree)
+    def _test_query(self, sql):
+        try:
+            # Convert query to parse tree
+            parse_tree = self.parser.sql2pt(sql)
+            normalized_sql = self.parser.pt2sql(parse_tree)
+            
+            # Convert parse tree to ASDL format
+            asdl_tree = self.parser.pt2ast(parse_tree)
+            
+            # Convert ASDL format to parse tree
+            back_parse_tree = self.parser.ast2pt(asdl_tree)
+
+            # Convert parse tree to query
+            back_sql = self.parser.pt2sql(back_parse_tree)
+        except Exception as e:
+            print("Error parsing query: {}".format(sql))
+            raise e
         
         # Test that the original query and the back converted query are the same
         self.assertTrue(parse_tree == back_parse_tree, f"Parse tree is not the same.\
                             \nSQL: {sql}\
-                            \nOriginal:\t{str(parse_tree)}\
-                            \nReconstructed:\t{str(back_parse_tree)}")
+                            \nOriginal:\t{str(parse_tree(skip_none=True))}\
+                            \nReconstructed:\t{str(back_parse_tree(skip_none=True))}")
         # Check that the original query and the back converted query are the same
         self.assertTrue(normalized_sql == back_sql, f"SQL is not the same.\
                             \nOriginal:\t{normalized_sql}\
@@ -62,6 +68,26 @@ class Test_ratsql_extension_parser(unittest.TestCase):
     def test_join(self):
         for query in examples.join_queries:
             self._test_query(query)
+
+    def test_nested(self):
+        for query in examples.nested_queries:
+            self._test_query(query)
+
+    
+    def test_set_op(self):
+        for query in examples.set_queries:
+            self._test_query(query)
+
+    def test_spider_dataset(self):
+        dir_path = "./datasets/spider/"
+        file_names = ["dev.json", "train_spider.json", "train_others.json"]
+        for file_name in file_names:
+            with open(os.path.join(dir_path, file_name)) as f:
+                spider_data = json.load(f)
+                for idx, datum in enumerate(spider_data):
+                    print(f"{file_name}: Testing query {idx}: {datum['query']}")
+                    self._test_query(datum["query"])
+        
 
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,7 @@ module RATSQL
 {
       sql = (
       select select,
-      from_ from_,
+      from from,
       sql_where sql_where,
       sql_groupby sql_groupby,
       sql_orderby sql_orderby,
@@ -15,25 +15,16 @@ module RATSQL
     )
 
     select = (singleton is_distinct, agg* aggs)
-    agg = (agg_type agg_type, val_unit val_unit)
-
-    from_ = (table_unit* table_units, join_cond* join_conds)
+    agg = (agg_type agg_id, val_unit val_unit)
+    
+    from = (table_unit* table_units, cond? conds)
 
     table_unit = TableUnitSql(sql s)
-               | Table(table table)
-
-    join_cond = (join_type join_type, cond cond)
-
-    join_type = NATURAL_JOIN
-        | INNER_JOIN
-        | LEFT_OUTER_JOIN
-        | RIGHT_OUTER_JOIN
-        | FULL_OUTER_JOIN
-        | CROSS_JOIN
+               | Table(table table_id)
 
     cond = And(cond left, cond right)
          | Or(cond left, cond right)
-         | Not(cond cond)
+         | Not(cond c)
          | Between(val_unit val_unit, val val1, val val2)
          | Eq(val_unit val_unit, val val1)
          | Gt(val_unit val_unit, val val1)
@@ -45,10 +36,10 @@ module RATSQL
          | Like(val_unit val_unit, val val1)
 
     val = Terminal
-        | String(string string)
+        | String(string s)
         | ValSql(sql s)
-        | ColUnit(col_unit col_unit)
-        | Number(object number)
+        | ColUnit(col_unit c)
+        | Number(object f)
 
     val_unit = Column(col_unit col_unit1)
         | Minus(col_unit col_unit1, col_unit col_unit2)
@@ -57,8 +48,8 @@ module RATSQL
         | Divide(col_unit col_unit1, col_unit col_unit2)
 
     col_unit = (
-      agg_type agg_type,
-      column column,
+      agg_type agg_id,
+      column col_id,
       singleton is_distinct
     )
 
@@ -72,7 +63,7 @@ module RATSQL
     )
 
     sql_orderby = (
-      order_by* order_by,
+      order_by? order_by,
       int? limit,
     )
 
@@ -82,10 +73,7 @@ module RATSQL
       sql? union,
     )
 
-    order_by = (order order, val_unit val_unit)
+    order_by = (order order, val_unit* val_units)
     agg_type = NoneAggOp | Max | Min | Count | Sum | Avg
-    order = Asc | Desc | Default
-
-    column = (string col_str)
-    table = (string tab_str)
+    order = Asc | Desc
 }

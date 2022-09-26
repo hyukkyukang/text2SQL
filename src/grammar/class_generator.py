@@ -3,10 +3,10 @@ import asdl
 from pathlib import Path
 
 PRIMITIVE_TYPE_MAP = {
-    "singleton": bool,
+    "bool": bool,
     "int": int,
     "string": str,
-    "object": float,
+    "float": float,
 }
 
 class VisitorBase(object):
@@ -45,10 +45,8 @@ class ASDL2Class(VisitorBase):
     def __call__(self):
         self.asdl = asdl.parse(self.asdl_file)
         
-        if asdl.check(self.asdl):
-            self.visit(self.asdl)
-        else:
-            raise ValueError
+        asdl.check(self.asdl)        
+        self.visit(self.asdl)
 
         return self.asdl_class
 
