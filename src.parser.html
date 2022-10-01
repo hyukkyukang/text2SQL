@@ -1,131 +1,226 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>src.parser package &#8212; Text2SQL 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src.parser package &mdash; Text2SQL 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Text2SQL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">src.parser package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-src.parser.asdl_visitor">src.parser.asdl_visitor module</a><ul>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_agg()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_from_"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_from_()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select_stmt()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_orderby()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_where()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitorBase"><code class="docutils literal notranslate"><span class="pre">ASDLVisitorBase</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitorBase.visit"><code class="docutils literal notranslate"><span class="pre">ASDLVisitorBase.visit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.parser.parser">src.parser.parser module</a><ul>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser"><code class="docutils literal notranslate"><span class="pre">SQLParser</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser.ast2pt"><code class="docutils literal notranslate"><span class="pre">SQLParser.ast2pt()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser.pt2ast"><code class="docutils literal notranslate"><span class="pre">SQLParser.pt2ast()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser.pt2sql"><code class="docutils literal notranslate"><span class="pre">SQLParser.pt2sql()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser.sql2pt"><code class="docutils literal notranslate"><span class="pre">SQLParser.sql2pt()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.parser.pg_visitor">src.parser.pg_visitor module</a><ul>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor"><code class="docutils literal notranslate"><span class="pre">PGVisitor</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_A_Const"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_A_Const()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_A_Expr"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_A_Expr()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_BoolExpr"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_BoolExpr()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_ColumnRef"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_ColumnRef()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_FuncCall"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_FuncCall()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_JoinExpr"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_JoinExpr()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RangeSubselect"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RangeSubselect()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RangeVar"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RangeVar()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RawStmt"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RawStmt()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_ResTarget"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_ResTarget()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_SelectStmt"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_SelectStmt()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_SortBy"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_SortBy()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_SubLink"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_SubLink()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitorVisitorBase"><code class="docutils literal notranslate"><span class="pre">PGVisitorVisitorBase</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitorVisitorBase.visit"><code class="docutils literal notranslate"><span class="pre">PGVisitorVisitorBase.visit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.parser.visitor">src.parser.visitor module</a><ul>
+<li><a class="reference internal" href="#src.parser.visitor.VisitorBase"><code class="docutils literal notranslate"><span class="pre">VisitorBase</span></code></a><ul>
+<li><a class="reference internal" href="#src.parser.visitor.VisitorBase.visit"><code class="docutils literal notranslate"><span class="pre">VisitorBase.visit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.parser">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Text2SQL</a>
+      </nav>
 
-          <div class="body" role="main">
-            
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>src.parser package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.parser.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="src-parser-package">
-<h1>src.parser package<a class="headerlink" href="#src-parser-package" title="Permalink to this heading">¶</a></h1>
+<h1>src.parser package<a class="headerlink" href="#src-parser-package" title="Permalink to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-src.parser.asdl_visitor">
-<span id="src-parser-asdl-visitor-module"></span><h2>src.parser.asdl_visitor module<a class="headerlink" href="#module-src.parser.asdl_visitor" title="Permalink to this heading">¶</a></h2>
+<span id="src-parser-asdl-visitor-module"></span><h2>src.parser.asdl_visitor module<a class="headerlink" href="#module-src.parser.asdl_visitor" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitor</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitor</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitorBase" title="src.parser.asdl_visitor.ASDLVisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ASDLVisitorBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_agg">
-<span class="sig-name descname"><span class="pre">visit_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_from_">
-<span class="sig-name descname"><span class="pre">visit_from_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_from_" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_from_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_from_" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_select">
-<span class="sig-name descname"><span class="pre">visit_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt">
-<span class="sig-name descname"><span class="pre">visit_select_stmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_select_stmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql">
-<span class="sig-name descname"><span class="pre">visit_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby">
-<span class="sig-name descname"><span class="pre">visit_sql_groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_sql_groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby">
-<span class="sig-name descname"><span class="pre">visit_sql_orderby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_sql_orderby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_where">
-<span class="sig-name descname"><span class="pre">visit_sql_where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_sql_where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitorBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitorBase</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitorBase</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.visitor.VisitorBase" title="src.parser.visitor.VisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitorBase.visit">
-<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase.visit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase.visit" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-src.parser.parser">
-<span id="src-parser-parser-module"></span><h2>src.parser.parser module<a class="headerlink" href="#module-src.parser.parser" title="Permalink to this heading">¶</a></h2>
+<span id="src-parser-parser-module"></span><h2>src.parser.parser module<a class="headerlink" href="#module-src.parser.parser" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.parser.</span></span><span class="sig-name descname"><span class="pre">SQLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asdl_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.parser.</span></span><span class="sig-name descname"><span class="pre">SQLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asdl_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>_summary_</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser.ast2pt">
-<span class="sig-name descname"><span class="pre">ast2pt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asdl_ast</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.ast2pt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ast2pt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asdl_ast</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.ast2pt" title="Permalink to this definition"></a></dt>
 <dd><p>Convert ASDL format to parse tree.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser.pt2ast">
-<span class="sig-name descname"><span class="pre">pt2ast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.pt2ast" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pt2ast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.pt2ast" title="Permalink to this definition"></a></dt>
 <dd><p>Convert parse tree to ASDL format.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser.pt2sql">
-<span class="sig-name descname"><span class="pre">pt2sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.pt2sql" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pt2sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.pt2sql" title="Permalink to this definition"></a></dt>
 <dd><p>Convert parse tree to SQL.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser.sql2pt">
-<span class="sig-name descname"><span class="pre">sql2pt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.sql2pt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sql2pt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.sql2pt" title="Permalink to this definition"></a></dt>
 <dd><p>Convert SQL to parse tree.</p>
 </dd></dl>
 
@@ -133,15 +228,15 @@
 
 </section>
 <section id="module-src.parser.pg_visitor">
-<span id="src-parser-pg-visitor-module"></span><h2>src.parser.pg_visitor module<a class="headerlink" href="#module-src.parser.pg_visitor" title="Permalink to this heading">¶</a></h2>
+<span id="src-parser-pg-visitor-module"></span><h2>src.parser.pg_visitor module<a class="headerlink" href="#module-src.parser.pg_visitor" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitor</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitor</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.pg_visitor.PGVisitorVisitorBase" title="src.parser.pg_visitor.PGVisitorVisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PGVisitorVisitorBase</span></code></a></p>
 <p>_summary_: Transform postgrseql parse tree to AST tree defined with ASDL grammar</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_A_Const">
-<span class="sig-name descname"><span class="pre">visit_A_Const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Const" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_A_Const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Const" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to constant values</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.A_Const): parse tree node representing a constant value</p>
@@ -155,7 +250,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_A_Expr">
-<span class="sig-name descname"><span class="pre">visit_A_Expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Expr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_A_Expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Expr" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to a single expression</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.A_Expr): parse tree node representing a single expression</p>
@@ -167,7 +262,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_BoolExpr">
-<span class="sig-name descname"><span class="pre">visit_BoolExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_BoolExpr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_BoolExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_BoolExpr" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>_summary_: Transformation related to boolean expressions</dt><dd><p>pglast parse tree represents multiple boolean expressions as a list,
 while ASDL AST represents it as a left deep tree.</p>
@@ -181,7 +276,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_ColumnRef">
-<span class="sig-name descname"><span class="pre">visit_ColumnRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ColumnRef" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_ColumnRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ColumnRef" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to column references</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.ColumnRef): parse tree node represents a reference to a column in a table.</p>
@@ -195,7 +290,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_FuncCall">
-<span class="sig-name descname"><span class="pre">visit_FuncCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_FuncCall" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_FuncCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_FuncCall" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related expressions with functions</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.FuncCall): parse tree node represents a function call.</p>
@@ -207,7 +302,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_JoinExpr">
-<span class="sig-name descname"><span class="pre">visit_JoinExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_JoinExpr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_JoinExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_JoinExpr" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to join expressions</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.JoinExpr): Parse tree node representing a join expression</p>
@@ -219,7 +314,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RangeSubselect">
-<span class="sig-name descname"><span class="pre">visit_RangeSubselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeSubselect" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_RangeSubselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeSubselect" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to subselects</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.RangeSubselect): Parse tree node representing a subselect</p>
@@ -231,7 +326,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RangeVar">
-<span class="sig-name descname"><span class="pre">visit_RangeVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeVar" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_RangeVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeVar" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to table references</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.RangeVar): parse tree node representing a table reference</p>
@@ -243,7 +338,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RawStmt">
-<span class="sig-name descname"><span class="pre">visit_RawStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RawStmt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_RawStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RawStmt" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.Node): Postgresql parse tree</p>
 </dd>
@@ -254,7 +349,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_ResTarget">
-<span class="sig-name descname"><span class="pre">visit_ResTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ResTarget" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_ResTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ResTarget" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>_summary_: Transformation related to the target list of a select statement</dt><dd><p>pg_node.val could be one of [pglast.ast.ColumnRef, pglast.ast.A_Star, pglast.ast.FuncCall]</p>
 </dd>
@@ -269,7 +364,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_SelectStmt">
-<span class="sig-name descname"><span class="pre">visit_SelectStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SelectStmt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_SelectStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SelectStmt" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.SelectStmt): Parse tree node for a general select statement</p>
 </dd>
@@ -280,7 +375,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_SortBy">
-<span class="sig-name descname"><span class="pre">visit_SortBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SortBy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_SortBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SortBy" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to ordering</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.SortBy): parse tree node representing ordering</p>
@@ -292,7 +387,7 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_SubLink">
-<span class="sig-name descname"><span class="pre">visit_SubLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SubLink" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit_SubLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SubLink" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Transformation related to subquery</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.SubLink): parse tree node representing subquery</p>
@@ -306,12 +401,12 @@ while ASDL AST represents it as a left deep tree.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitorVisitorBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitorVisitorBase</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitorVisitorBase</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.visitor.VisitorBase" title="src.parser.visitor.VisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorBase</span></code></a></p>
 <p>_summary_: Base visitor for pglast parse tree</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitorVisitorBase.visit">
-<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase.visit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase.visit" title="Permalink to this definition"></a></dt>
 <dd><p>_summary_: Traverse nodes of the pglast parse tree</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>obj (Union[list | tuple | pglast.ast.Node]): input object for visitor</p>
@@ -325,86 +420,51 @@ while ASDL AST represents it as a left deep tree.</p>
 
 </section>
 <section id="module-src.parser.visitor">
-<span id="src-parser-visitor-module"></span><h2>src.parser.visitor module<a class="headerlink" href="#module-src.parser.visitor" title="Permalink to this heading">¶</a></h2>
+<span id="src-parser-visitor-module"></span><h2>src.parser.visitor module<a class="headerlink" href="#module-src.parser.visitor" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.visitor.VisitorBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.visitor.</span></span><span class="sig-name descname"><span class="pre">VisitorBase</span></span><a class="headerlink" href="#src.parser.visitor.VisitorBase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.visitor.</span></span><span class="sig-name descname"><span class="pre">VisitorBase</span></span><a class="headerlink" href="#src.parser.visitor.VisitorBase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Generic tree visitor for ASTs.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.visitor.VisitorBase.visit">
-<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.visitor.VisitorBase.visit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.visitor.VisitorBase.visit" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-src.parser">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.parser" title="Permalink to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.parser" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
 
+           </div>
           </div>
-          
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, hyukkyu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Text2SQL</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2022, hyukkyu.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/src.parser.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
