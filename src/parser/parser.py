@@ -31,8 +31,7 @@ class SQLParser():
         return stream.RawStream()(parse_tree)
     
 if __name__ == "__main__":
-    # sql_query = "SELECT date ,  (max_temperature_f - min_temperature_f) - avg_temperature_f FROM weather WHERE 1 = c "
-    sql_query = "SELECT date < 1 FROM weather WHERE (1 = c) = True order by date*2"
+    sql_query = "SELECT T2.Lname FROM DEPARTMENT AS T1 JOIN FACULTY AS T2 ON T1.DNO  =  T3.DNO JOIN MEMBER_OF AS T3 ON T2.FacID  =  T3.FacID WHERE T1.DName  =  'Computer Science'"
     parser = SQLParser("./src/grammar/ratsql_extended.asdl")
     # Parse string and Generate Parse tree
     parse_tree = parser.sql2pt(sql_query)
@@ -51,7 +50,3 @@ if __name__ == "__main__":
     print(f"Reconstructed SQL:{parser.pt2sql(back_parse_tree)}")
     
     stop =1
-
-    
-# TODO: cond make left and right invariant
-# TODO: make val_unit and cond both possible?

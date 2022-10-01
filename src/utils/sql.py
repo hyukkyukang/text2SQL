@@ -37,6 +37,12 @@ def add_subquery_alias(sql_str):
                 new_sql_str += f" AS {new_alias}"
     return new_sql_str
 
+def replace_table_or_column_names_with_postgresql_keywords(sql_str):
+    keywords = ["CAST", "cast"]
+    for keyword in keywords:
+        sql_str = sql_str.replace(f" FROM {keyword} ", f" FROM {keyword}1 ").replace(f" JOIN {keyword} ", f" JOIN {keyword}1 ")
+    return sql_str
+
 def loosely_parse(sql_str):
     """_summary_: Parse a SQL string and return a parse tree. If the parsing fails, return None.
 
@@ -50,7 +56,7 @@ def loosely_parse(sql_str):
         return e_args[0] == "subquery in FROM must have an alias"
     def has_join_keyword_without_join_condition(sql, e_args):
         sql = sql.lower()
-        if e_args[0].lower() == "syntax error at or near \"where\"":
+        if "syntax error at or near" in e_args[0].lower():
             # Cut off the WHERE clause
             where_start_idx = e_args[1]
             sql_substring = sql[:where_start_idx]
@@ -66,6 +72,7 @@ def loosely_parse(sql_str):
         return sql_front.replace(" join ", " natural join ").replace(" JOIN ", " NATURAL JOIN ") + sql_rear
 
     sql_str_ = double_quotes_to_single_quotes(sql_str)
+    sql_str_ = replace_table_or_column_names_with_postgresql_keywords(sql_str_)
     try:
         parse_tree = pglast.parse_sql(sql_str_)
     except pglast.parser.ParseError as e:

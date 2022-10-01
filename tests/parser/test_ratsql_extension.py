@@ -2,13 +2,14 @@ import os
 import json
 import unittest
 
-from src.grammar.parser import SQLParser
+from src.parser.parser import SQLParser
 from tests.parser import examples
 
 class Test_ratsql_extension_parser(unittest.TestCase):    
     def __init__(self, *args, **kwargs):
         super(Test_ratsql_extension_parser, self).__init__(*args, **kwargs)
         self.parser = SQLParser("./src/grammar/ratsql_extended.asdl")
+        self.queries_with_syntax_error = []
 
 
     def _test_query(self, sql):
@@ -27,7 +28,12 @@ class Test_ratsql_extension_parser(unittest.TestCase):
             back_sql = self.parser.pt2sql(back_parse_tree)
         except Exception as e:
             print("Error parsing query: {}".format(sql))
-            raise e
+            if "syntax error at" in e.args[0]:
+                print(f"SQL has syntax error:{sql}")
+                self.queries_with_syntax_error.append(sql)
+                return
+            else:
+                raise e
         
         # Test that the original query and the back converted query are the same
         self.assertTrue(parse_tree == back_parse_tree, f"Parse tree is not the same.\
@@ -71,6 +77,7 @@ class Test_ratsql_extension_parser(unittest.TestCase):
 
     def test_nested(self):
         for query in examples.nested_queries:
+            print(query)
             self._test_query(query)
 
     
@@ -88,6 +95,10 @@ class Test_ratsql_extension_parser(unittest.TestCase):
                     print(f"{file_name}: Testing query {idx}: {datum['query']}")
                     self._test_query(datum["query"])
         
+        print("")
+        print(f"Number of queries with syntax error:{len(self.queries_with_syntax_error)}")
+        for idx, query in enumerate(self.queries_with_syntax_error):
+            print(f"{idx}: {query}")
 
 if __name__ == "__main__":
     unittest.main()

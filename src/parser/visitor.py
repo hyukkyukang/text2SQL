@@ -1,7 +1,7 @@
+import os 
 import pglast
 from src.grammar.class_generator import ASDL2Class
 
-import os 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 grammar_file_path = os.path.join(dir_path, "../grammar/ratsql_extended.asdl")
 
@@ -29,14 +29,13 @@ JOIN_TYPE_AST_TO_PG = {val: key for key, val in JOIN_TYPE_PG_TO_AST.items()}
 JOIN_TYPE_AST_TO_PG.update({ASDL_CLASS.CROSS_JOIN: pglast.enums.nodes.JoinType.JOIN_INNER})
 JOIN_TYPE_AST_TO_PG.update({ASDL_CLASS.NATURAL_JOIN: pglast.enums.nodes.JoinType.JOIN_INNER})
 
-# Mapping Arithemetic Operations
-VAL_OP_STR_TO_AST = {
-    "-": ASDL_CLASS.Minus,
-    "+": ASDL_CLASS.Plus,
-    "*": ASDL_CLASS.Times,
-    "/": ASDL_CLASS.Divide,
+# Mapping operation types
+BOOL_OP_TYPE_PG_TO_AST = {
+    pglast.enums.primnodes.BoolExprType.NOT_EXPR: ASDL_CLASS.Not,
+    pglast.enums.primnodes.BoolExprType.AND_EXPR: ASDL_CLASS.And,
+    pglast.enums.primnodes.BoolExprType.OR_EXPR: ASDL_CLASS.Or
 }
-VAL_OP_AST_TO_STR = {val: key for key, val in VAL_OP_STR_TO_AST.items()}
+BOOL_OP_TYPE_AST_TO_PG = {val: key for key, val in BOOL_OP_TYPE_PG_TO_AST.items()}
 
 # Mapping Logical Operations
 OP_STR_TO_AST = {
@@ -47,6 +46,11 @@ OP_STR_TO_AST = {
     "<=": ASDL_CLASS.Le,
     "<>": ASDL_CLASS.Ne,
     "~~": ASDL_CLASS.Like,
+    "!~~": ASDL_CLASS.NotLike,
+    "-": ASDL_CLASS.Minus,
+    "+": ASDL_CLASS.Plus,
+    "*": ASDL_CLASS.Times,
+    "/": ASDL_CLASS.Divide,
 }
 OP_AST_TO_STR = {val: key for key, val in OP_STR_TO_AST.items()}
 
@@ -60,10 +64,17 @@ OP_TO_A_Expr_Kind = {
     "<=": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
     "<>": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
     "~~": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_LIKE,
+    "!~~": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_LIKE,
     "In": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_IN,
+    "-": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
+    "+": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
+    "*": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
+    "/": pglast.enums.parsenodes.A_Expr_Kind.AEXPR_OP,
 }
 
 dummy_location = 0
+
+SPECIAL_POSTGRESQL_TABLES = {"SVFOP_USER": pglast.enums.SQLValueFunctionOp.SVFOP_USER}
 
 
 class VisitorBase(object):
