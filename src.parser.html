@@ -44,10 +44,10 @@
 <li><a class="reference internal" href="#module-src.parser.asdl_visitor">src.parser.asdl_visitor module</a><ul>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor</span></code></a><ul>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_agg()</span></code></a></li>
-<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_from_"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_from_()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select_stmt()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_from"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_from()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_groupby()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_orderby()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql_where()</span></code></a></li>
@@ -139,45 +139,136 @@
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitor</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitorBase" title="src.parser.asdl_visitor.ASDLVisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ASDLVisitorBase</span></code></a></p>
+<p>Transforms a AST node into a Postgres parse tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_agg">
-<span class="sig-name descname"><span class="pre">visit_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_from_">
-<span class="sig-name descname"><span class="pre">visit_from_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_from_" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">visit_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a agg AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.agg</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Postgres parse tree node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pglast.ast.ResTarget</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_select">
-<span class="sig-name descname"><span class="pre">visit_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">visit_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a select AST node into set of Postgres parse tree nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.select</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of Postgres parse tree node keywords to parse tree nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, pglast.ast.Node]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt">
 <span class="sig-name descname"><span class="pre">visit_select_stmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Transforms a select_stmt AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.select_stmt</em>) – SQL AST node to transform.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql">
 <span class="sig-name descname"><span class="pre">visit_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Transforms a SQL AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.sql</em>) – The SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Root node of Postgresql parse tree</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pglast.ast.RawStmt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_from">
+<span class="sig-name descname"><span class="pre">visit_sql_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_from" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a sql_from AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.sql_from</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of Postgres parse tree nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[pglast.ast.RangeVar | pglast.ast.RangeSubselect]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby">
-<span class="sig-name descname"><span class="pre">visit_sql_groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">visit_sql_groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_groupby" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a sql_groupby AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.sql_groupby</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of Postgres parse tree nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, pglast.ast.Node]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby">
-<span class="sig-name descname"><span class="pre">visit_sql_orderby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">visit_sql_orderby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_orderby" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a sql_orderby AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.sql_orderby</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of Postgres parse tree nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, pglast.ast.Node]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_sql_where">
-<span class="sig-name descname"><span class="pre">visit_sql_where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">visit_sql_where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql_where" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a sql_where AST node into a Postgres parse tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.sql_where</em>) – SQL AST node to transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Postgres parse tree node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pglast.ast.A_Expr</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -185,6 +276,7 @@
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitorBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.asdl_visitor.</span></span><span class="sig-name descname"><span class="pre">ASDLVisitorBase</span></span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.visitor.VisitorBase" title="src.parser.visitor.VisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorBase</span></code></a></p>
+<p>Transforms a AST object into a ASDL object</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitorBase.visit">
 <span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitorBase.visit" title="Permalink to this definition"></a></dt>
@@ -233,11 +325,11 @@
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitor</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.pg_visitor.PGVisitorVisitorBase" title="src.parser.pg_visitor.PGVisitorVisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PGVisitorVisitorBase</span></code></a></p>
-<p>_summary_: Transform postgrseql parse tree to AST tree defined with ASDL grammar</p>
+<p>Transform postgrseql parse tree to AST tree defined with ASDL grammar</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_A_Const">
 <span class="sig-name descname"><span class="pre">visit_A_Const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Const" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to constant values</p>
+<dd><p>Transformation related to constant values</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.A_Const): parse tree node representing a constant value</p>
 </dd>
@@ -251,7 +343,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_A_Expr">
 <span class="sig-name descname"><span class="pre">visit_A_Expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_A_Expr" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to a single expression</p>
+<dd><p>Transformation related to a single expression</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.A_Expr): parse tree node representing a single expression</p>
 </dd>
@@ -264,7 +356,7 @@
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_BoolExpr">
 <span class="sig-name descname"><span class="pre">visit_BoolExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_BoolExpr" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
-<dt>_summary_: Transformation related to boolean expressions</dt><dd><p>pglast parse tree represents multiple boolean expressions as a list,
+<dt>Transformation related to boolean expressions</dt><dd><p>pglast parse tree represents multiple boolean expressions as a list,
 while ASDL AST represents it as a left deep tree.</p>
 </dd>
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.BoolExpr): parse tree node representing a boolean expression</p>
@@ -277,7 +369,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_ColumnRef">
 <span class="sig-name descname"><span class="pre">visit_ColumnRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ColumnRef" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to column references</p>
+<dd><p>Transformation related to column references</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.ColumnRef): parse tree node represents a reference to a column in a table.</p>
 </dd>
@@ -291,7 +383,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_FuncCall">
 <span class="sig-name descname"><span class="pre">visit_FuncCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_FuncCall" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related expressions with functions</p>
+<dd><p>Transformation related expressions with functions</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.FuncCall): parse tree node represents a function call.</p>
 </dd>
@@ -303,7 +395,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_JoinExpr">
 <span class="sig-name descname"><span class="pre">visit_JoinExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_JoinExpr" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to join expressions</p>
+<dd><p>Transformation related to join expressions</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.JoinExpr): Parse tree node representing a join expression</p>
 </dd>
@@ -315,7 +407,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RangeSubselect">
 <span class="sig-name descname"><span class="pre">visit_RangeSubselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeSubselect" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to subselects</p>
+<dd><p>Transformation related to subselects</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.RangeSubselect): Parse tree node representing a subselect</p>
 </dd>
@@ -327,7 +419,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RangeVar">
 <span class="sig-name descname"><span class="pre">visit_RangeVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeVar" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to table references</p>
+<dd><p>Transformation related to table references</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.RangeVar): parse tree node representing a table reference</p>
 </dd>
@@ -351,7 +443,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_ResTarget">
 <span class="sig-name descname"><span class="pre">visit_ResTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_ResTarget" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
-<dt>_summary_: Transformation related to the target list of a select statement</dt><dd><p>pg_node.val could be one of [pglast.ast.ColumnRef, pglast.ast.A_Star, pglast.ast.FuncCall]</p>
+<dt>Transformation related to the target list of a select statement</dt><dd><p>pg_node.val could be one of [pglast.ast.ColumnRef, pglast.ast.A_Star, pglast.ast.FuncCall]</p>
 </dd>
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.ResTarget): parse tree node represents a target list entry in a SELECT statement.</p>
 </dd>
@@ -376,7 +468,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_SortBy">
 <span class="sig-name descname"><span class="pre">visit_SortBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SortBy" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to ordering</p>
+<dd><p>Transformation related to ordering</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.SortBy): parse tree node representing ordering</p>
 </dd>
@@ -388,7 +480,7 @@ while ASDL AST represents it as a left deep tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_SubLink">
 <span class="sig-name descname"><span class="pre">visit_SubLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_SubLink" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Transformation related to subquery</p>
+<dd><p>Transformation related to subquery</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.SubLink): parse tree node representing subquery</p>
 </dd>
@@ -403,11 +495,11 @@ while ASDL AST represents it as a left deep tree.</p>
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitorVisitorBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.pg_visitor.</span></span><span class="sig-name descname"><span class="pre">PGVisitorVisitorBase</span></span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.parser.visitor.VisitorBase" title="src.parser.visitor.VisitorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorBase</span></code></a></p>
-<p>_summary_: Base visitor for pglast parse tree</p>
+<p>Base visitor for pglast parse tree</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitorVisitorBase.visit">
 <span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitorVisitorBase.visit" title="Permalink to this definition"></a></dt>
-<dd><p>_summary_: Traverse nodes of the pglast parse tree</p>
+<dd><p>Traverse nodes of the pglast parse tree</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>obj (Union[list | tuple | pglast.ast.Node]): input object for visitor</p>
 </dd>
