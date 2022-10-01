@@ -1,7 +1,11 @@
 import pglast
 from src.grammar.class_generator import ASDL2Class
 
-ASDL_CLASS = ASDL2Class("./src/grammar/ratsql.asdl")()
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+grammar_file_path = os.path.join(dir_path, "../grammar/ratsql_extended.asdl")
+
+ASDL_CLASS = ASDL2Class(grammar_file_path)()
 
 # Mapping Aggregation functions
 AGG_FUNC_STR_TO_AST = {

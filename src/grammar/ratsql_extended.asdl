@@ -8,7 +8,7 @@ module RATSQL
     sql = (select_stmt select_stmt)
 
     select_stmt = NoSetOp(select select,
-                        from_ from_,
+                        sql_from sql_from,
                         sql_where sql_where,
                         sql_groupby sql_groupby,
                         sql_orderby sql_orderby)
@@ -19,7 +19,7 @@ module RATSQL
     select = (bool is_distinct, agg* aggs)
     agg = (agg_type agg_type, expr expr)
 
-    from_ = (table_unit* table_units, join_cond* join_conds)
+    sql_from = (table_unit* table_units, join_cond* join_conds)
 
     table_unit = TableUnitSql(select_stmt select_stmt, string alias)
                | Table(table table)

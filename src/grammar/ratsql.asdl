@@ -5,75 +5,83 @@
 
 module RATSQL
 {
-      sql = (
-      select select,
-      from from,
-      sql_where sql_where,
-      sql_groupby sql_groupby,
-      sql_orderby sql_orderby,
-      sql_ieu sql_ieu,
-    )
+    sql = (select_stmt select_stmt)
 
-    select = (singleton is_distinct, agg* aggs)
-    agg = (agg_type agg_id, val_unit val_unit)
-    
-    from = (table_unit* table_units, cond? conds)
+    select_stmt = No_Set(select select,
+                        from_ from_,
+                        sql_where sql_where,
+                        sql_groupby sql_groupby,
+                        sql_orderby sql_orderby)
+    | INTERSECT(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
+    | UNION(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
+    | EXCEPT(bool all, select_stmt select_stmt1, select_stmt select_stmt2)
 
-    table_unit = TableUnitSql(sql s)
-               | Table(table table_id)
+    select = (bool is_distinct, agg* aggs)
+    agg = (agg_type agg_type, expr expr)
 
-    cond = And(cond left, cond right)
-         | Or(cond left, cond right)
-         | Not(cond c)
-         | Between(val_unit val_unit, val val1, val val2)
-         | Eq(val_unit val_unit, val val1)
-         | Gt(val_unit val_unit, val val1)
-         | Lt(val_unit val_unit, val val1)
-         | Ge(val_unit val_unit, val val1)
-         | Le(val_unit val_unit, val val1)
-         | Ne(val_unit val_unit, val val1)
-         | In(val_unit val_unit, val val1)
-         | Like(val_unit val_unit, val val1)
+    from_ = (table_unit* table_units, join_cond* join_conds)
 
-    val = Terminal
-        | String(string s)
-        | ValSql(sql s)
-        | ColUnit(col_unit c)
-        | Number(object f)
+    table_unit = TableUnitSql(select_stmt select_stmt, string alias)
+               | Table(table table)
 
-    val_unit = Column(col_unit col_unit1)
-        | Minus(col_unit col_unit1, col_unit col_unit2)
-        | Plus(col_unit col_unit1, col_unit col_unit2)
-        | Times(col_unit col_unit1, col_unit col_unit2)
-        | Divide(col_unit col_unit1, col_unit col_unit2)
+    join_cond = (join_type join_type, expr expr)
+
+    join_type = NATURAL_JOIN
+        | INNER_JOIN
+        | LEFT_OUTER_JOIN
+        | RIGHT_OUTER_JOIN
+        | FULL_OUTER_JOIN
+        | CROSS_JOIN
+
+    expr = And(expr left, expr right)
+         | Or(expr left, expr right)
+         | Not(expr expr)
+         | All(expr expr)
+         | Any(expr expr)
+         | Between(expr expr1, expr expr2, expr expr3)
+         | Eq(expr expr1, expr expr2)
+         | Gt(expr expr1, expr expr2)
+         | Lt(expr expr1, expr expr2)
+         | Ge(expr expr1, expr expr2)
+         | Le(expr expr1, expr expr2)
+         | Ne(expr expr1, expr expr2)
+         | In(expr expr1, expr expr2)
+         | Like(expr expr1, expr expr2)
+         | Exists(val expr1)
+         | Minus(expr expr1, expr expr2)
+         | Plus(expr expr1, expr expr2)
+         | Times(expr expr1, expr expr2)
+         | Divide(expr expr1, expr expr2)
+         | ValSql(select_stmt select_stmt)
+         | ColUnit(col_unit col_unit)
+         | String(string string)
+         | Number(float number)
+         | Terminal
 
     col_unit = (
-      agg_type agg_id,
-      column col_id,
-      singleton is_distinct
+      agg_type agg_type,
+      column column,
+      bool is_distinct
     )
 
     sql_where = (
-      cond? where,
+      expr? where,
     )
 
     sql_groupby = (
       col_unit* group_by,
-      cond? having,
+      expr? having,
     )
 
     sql_orderby = (
-      order_by? order_by,
+      order_by* order_by,
       int? limit,
     )
 
-    sql_ieu = (
-      sql? intersect,
-      sql? except,
-      sql? union,
-    )
-
-    order_by = (order order, val_unit* val_units)
+    order_by = (order order, expr expr)
     agg_type = NoneAggOp | Max | Min | Count | Sum | Avg
-    order = Asc | Desc
+    order = Asc | Desc | Default
+
+    column = (string col_str)
+    table = (string tab_str)
 }

@@ -5,3 +5,5 @@ transformers==4.22.1
 unittest-xml-reporting==3.2.0
 coverage==6.4.4
 pglast==3.14
+sphinx==5.2.2
+sphinx-rtd-theme==1.0.0

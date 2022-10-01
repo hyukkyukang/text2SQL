@@ -1,12 +1,12 @@
 import asdl
-import src.utils as utils
 
 from pglast import stream
+from src.utils.sql import loosely_parse, set_att_value, pprint_parse_tree
 from src.parser.asdl_visitor import ASDLVisitor
 from src.parser.pg_visitor import PGVisitor
 
 class SQLParser():
-    """_summary_table = {}
+    """_summary_
     """
     def __init__(self, asdl_file_path): 
         self.asdl_def = asdl.parse(asdl_file_path)
@@ -14,8 +14,8 @@ class SQLParser():
     
     def sql2pt(self, sql):
         """Convert SQL to parse tree."""
-        parse_tree = utils.sql.loosely_parse(sql)
-        utils.sql.set_att_value(parse_tree, "location", None)
+        parse_tree = loosely_parse(sql)
+        set_att_value(parse_tree, "location", None)
         return parse_tree
 
     def pt2ast(self, parse_tree):
@@ -33,11 +33,11 @@ class SQLParser():
 if __name__ == "__main__":
     # sql_query = "SELECT date ,  (max_temperature_f - min_temperature_f) - avg_temperature_f FROM weather WHERE 1 = c "
     sql_query = "SELECT date < 1 FROM weather WHERE (1 = c) = True order by date*2"
-    parser = SQLParser("./src/grammar/ratsql.asdl")
+    parser = SQLParser("./src/grammar/ratsql_extended.asdl")
     # Parse string and Generate Parse tree
     parse_tree = parser.sql2pt(sql_query)
     print("\n Parsed parse tree: \n")
-    utils.sql.pprint_parse_tree(parse_tree(skip_none=True))
+    pprint_parse_tree(parse_tree(skip_none=True))
     # Transform parse tree into ASDL AST
     asdl_ast = parser.pt2ast(parse_tree)
     print("\n Parsed ASDL AST: \n")
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Reconstruct parse tree from ASDL AST
     back_parse_tree = parser.ast2pt(asdl_ast)
     print("\n Reconstructed parse tree: \n")
-    utils.sql.pprint_parse_tree(back_parse_tree(skip_none=True))
+    pprint_parse_tree(back_parse_tree(skip_none=True))
     # Reconstruct SQL string from parse tree
     print(f"Original      SQL:{parser.pt2sql(parse_tree)}")
     print(f"Reconstructed SQL:{parser.pt2sql(back_parse_tree)}")

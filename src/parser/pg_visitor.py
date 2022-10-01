@@ -46,7 +46,7 @@ class PGVisitor(PGVisitorVisitorBase):
             def get_number_or_none(node):
                 return node.number if node else None
             def combine_from(nodes):
-                tmp = ASDL_CLASS.from_(table_units=[], join_conds=[])
+                tmp = ASDL_CLASS.sql_from(table_units=[], join_conds=[])
                 for node in nodes:
                     if node.table_units:
                         tmp.table_units += node.table_units
@@ -56,12 +56,12 @@ class PGVisitor(PGVisitorVisitorBase):
 
             # Create arguments
             select = ASDL_CLASS.select(is_distinct=bool(pg_node.distinctClause), aggs=self.visit(pg_node.targetList))
-            from_ = combine_from(self.visit(pg_node.fromClause))
+            sql_from = combine_from(self.visit(pg_node.fromClause))
             sql_where = ASDL_CLASS.sql_where(where=self.visit(pg_node.whereClause))
             sql_groupby = ASDL_CLASS.sql_groupby(group_by=self.visit(pg_node.groupClause), having=self.visit(pg_node.havingClause))
             sql_orderby = ASDL_CLASS.sql_orderby(order_by=self.visit(pg_node.sortClause), limit=get_number_or_none(self.visit(pg_node.limitCount)))
             
-            return ASDL_CLASS.No_Set(select=select, from_=from_, sql_where=sql_where, sql_groupby=sql_groupby, sql_orderby=sql_orderby)
+            return ASDL_CLASS.No_Set(select=select, sql_from=sql_from, sql_where=sql_where, sql_groupby=sql_groupby, sql_orderby=sql_orderby)
         
         # Main logic of the function
         if pg_node.op != pglast.enums.parsenodes.SetOperation.SETOP_NONE:
@@ -151,12 +151,12 @@ class PGVisitor(PGVisitorVisitorBase):
             pg_node (pglast.ast.RangeVar): parse tree node representing a table reference
 
         Returns:
-            ASDL_CLASS.from__: ASDL AST Node for "from_"
-        """
+            ASDL_CLASS.sql_from: ASDL AST Node for "from"
+        """ 
         def get_table_referencing_string(node):
             return f"{node.relname} {pg_node.alias.aliasname}" if node.alias else node.relname
         
-        return ASDL_CLASS.from_(table_units=[ASDL_CLASS.Table(table=ASDL_CLASS.table(tab_str=get_table_referencing_string(pg_node)))])
+        return ASDL_CLASS.sql_from(table_units=[ASDL_CLASS.Table(table=ASDL_CLASS.table(tab_str=get_table_referencing_string(pg_node)))])
     
     def visit_RangeSubselect(self, pg_node):
         """_summary_: Transformation related to subselects
@@ -165,9 +165,9 @@ class PGVisitor(PGVisitorVisitorBase):
             pg_node (pglast.ast.RangeSubselect): Parse tree node representing a subselect
 
         Returns:
-            ASDL_CLASS.from_: ASDL AST Node for "from_"
+            ASDL_CLASS.sql_from: ASDL AST Node for "from"
         """
-        return ASDL_CLASS.from_(table_units=[ASDL_CLASS.TableUnitSql(select_stmt=self.visit(pg_node.subquery),
+        return ASDL_CLASS.sql_from(table_units=[ASDL_CLASS.TableUnitSql(select_stmt=self.visit(pg_node.subquery),
                                                                             alias=pg_node.alias.aliasname)])
                                 
     
@@ -178,7 +178,7 @@ class PGVisitor(PGVisitorVisitorBase):
             pg_node (pglast.ast.JoinExpr): Parse tree node representing a join expression
 
         Return:
-            _ASDL_CLASS.from__: ASDL AST Node for "from_"
+            _ASDL_CLASS.sql_from: ASDL AST Node for "from"
         """
         def create_default_expr_for_cross_join(tab1_str, tab2_str):
             return ASDL_CLASS.Eq(
@@ -208,7 +208,7 @@ class PGVisitor(PGVisitorVisitorBase):
         # Combine class
         new_join_cond = ASDL_CLASS.join_cond(join_type=get_join_type(pg_node.jointype, has_quals=bool(pg_node.quals), is_natural=pg_node.isNatural),
                                              expr=create_join_expression(pg_node))
-        return ASDL_CLASS.from_(table_units=left_from_.table_units + right_from_.table_units, join_conds=left_from_.join_conds+[new_join_cond])
+        return ASDL_CLASS.sql_from(table_units=left_from_.table_units + right_from_.table_units, join_conds=left_from_.join_conds+[new_join_cond])
     
     def visit_A_Const(self, pg_node):
         """_summary_: Transformation related to constant values
