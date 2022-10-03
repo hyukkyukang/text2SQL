@@ -44,6 +44,8 @@
 <li><a class="reference internal" href="#module-src.parser.asdl_visitor">src.parser.asdl_visitor module</a><ul>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor</span></code></a><ul>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_agg"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_agg()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_col_unit"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_col_unit()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_expr"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_expr()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_select_stmt"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_select_stmt()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.asdl_visitor.ASDLVisitor.visit_sql"><code class="docutils literal notranslate"><span class="pre">ASDLVisitor.visit_sql()</span></code></a></li>
@@ -77,6 +79,7 @@
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_ColumnRef"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_ColumnRef()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_FuncCall"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_FuncCall()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_JoinExpr"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_JoinExpr()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RangeFunction"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RangeFunction()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RangeSubselect"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RangeSubselect()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RangeVar"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RangeVar()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.pg_visitor.PGVisitor.visit_RawStmt"><code class="docutils literal notranslate"><span class="pre">PGVisitor.visit_RawStmt()</span></code></a></li>
@@ -153,6 +156,47 @@
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>pglast.ast.ResTarget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_col_unit">
+<span class="sig-name descname"><span class="pre">visit_col_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_col_unit" title="Permalink to this definition"></a></dt>
+<dd><p>Transform a AST node into a Postgres parse tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>ASDL_CLASS.col_unit</em>) – AST node of col_unit</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>parse tree node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[pglast.ast.ColumnRef, pglast.ast.FuncCall]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.parser.asdl_visitor.ASDLVisitor.visit_expr">
+<span class="sig-name descname"><span class="pre">visit_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.asdl_visitor.ASDLVisitor.visit_expr" title="Permalink to this definition"></a></dt>
+<dd><p>Transform AST node of type ASDL_CLASS.expr to pglsat parse tree node of type Expr</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ast_node</strong> (<em>_type_</em>) – _description_</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>NotImplementedError</strong> – _description_</p></li>
+<li><p><strong>NotImplementedError</strong> – _description_</p></li>
+<li><p><strong>NotImplementedError</strong> – _description_</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>_type_</p>
 </dd>
 </dl>
 </dd></dl>
@@ -400,6 +444,23 @@ while ASDL AST represents it as a left deep tree.</p>
 <dt>Args:</dt><dd><p>pg_node (pglast.ast.JoinExpr): Parse tree node representing a join expression</p>
 </dd>
 <dt>Return:</dt><dd><p>_ASDL_CLASS.sql_from: ASDL AST Node for “from”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.parser.pg_visitor.PGVisitor.visit_RangeFunction">
+<span class="sig-name descname"><span class="pre">visit_RangeFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.pg_visitor.PGVisitor.visit_RangeFunction" title="Permalink to this definition"></a></dt>
+<dd><p>Transformation of cases where FROM clause contains special Postgresql tables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pg_node</strong> (<em>pglast.ast.RangeFunction</em>) – postgresql parse tree node</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ASDL AST node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ADSL_CLASS.sql_from</p>
 </dd>
 </dl>
 </dd></dl>
