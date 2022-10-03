@@ -1,0 +1,3810 @@
+[
+    {
+        "column_descriptions": [
+            "*",
+            "the year of the betfront",
+            "the datetime of the betfront",
+            "the country of the betfront",
+            "the competion of the betfront",
+            "the match of the betfront",
+            "the home opening of the betfront",
+            "the draw opening of the betfront",
+            "the away opening of the betfront",
+            "the home closing of the betfront",
+            "the draw closing of the betfront",
+            "the away closing of the betfront",
+            "the season of the football_data",
+            "the datetime of the football_data",
+            "League Division",
+            "the country of the football_data",
+            "the league of the football_data",
+            "Match Referee",
+            "Home Team",
+            "Away Team",
+            "Full Time Home Team Goals",
+            "Full Time Away Team Goals",
+            "Full Time Result (H: Home Win, D: Draw, A: Away Win)",
+            "Half Time Home Team Goals",
+            "Half Time Away Team Goals",
+            "Half Time Result (H: Home Win, D: Draw, A: Away Win)",
+            "Pinnacle home win odds",
+            "Pinnacle draw odds",
+            "Pinnacle away win odds",
+            "Bet365 home win odds",
+            "Bet365 draw odds",
+            "Bet365 away win odds",
+            "Ladbrokes home win odds",
+            "Ladbrokes draw odds",
+            "Ladbrokes away win odds",
+            "Bet&Win home win odds",
+            "Bet&Win draw odds",
+            "Bet&Win away win odds"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "year"
+            ],
+            [
+                0,
+                "datetime"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "competion"
+            ],
+            [
+                0,
+                "match"
+            ],
+            [
+                0,
+                "home opening"
+            ],
+            [
+                0,
+                "draw opening"
+            ],
+            [
+                0,
+                "away opening"
+            ],
+            [
+                0,
+                "home closing"
+            ],
+            [
+                0,
+                "draw closing"
+            ],
+            [
+                0,
+                "away closing"
+            ],
+            [
+                1,
+                "season"
+            ],
+            [
+                1,
+                "datetime"
+            ],
+            [
+                1,
+                "div"
+            ],
+            [
+                1,
+                "country"
+            ],
+            [
+                1,
+                "league"
+            ],
+            [
+                1,
+                "referee"
+            ],
+            [
+                1,
+                "home team"
+            ],
+            [
+                1,
+                "away team"
+            ],
+            [
+                1,
+                "fthg"
+            ],
+            [
+                1,
+                "ftag"
+            ],
+            [
+                1,
+                "ftr"
+            ],
+            [
+                1,
+                "hthg"
+            ],
+            [
+                1,
+                "htag"
+            ],
+            [
+                1,
+                "htr"
+            ],
+            [
+                1,
+                "psh"
+            ],
+            [
+                1,
+                "psd"
+            ],
+            [
+                1,
+                "psa"
+            ],
+            [
+                1,
+                "b365h"
+            ],
+            [
+                1,
+                "b365d"
+            ],
+            [
+                1,
+                "b365a"
+            ],
+            [
+                1,
+                "lbh"
+            ],
+            [
+                1,
+                "lbd"
+            ],
+            [
+                1,
+                "lba"
+            ],
+            [
+                1,
+                "bwh"
+            ],
+            [
+                1,
+                "bwd"
+            ],
+            [
+                1,
+                "bwa"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "year"
+            ],
+            [
+                0,
+                "date time"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "competion"
+            ],
+            [
+                0,
+                "match"
+            ],
+            [
+                0,
+                "home opening"
+            ],
+            [
+                0,
+                "draw opening"
+            ],
+            [
+                0,
+                "away opening"
+            ],
+            [
+                0,
+                "home closing"
+            ],
+            [
+                0,
+                "draw closing"
+            ],
+            [
+                0,
+                "away closing"
+            ],
+            [
+                1,
+                "season"
+            ],
+            [
+                1,
+                "date time"
+            ],
+            [
+                1,
+                "division"
+            ],
+            [
+                1,
+                "country"
+            ],
+            [
+                1,
+                "league"
+            ],
+            [
+                1,
+                "referee"
+            ],
+            [
+                1,
+                "home team"
+            ],
+            [
+                1,
+                "away team"
+            ],
+            [
+                1,
+                "full time home team goals"
+            ],
+            [
+                1,
+                "full time away team goals"
+            ],
+            [
+                1,
+                "full time results"
+            ],
+            [
+                1,
+                "half time home team goals"
+            ],
+            [
+                1,
+                "half time away team goals"
+            ],
+            [
+                1,
+                "half time results"
+            ],
+            [
+                1,
+                "pinnacle home win odds"
+            ],
+            [
+                1,
+                "pinnacle draw odds"
+            ],
+            [
+                1,
+                "pinnacle away win odds"
+            ],
+            [
+                1,
+                "bet365 home win odds"
+            ],
+            [
+                1,
+                "bet365 draw odds"
+            ],
+            [
+                1,
+                "bet365 away win odds"
+            ],
+            [
+                1,
+                "ladbrokes home win odds"
+            ],
+            [
+                1,
+                "ladbrokes draw odds"
+            ],
+            [
+                1,
+                "ladbrokes away win odds"
+            ],
+            [
+                1,
+                "bet&win home win odds"
+            ],
+            [
+                1,
+                "bet&win draw odds"
+            ],
+            [
+                1,
+                "bet&win away win odds"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "YEAR"
+            ],
+            [
+                0,
+                "DATETIME"
+            ],
+            [
+                0,
+                "COUNTRY"
+            ],
+            [
+                0,
+                "COMPETION"
+            ],
+            [
+                0,
+                "MATCH"
+            ],
+            [
+                0,
+                "HOME_OPENING"
+            ],
+            [
+                0,
+                "DRAW_OPENING"
+            ],
+            [
+                0,
+                "AWAY_OPENING"
+            ],
+            [
+                0,
+                "HOME_CLOSING"
+            ],
+            [
+                0,
+                "DRAW_CLOSING"
+            ],
+            [
+                0,
+                "AWAY_CLOSING"
+            ],
+            [
+                1,
+                "Season"
+            ],
+            [
+                1,
+                "Datetime"
+            ],
+            [
+                1,
+                "Div"
+            ],
+            [
+                1,
+                "Country"
+            ],
+            [
+                1,
+                "League"
+            ],
+            [
+                1,
+                "Referee"
+            ],
+            [
+                1,
+                "HomeTeam"
+            ],
+            [
+                1,
+                "AwayTeam"
+            ],
+            [
+                1,
+                "FTHG"
+            ],
+            [
+                1,
+                "FTAG"
+            ],
+            [
+                1,
+                "FTR"
+            ],
+            [
+                1,
+                "HTHG"
+            ],
+            [
+                1,
+                "HTAG"
+            ],
+            [
+                1,
+                "HTR"
+            ],
+            [
+                1,
+                "PSH"
+            ],
+            [
+                1,
+                "PSD"
+            ],
+            [
+                1,
+                "PSA"
+            ],
+            [
+                1,
+                "B365H"
+            ],
+            [
+                1,
+                "B365D"
+            ],
+            [
+                1,
+                "B365A"
+            ],
+            [
+                1,
+                "LBH"
+            ],
+            [
+                1,
+                "LBD"
+            ],
+            [
+                1,
+                "LBA"
+            ],
+            [
+                1,
+                "BWH"
+            ],
+            [
+                1,
+                "BWD"
+            ],
+            [
+                1,
+                "BWA"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "number",
+            "time",
+            "text",
+            "text",
+            "text",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "text",
+            "time",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "number",
+            "text",
+            "number",
+            "number",
+            "text",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number"
+        ],
+        "db_id": "WorldSoccerDataBase",
+        "db_overview": "",
+        "foreign_keys": [],
+        "primary_keys": [],
+        "table_names": [
+            "betfront",
+            "football data"
+        ],
+        "table_names_original": [
+            "betfront",
+            "football_data"
+        ],
+        "value_enums": ""
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "PDP Sample ID - unique sample identifer",
+            "State code for location of origin (grower packer or distributor) if sample is domestic",
+            "2-digit Year",
+            "2-digit Month",
+            "2-digit Day",
+            "4-digit Collection Site code",
+            "Commodity Code for product collected",
+            "optional 1-letter Source ID code",
+            "Variety/class of the product collected",
+            "Code indicating sample origin",
+            "Country of origin if the sample was imported",
+            "Code for type of collection/distribution facility",
+            "Code for commodity or package/container type",
+            "Code for claim made on product",
+            "Number of individual units in sample for select non-clustered products",
+            "the grow state of the sampledata15",
+            "the pack state of the sampledata15",
+            "the distribution state of the sampledata15",
+            "the sample pk of the resultsdata15",
+            "the commodity code of the resultsdata15",
+            "the commodity type of the resultsdata15",
+            "the lab code of the resultsdata15",
+            "FDA/PDP Pesticide Code for compound tested",
+            "Code for Test Classification",
+            "Concentration of residue detected. Zero (0) for non-detect",
+            "Limit of Detection for pesticide/commodity pair",
+            "Concentration of residue detected",
+            "Code for primary Confirmation method",
+            "Code for secondary Confirmation method",
+            "Code for Annotated Information",
+            "Code for Quantitative method",
+            "Code for Mean Result finding",
+            "Code for Extraction method",
+            "Code for Determinative method"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "sample pk"
+            ],
+            [
+                0,
+                "state"
+            ],
+            [
+                0,
+                "year"
+            ],
+            [
+                0,
+                "month"
+            ],
+            [
+                0,
+                "day"
+            ],
+            [
+                0,
+                "site"
+            ],
+            [
+                0,
+                "commod"
+            ],
+            [
+                0,
+                "source id"
+            ],
+            [
+                0,
+                "variety"
+            ],
+            [
+                0,
+                "origin"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "disttype"
+            ],
+            [
+                0,
+                "commtype"
+            ],
+            [
+                0,
+                "claim"
+            ],
+            [
+                0,
+                "quantity"
+            ],
+            [
+                0,
+                "growst"
+            ],
+            [
+                0,
+                "packst"
+            ],
+            [
+                0,
+                "distst"
+            ],
+            [
+                1,
+                "sample pk"
+            ],
+            [
+                1,
+                "commod"
+            ],
+            [
+                1,
+                "commtype"
+            ],
+            [
+                1,
+                "lab"
+            ],
+            [
+                1,
+                "pestcode"
+            ],
+            [
+                1,
+                "testclass"
+            ],
+            [
+                1,
+                "concen"
+            ],
+            [
+                1,
+                "lod"
+            ],
+            [
+                1,
+                "conunit"
+            ],
+            [
+                1,
+                "confmethod"
+            ],
+            [
+                1,
+                "confmethod2"
+            ],
+            [
+                1,
+                "annotate"
+            ],
+            [
+                1,
+                "quantitate"
+            ],
+            [
+                1,
+                "mean"
+            ],
+            [
+                1,
+                "extract"
+            ],
+            [
+                1,
+                "determin"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "sample pk"
+            ],
+            [
+                0,
+                "state code"
+            ],
+            [
+                0,
+                "year"
+            ],
+            [
+                0,
+                "month"
+            ],
+            [
+                0,
+                "day"
+            ],
+            [
+                0,
+                "site code"
+            ],
+            [
+                0,
+                "commodity code"
+            ],
+            [
+                0,
+                "source id"
+            ],
+            [
+                0,
+                "variety"
+            ],
+            [
+                0,
+                "origin code"
+            ],
+            [
+                0,
+                "country code"
+            ],
+            [
+                0,
+                "distribution type code"
+            ],
+            [
+                0,
+                "commodity type code"
+            ],
+            [
+                0,
+                "claim code"
+            ],
+            [
+                0,
+                "quantity"
+            ],
+            [
+                0,
+                "grow state"
+            ],
+            [
+                0,
+                "pack state"
+            ],
+            [
+                0,
+                "distribution state"
+            ],
+            [
+                1,
+                "sample pk"
+            ],
+            [
+                1,
+                "commodity code"
+            ],
+            [
+                1,
+                "commodity type"
+            ],
+            [
+                1,
+                "lab code"
+            ],
+            [
+                1,
+                "pest code"
+            ],
+            [
+                1,
+                "test class code"
+            ],
+            [
+                1,
+                "concentration"
+            ],
+            [
+                1,
+                "limit of detection"
+            ],
+            [
+                1,
+                "concentration unit code"
+            ],
+            [
+                1,
+                "confirmation method code"
+            ],
+            [
+                1,
+                "confirmation method code 2"
+            ],
+            [
+                1,
+                "annotate code"
+            ],
+            [
+                1,
+                "quantitate code"
+            ],
+            [
+                1,
+                "mean code"
+            ],
+            [
+                1,
+                "extract"
+            ],
+            [
+                1,
+                "determine code"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "sample_pk"
+            ],
+            [
+                0,
+                "state"
+            ],
+            [
+                0,
+                "year"
+            ],
+            [
+                0,
+                "month"
+            ],
+            [
+                0,
+                "day"
+            ],
+            [
+                0,
+                "site"
+            ],
+            [
+                0,
+                "commod"
+            ],
+            [
+                0,
+                "source_id"
+            ],
+            [
+                0,
+                "variety"
+            ],
+            [
+                0,
+                "origin"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "disttype"
+            ],
+            [
+                0,
+                "commtype"
+            ],
+            [
+                0,
+                "claim"
+            ],
+            [
+                0,
+                "quantity"
+            ],
+            [
+                0,
+                "growst"
+            ],
+            [
+                0,
+                "packst"
+            ],
+            [
+                0,
+                "distst"
+            ],
+            [
+                1,
+                "sample_pk"
+            ],
+            [
+                1,
+                "commod"
+            ],
+            [
+                1,
+                "commtype"
+            ],
+            [
+                1,
+                "lab"
+            ],
+            [
+                1,
+                "pestcode"
+            ],
+            [
+                1,
+                "testclass"
+            ],
+            [
+                1,
+                "concen"
+            ],
+            [
+                1,
+                "lod"
+            ],
+            [
+                1,
+                "conunit"
+            ],
+            [
+                1,
+                "confmethod"
+            ],
+            [
+                1,
+                "confmethod2"
+            ],
+            [
+                1,
+                "annotate"
+            ],
+            [
+                1,
+                "quantitate"
+            ],
+            [
+                1,
+                "mean"
+            ],
+            [
+                1,
+                "extract"
+            ],
+            [
+                1,
+                "determin"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text"
+        ],
+        "db_id": "Pesticide",
+        "db_overview": "This dataset contains information on pesticide residues in food. The U.S. Department of Agriculture (USDA) Agricultural Marketing Service (AMS) conducts the Pesticide Data Program (PDP) every year to help assure consumers that the food they feed themselves and their families is safe. Ultimately, if EPA determines a pesticide is not safe for human consumption, it is removed from the market. The PDP tests a wide variety of domestic and imported foods, with a strong focus on foods that are consumed by infants and children. EPA relies on PDP data to conduct dietary risk assessments and to ensure that any pesticide residues in foods remain at safe levels. USDA uses the data to better understand the relationship of pesticide residues to agricultural practices and to enhance USDA\u2019s Integrated Pest Management objectives. USDA also works with U.S. growers to improve agricultural practices.",
+        "foreign_keys": [
+            [
+                1,
+                19
+            ]
+        ],
+        "primary_keys": [
+            1,
+            19
+        ],
+        "table_names": [
+            "sampledata15",
+            "resultsdata15"
+        ],
+        "table_names_original": [
+            "sampledata15",
+            "resultsdata15"
+        ],
+        "value_enums": {
+            "annotate": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "claim": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "commod": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "commtype": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "concen": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "confmethod": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "country": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "determin": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "disttype": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "extract": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "lab": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "mean": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "origin": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "pestcode": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "quantitate": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "state": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            },
+            "testclass": {
+                "AK": "Alaska",
+                "AL": "Alabama",
+                "AR": "Arkansas",
+                "AZ": "Arizona",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DC": "Washington D.C.",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "IA": "Iowa",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "MA": "Massachusetts",
+                "MD": "Maryland",
+                "ME": "Maine",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MO": "Missouri",
+                "MS": "Mississippi",
+                "MT": "Montana",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "NE": "Nebraska",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NV": "Nevada",
+                "NY": "New York",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "PR": "Puerto Rico",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VA": "Virginia",
+                "VT": "Vermont",
+                "WA": "Washington",
+                "WI": "Wisconsin",
+                "WV": "West Virginia",
+                "WY": "Wyoming"
+            }
+        }
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "Calendar year in which the fire was discovered or confirmed to exist.",
+            "Date on which the fire was discovered or confirmed to exist.",
+            "Day of year on which the fire was discovered or confirmed to exist.",
+            "Time of day that the fire was discovered or confirmed to exist.",
+            "Code for the (statistical) cause of the fire.",
+            "Description of the (statistical) cause of the fire.",
+            "Date on which the fire was declared contained or otherwise controlled",
+            "Day of year on which the fire was declared contained or otherwise controlled.",
+            "Time of day that the fire was declared contained or otherwise controlled",
+            "Estimate of acres within the final perimeter of the fire.",
+            "Code for fire size based on the number of acres within the final fire perimeter expenditures.",
+            "Latitude (NAD83) for point location of the fire",
+            "Longitude (NAD83) for point location of the fire",
+            "Code for primary owner or entity responsible for managing the land at the point of origin of the fire at the time of the incident.",
+            "Name of primary owner or entity responsible for managing the land at the point of origin of the fire at the time of the incident.",
+            "Two-letter code for the state in which the unit is located",
+            "County, or equivalent, in which the fire burned (or originated), based on nominal designation in the fire report.",
+            "Three-digit code from the Federal Information Process Standards (FIPS) publication 6-4 for representation of counties and equivalent entities.",
+            "County name from the FIPS publication 6-4 for representation of counties and equivalent entities."
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "fire year"
+            ],
+            [
+                0,
+                "discovery date"
+            ],
+            [
+                0,
+                "discovery doy"
+            ],
+            [
+                0,
+                "discovery time"
+            ],
+            [
+                0,
+                "stat cause code"
+            ],
+            [
+                0,
+                "stat cause descr"
+            ],
+            [
+                0,
+                "cont date"
+            ],
+            [
+                0,
+                "cont doy"
+            ],
+            [
+                0,
+                "cont time"
+            ],
+            [
+                0,
+                "fire size"
+            ],
+            [
+                0,
+                "fire size class"
+            ],
+            [
+                0,
+                "latitude"
+            ],
+            [
+                0,
+                "longitude"
+            ],
+            [
+                0,
+                "owner code"
+            ],
+            [
+                0,
+                "owner descr"
+            ],
+            [
+                0,
+                "state"
+            ],
+            [
+                0,
+                "county"
+            ],
+            [
+                0,
+                "fips code"
+            ],
+            [
+                0,
+                "fips name"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "fire year"
+            ],
+            [
+                0,
+                "discovery date"
+            ],
+            [
+                0,
+                "discovery day"
+            ],
+            [
+                0,
+                "discovery time"
+            ],
+            [
+                0,
+                "statistical cause code"
+            ],
+            [
+                0,
+                "statistical cause description"
+            ],
+            [
+                0,
+                "contained date"
+            ],
+            [
+                0,
+                "contained day"
+            ],
+            [
+                0,
+                "contained time"
+            ],
+            [
+                0,
+                "fire size"
+            ],
+            [
+                0,
+                "fire size class"
+            ],
+            [
+                0,
+                "latitude"
+            ],
+            [
+                0,
+                "longitude"
+            ],
+            [
+                0,
+                "owner code"
+            ],
+            [
+                0,
+                "owner description"
+            ],
+            [
+                0,
+                "state code"
+            ],
+            [
+                0,
+                "county code"
+            ],
+            [
+                0,
+                "fips code"
+            ],
+            [
+                0,
+                "fips name"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "FIRE_YEAR"
+            ],
+            [
+                0,
+                "DISCOVERY_DATE"
+            ],
+            [
+                0,
+                "DISCOVERY_DOY"
+            ],
+            [
+                0,
+                "DISCOVERY_TIME"
+            ],
+            [
+                0,
+                "STAT_CAUSE_CODE"
+            ],
+            [
+                0,
+                "STAT_CAUSE_DESCR"
+            ],
+            [
+                0,
+                "CONT_DATE"
+            ],
+            [
+                0,
+                "CONT_DOY"
+            ],
+            [
+                0,
+                "CONT_TIME"
+            ],
+            [
+                0,
+                "FIRE_SIZE"
+            ],
+            [
+                0,
+                "FIRE_SIZE_CLASS"
+            ],
+            [
+                0,
+                "LATITUDE"
+            ],
+            [
+                0,
+                "LONGITUDE"
+            ],
+            [
+                0,
+                "OWNER_CODE"
+            ],
+            [
+                0,
+                "OWNER_DESCR"
+            ],
+            [
+                0,
+                "STATE"
+            ],
+            [
+                0,
+                "COUNTY"
+            ],
+            [
+                0,
+                "FIPS_CODE"
+            ],
+            [
+                0,
+                "FIPS_NAME"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "number",
+            "number",
+            "number",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "number",
+            "number",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text"
+        ],
+        "db_id": "USWildFires",
+        "db_overview": "This data publication contains a spatial database of wildfires that occurred in the United States from 1992 to 2015. It is the third update of a publication originally generated to support the national Fire Program Analysis (FPA) system. The wildfire records were acquired from the reporting systems of federal, state, and local fire organizations. The following core data elements were required for records to be included in this data publication: discovery date, final fire size, and a point location at least as precise as Public Land Survey System (PLSS) section (1-square mile grid). The data were transformed to conform, when possible, to the data standards of the National Wildfire Coordinating Group (NWCG). Basic error-checking was performed and redundant records were identified and removed, to the degree possible. The resulting product, referred to as the Fire Program Analysis fire-occurrence database (FPA FOD), includes 1.88 million geo-referenced wildfire records, representing a total of 140 million acres burned during the 24-year period.",
+        "foreign_keys": [],
+        "primary_keys": [],
+        "table_names": [
+            "fires"
+        ],
+        "table_names_original": [
+            "Fires"
+        ],
+        "value_enums": ""
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "numeric id key",
+            "nuclear power plant name",
+            "latitude in decimal format",
+            "longitude in decimal format",
+            "the country of the nuclear_power_plants",
+            "the status of the nuclear_power_plants",
+            "the reactortype of the nuclear_power_plants",
+            "nuclear reactor model",
+            "date when nuclear power plant construction was started",
+            "date when nuclear power plant became operational (also known as commercial operation date)",
+            "date when nuclear power plant was shutdown (also known as permanent shutdown date)",
+            "nuclear power plant capacity (design net capacity in MWe)",
+            "date and time when information was last updated",
+            "source of the information"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "id"
+            ],
+            [
+                0,
+                "name"
+            ],
+            [
+                0,
+                "latitude"
+            ],
+            [
+                0,
+                "longitude"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "status"
+            ],
+            [
+                0,
+                "reactor type"
+            ],
+            [
+                0,
+                "reactor model"
+            ],
+            [
+                0,
+                "construction start at"
+            ],
+            [
+                0,
+                "operational from"
+            ],
+            [
+                0,
+                "operational to"
+            ],
+            [
+                0,
+                "capacity"
+            ],
+            [
+                0,
+                "last updated at"
+            ],
+            [
+                0,
+                "source"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "id"
+            ],
+            [
+                0,
+                "name"
+            ],
+            [
+                0,
+                "latitude"
+            ],
+            [
+                0,
+                "longitude"
+            ],
+            [
+                0,
+                "country"
+            ],
+            [
+                0,
+                "status"
+            ],
+            [
+                0,
+                "reactor type"
+            ],
+            [
+                0,
+                "reactor model"
+            ],
+            [
+                0,
+                "construction start at"
+            ],
+            [
+                0,
+                "operational from"
+            ],
+            [
+                0,
+                "operational to"
+            ],
+            [
+                0,
+                "capacity"
+            ],
+            [
+                0,
+                "last updated at"
+            ],
+            [
+                0,
+                "source"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "Id"
+            ],
+            [
+                0,
+                "Name"
+            ],
+            [
+                0,
+                "Latitude"
+            ],
+            [
+                0,
+                "Longitude"
+            ],
+            [
+                0,
+                "Country"
+            ],
+            [
+                0,
+                "Status"
+            ],
+            [
+                0,
+                "ReactorType"
+            ],
+            [
+                0,
+                "ReactorModel"
+            ],
+            [
+                0,
+                "ConstructionStartAt"
+            ],
+            [
+                0,
+                "OperationalFrom"
+            ],
+            [
+                0,
+                "OperationalTo"
+            ],
+            [
+                0,
+                "Capacity"
+            ],
+            [
+                0,
+                "LastUpdatedAt"
+            ],
+            [
+                0,
+                "Source"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text"
+        ],
+        "db_id": "GeoNuclearData",
+        "db_overview": "This is a database about nuclear power plants around the world.",
+        "foreign_keys": [],
+        "primary_keys": [],
+        "table_names": [
+            "nuclear power plants"
+        ],
+        "table_names_original": [
+            "nuclear_power_plants"
+        ],
+        "value_enums": {
+            "ReactorType": {
+                "ABWR": "Advanced Boiling Water Reactor",
+                "AGR": "Advanced Gas-cooled Reactor",
+                "APR": "Advanced Power Reactor",
+                "APWR": "Advanced Pressurised Water Reactor",
+                "BWR": "Boiling Water Reactor",
+                "EPR": "Evolutionary Power Reactor",
+                "FBR": "Fast Breeder Reactor",
+                "GCR": "Gas-Cooled Reactor",
+                "HTGR": "High-Temperature Gas-cooled Reactor",
+                "HTR-PM": "High Temperature Reactor - Pebble Module",
+                "HWGCR": "Heavy Water Gas Cooled Reactor",
+                "HWLWR": "Heavy Water Light Water Reactor",
+                "HWOCR": "Heavy Water Organic Cooled Reactor",
+                "LFR": "Lead-cooled Fast Reactor",
+                "LMFBR": "Liquid Metal Fast Breeder Reactor",
+                "LMFR": "Liquid Metal Fast Reactor",
+                "LWGR": "Light Water Graphite Reactor",
+                "MSR": "Molten Salt Reactor",
+                "OCR": "Organic Cooled Reactor",
+                "PHWR": "Pressurised Heavy Water Reactor",
+                "PWR": "Pressurised Water Reactor",
+                "RBMK": "High Power Channel-Type Reactor (Reaktor Bolshoy Moshchnosti Kanalniy)",
+                "SGHWR": "Steam Generating Heavy Water Reactor",
+                "SGR": "Sodium-Graphite Reactor",
+                "TWR": "Traveling-Wave Reactor"
+            }
+        }
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "Release title",
+            "Number of times the release has been downloaded.",
+            "Artist/group name.",
+            "Release year.",
+            "Release type (e.g. album single mixtape)",
+            "Unique release identifier from What.CD. Used to ensure no releases are duplicates.",
+            "unique identifier (essentially an index).",
+            "the index of the tags",
+            "unique identifier (essentially an index).",
+            "the tag of the tags"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "group name"
+            ],
+            [
+                0,
+                "total snatched"
+            ],
+            [
+                0,
+                "artist"
+            ],
+            [
+                0,
+                "group year"
+            ],
+            [
+                0,
+                "release type"
+            ],
+            [
+                0,
+                "group id"
+            ],
+            [
+                0,
+                "id"
+            ],
+            [
+                1,
+                "index"
+            ],
+            [
+                1,
+                "id"
+            ],
+            [
+                1,
+                "tag"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "group name"
+            ],
+            [
+                0,
+                "total snatched"
+            ],
+            [
+                0,
+                "artist"
+            ],
+            [
+                0,
+                "group year"
+            ],
+            [
+                0,
+                "release type"
+            ],
+            [
+                0,
+                "group id"
+            ],
+            [
+                0,
+                "id"
+            ],
+            [
+                1,
+                "index"
+            ],
+            [
+                1,
+                "id"
+            ],
+            [
+                1,
+                "tag"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "groupName"
+            ],
+            [
+                0,
+                "totalSnatched"
+            ],
+            [
+                0,
+                "artist"
+            ],
+            [
+                0,
+                "groupYear"
+            ],
+            [
+                0,
+                "releaseType"
+            ],
+            [
+                0,
+                "groupId"
+            ],
+            [
+                0,
+                "id"
+            ],
+            [
+                1,
+                "index"
+            ],
+            [
+                1,
+                "id"
+            ],
+            [
+                1,
+                "tag"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "text",
+            "number",
+            "text",
+            "number",
+            "text",
+            "number",
+            "number",
+            "number",
+            "number",
+            "text"
+        ],
+        "db_id": "WhatCDHipHop",
+        "db_overview": "",
+        "foreign_keys": [
+            [
+                7,
+                9
+            ]
+        ],
+        "primary_keys": [
+            7,
+            9
+        ],
+        "table_names": [
+            "torrents",
+            "tags"
+        ],
+        "table_names_original": [
+            "torrents",
+            "tags"
+        ],
+        "value_enums": ""
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "Player ID code",
+            "Year of ballot",
+            "Method by which player was voted upon",
+            "Total ballots cast in that year",
+            "Number of votes needed for selection in that year",
+            "Total votes received",
+            "Whether player was inducted by that vote or not (Y or N)",
+            "Category in which candidate was honored",
+            "Explanation of qualifiers for special elections",
+            "Player ID code",
+            "Name of award won",
+            "the year of the player_award",
+            "the league id of the player_award",
+            "Award was a tie (Y or N)",
+            "Notes about the award",
+            "name of award votes were received for",
+            "the year of the player_award_vote",
+            "the league id of the player_award_vote",
+            "Player ID code",
+            "Number of points received",
+            "Maximum numner of points possible",
+            "Number of first place votes",
+            "the year of the salary",
+            "Team",
+            "the league id of the salary",
+            "Player ID code",
+            "Salary",
+            "Player ID code",
+            "Year player was born",
+            "Month player was born",
+            "Day player was born",
+            "Country where player was born",
+            "State where player was born",
+            "City where player was born",
+            "Year player died",
+            "Month player died",
+            "Day player died",
+            "Country where player died",
+            "State where player died",
+            "City where player died",
+            "Player's first name",
+            "Player's last name",
+            "Player's given name (typically first and middle)",
+            "Player's weight in pounds"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "player id"
+            ],
+            [
+                0,
+                "yearid"
+            ],
+            [
+                0,
+                "votedby"
+            ],
+            [
+                0,
+                "ballots"
+            ],
+            [
+                0,
+                "needed"
+            ],
+            [
+                0,
+                "votes"
+            ],
+            [
+                0,
+                "inducted"
+            ],
+            [
+                0,
+                "category"
+            ],
+            [
+                0,
+                "needed note"
+            ],
+            [
+                1,
+                "player id"
+            ],
+            [
+                1,
+                "award id"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "league id"
+            ],
+            [
+                1,
+                "tie"
+            ],
+            [
+                1,
+                "notes"
+            ],
+            [
+                2,
+                "award id"
+            ],
+            [
+                2,
+                "year"
+            ],
+            [
+                2,
+                "league id"
+            ],
+            [
+                2,
+                "player id"
+            ],
+            [
+                2,
+                "points won"
+            ],
+            [
+                2,
+                "points max"
+            ],
+            [
+                2,
+                "votes first"
+            ],
+            [
+                3,
+                "year"
+            ],
+            [
+                3,
+                "team id"
+            ],
+            [
+                3,
+                "league id"
+            ],
+            [
+                3,
+                "player id"
+            ],
+            [
+                3,
+                "salary"
+            ],
+            [
+                4,
+                "player id"
+            ],
+            [
+                4,
+                "birth year"
+            ],
+            [
+                4,
+                "birth month"
+            ],
+            [
+                4,
+                "birth day"
+            ],
+            [
+                4,
+                "birth country"
+            ],
+            [
+                4,
+                "birth state"
+            ],
+            [
+                4,
+                "birth city"
+            ],
+            [
+                4,
+                "death year"
+            ],
+            [
+                4,
+                "death month"
+            ],
+            [
+                4,
+                "death day"
+            ],
+            [
+                4,
+                "death country"
+            ],
+            [
+                4,
+                "death state"
+            ],
+            [
+                4,
+                "death city"
+            ],
+            [
+                4,
+                "name first"
+            ],
+            [
+                4,
+                "name last"
+            ],
+            [
+                4,
+                "name given"
+            ],
+            [
+                4,
+                "weight"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "player id"
+            ],
+            [
+                0,
+                "year id"
+            ],
+            [
+                0,
+                "voted by"
+            ],
+            [
+                0,
+                "ballots"
+            ],
+            [
+                0,
+                "needed"
+            ],
+            [
+                0,
+                "votes"
+            ],
+            [
+                0,
+                "inducted"
+            ],
+            [
+                0,
+                "category"
+            ],
+            [
+                0,
+                "needed note"
+            ],
+            [
+                1,
+                "player id"
+            ],
+            [
+                1,
+                "award id"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "league id"
+            ],
+            [
+                1,
+                "tie"
+            ],
+            [
+                1,
+                "notes"
+            ],
+            [
+                2,
+                "award id"
+            ],
+            [
+                2,
+                "year"
+            ],
+            [
+                2,
+                "league id"
+            ],
+            [
+                2,
+                "player id"
+            ],
+            [
+                2,
+                "points won"
+            ],
+            [
+                2,
+                "points max"
+            ],
+            [
+                2,
+                "votes first"
+            ],
+            [
+                3,
+                "year"
+            ],
+            [
+                3,
+                "team id"
+            ],
+            [
+                3,
+                "league id"
+            ],
+            [
+                3,
+                "player id"
+            ],
+            [
+                3,
+                "salary"
+            ],
+            [
+                4,
+                "player id"
+            ],
+            [
+                4,
+                "birth year"
+            ],
+            [
+                4,
+                "birth month"
+            ],
+            [
+                4,
+                "birth day"
+            ],
+            [
+                4,
+                "birth country"
+            ],
+            [
+                4,
+                "birth state"
+            ],
+            [
+                4,
+                "birth city"
+            ],
+            [
+                4,
+                "death year"
+            ],
+            [
+                4,
+                "death month"
+            ],
+            [
+                4,
+                "death day"
+            ],
+            [
+                4,
+                "death country"
+            ],
+            [
+                4,
+                "death state"
+            ],
+            [
+                4,
+                "death city"
+            ],
+            [
+                4,
+                "name first"
+            ],
+            [
+                4,
+                "name last"
+            ],
+            [
+                4,
+                "name given"
+            ],
+            [
+                4,
+                "weight"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "player_id"
+            ],
+            [
+                0,
+                "yearid"
+            ],
+            [
+                0,
+                "votedby"
+            ],
+            [
+                0,
+                "ballots"
+            ],
+            [
+                0,
+                "needed"
+            ],
+            [
+                0,
+                "votes"
+            ],
+            [
+                0,
+                "inducted"
+            ],
+            [
+                0,
+                "category"
+            ],
+            [
+                0,
+                "needed_note"
+            ],
+            [
+                1,
+                "player_id"
+            ],
+            [
+                1,
+                "award_id"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "league_id"
+            ],
+            [
+                1,
+                "tie"
+            ],
+            [
+                1,
+                "notes"
+            ],
+            [
+                2,
+                "award_id"
+            ],
+            [
+                2,
+                "year"
+            ],
+            [
+                2,
+                "league_id"
+            ],
+            [
+                2,
+                "player_id"
+            ],
+            [
+                2,
+                "points_won"
+            ],
+            [
+                2,
+                "points_max"
+            ],
+            [
+                2,
+                "votes_first"
+            ],
+            [
+                3,
+                "year"
+            ],
+            [
+                3,
+                "team_id"
+            ],
+            [
+                3,
+                "league_id"
+            ],
+            [
+                3,
+                "player_id"
+            ],
+            [
+                3,
+                "salary"
+            ],
+            [
+                4,
+                "player_id"
+            ],
+            [
+                4,
+                "birth_year"
+            ],
+            [
+                4,
+                "birth_month"
+            ],
+            [
+                4,
+                "birth_day"
+            ],
+            [
+                4,
+                "birth_country"
+            ],
+            [
+                4,
+                "birth_state"
+            ],
+            [
+                4,
+                "birth_city"
+            ],
+            [
+                4,
+                "death_year"
+            ],
+            [
+                4,
+                "death_month"
+            ],
+            [
+                4,
+                "death_day"
+            ],
+            [
+                4,
+                "death_country"
+            ],
+            [
+                4,
+                "death_state"
+            ],
+            [
+                4,
+                "death_city"
+            ],
+            [
+                4,
+                "name_first"
+            ],
+            [
+                4,
+                "name_last"
+            ],
+            [
+                4,
+                "name_given"
+            ],
+            [
+                4,
+                "weight"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "number",
+            "number",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "number",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text",
+            "text"
+        ],
+        "db_id": "TheHistoryofBaseball",
+        "db_overview": "The History of Baseball is a reformatted version of the famous Lahman\u2019s Baseball Database. It contains Major League Baseball\u2019s complete batting and pitching statistics from 1871 to 2015, plus fielding statistics, standings, team stats, park stats, player demographics, managerial records, awards, post-season data, and more. Scripts, Kaggle\u2019s free, in-browser analytics tool, makes it easy to share detailed sabermetrics, predict the next hall of fame inductee, or illustrate how speed scores runs.",
+        "foreign_keys": [
+            [
+                10,
+                1
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                26,
+                1
+            ],
+            [
+                28,
+                1
+            ]
+        ],
+        "primary_keys": [
+            1,
+            10,
+            19,
+            26,
+            28
+        ],
+        "table_names": [
+            "hall of fame",
+            "player award",
+            "player award vote",
+            "salary",
+            "player"
+        ],
+        "table_names_original": [
+            "hall_of_fame",
+            "player_award",
+            "player_award_vote",
+            "salary",
+            "player"
+        ],
+        "value_enums": ""
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "the state code of the FINREV_FED_17",
+            "the idcensus of the FINREV_FED_17",
+            "the school district of the FINREV_FED_17",
+            "the nces id of the FINREV_FED_17",
+            "the year data of the FINREV_FED_17",
+            "Total federal revenue through the state to each school district.",
+            "Federal revenue through the state- Title 1 (no child left behind act).",
+            "Federal revenue through the state- Child Nutrition A",
+            "the year of the NDECoreExcel_Math_Grade8",
+            "the state of the NDECoreExcel_Math_Grade8",
+            "the all students of the NDECoreExcel_Math_Grade8",
+            "the average scale score of the NDECoreExcel_Math_Grade8",
+            "the state code of the FINREV_FED_KEY_17",
+            "the state of the FINREV_FED_KEY_17",
+            "the number of records of the FINREV_FED_KEY_17"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "state code"
+            ],
+            [
+                0,
+                "idcensus"
+            ],
+            [
+                0,
+                "school district"
+            ],
+            [
+                0,
+                "nces id"
+            ],
+            [
+                0,
+                "yr data"
+            ],
+            [
+                0,
+                "t fed rev"
+            ],
+            [
+                0,
+                "c14"
+            ],
+            [
+                0,
+                "c25"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "state"
+            ],
+            [
+                1,
+                "all students"
+            ],
+            [
+                1,
+                "average scale score"
+            ],
+            [
+                2,
+                "state code"
+            ],
+            [
+                2,
+                "state"
+            ],
+            [
+                2,
+                "# records"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "state code"
+            ],
+            [
+                0,
+                "id census"
+            ],
+            [
+                0,
+                "school district"
+            ],
+            [
+                0,
+                "nces id"
+            ],
+            [
+                0,
+                "year data"
+            ],
+            [
+                0,
+                "total federal revenue"
+            ],
+            [
+                0,
+                "child 14"
+            ],
+            [
+                0,
+                "child 25"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "state"
+            ],
+            [
+                1,
+                "all students"
+            ],
+            [
+                1,
+                "average scale score"
+            ],
+            [
+                2,
+                "state code"
+            ],
+            [
+                2,
+                "state"
+            ],
+            [
+                2,
+                "number of records"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "state_code"
+            ],
+            [
+                0,
+                "idcensus"
+            ],
+            [
+                0,
+                "school_district"
+            ],
+            [
+                0,
+                "nces_id"
+            ],
+            [
+                0,
+                "yr_data"
+            ],
+            [
+                0,
+                "t_fed_rev"
+            ],
+            [
+                0,
+                "c14"
+            ],
+            [
+                0,
+                "c25"
+            ],
+            [
+                1,
+                "year"
+            ],
+            [
+                1,
+                "state"
+            ],
+            [
+                1,
+                "all_students"
+            ],
+            [
+                1,
+                "average_scale_score"
+            ],
+            [
+                2,
+                "State_Code"
+            ],
+            [
+                2,
+                "State"
+            ],
+            [
+                2,
+                "#_Records"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "number",
+            "number",
+            "text",
+            "text",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "text",
+            "text",
+            "number",
+            "number",
+            "text",
+            "text"
+        ],
+        "db_id": "StudentMathScore",
+        "db_overview": "This is a database contain information of the average student math score of a state and how much federal revenue a school district receives through its state.",
+        "foreign_keys": [],
+        "primary_keys": [],
+        "table_names": [
+            "finrev fed 17",
+            "ndecoreexcel math grade8",
+            "finrev fed key 17"
+        ],
+        "table_names_original": [
+            "FINREV_FED_17",
+            "NDECoreExcel_Math_Grade8",
+            "FINREV_FED_KEY_17"
+        ],
+        "value_enums": ""
+    },
+    {
+        "column_descriptions": [
+            "*",
+            "this is a randomly generated text string to uniquely indentify each crime record",
+            "the crime time stamp of the GreaterManchesterCrime",
+            "this is the text description of the area in Greater Manchester where the crime occured",
+            "Lower Layer Super Output Area (LSOA) is a GEOGRAPHIC AREA. Lower Layer Super Output Areas are a geographic hierarchy designed to improve the reporting of small area statistics in England and Wales",
+            "this is the type or class of crime",
+            "this is an indication of the outcome of the police investigation"
+        ],
+        "column_names": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "crime id"
+            ],
+            [
+                0,
+                "crime ts"
+            ],
+            [
+                0,
+                "location"
+            ],
+            [
+                0,
+                "lsoa"
+            ],
+            [
+                0,
+                "type"
+            ],
+            [
+                0,
+                "outcome"
+            ]
+        ],
+        "column_names_manually_normalized_alternative": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "crime id"
+            ],
+            [
+                0,
+                "crime time stamp"
+            ],
+            [
+                0,
+                "location"
+            ],
+            [
+                0,
+                "lsoa"
+            ],
+            [
+                0,
+                "type"
+            ],
+            [
+                0,
+                "outcome"
+            ]
+        ],
+        "column_names_original": [
+            [
+                -1,
+                "*"
+            ],
+            [
+                0,
+                "CrimeID"
+            ],
+            [
+                0,
+                "CrimeTS"
+            ],
+            [
+                0,
+                "Location"
+            ],
+            [
+                0,
+                "LSOA"
+            ],
+            [
+                0,
+                "Type"
+            ],
+            [
+                0,
+                "Outcome"
+            ]
+        ],
+        "column_types": [
+            "text",
+            "text",
+            "time",
+            "text",
+            "text",
+            "text",
+            "text"
+        ],
+        "db_id": "GreaterManchesterCrime",
+        "db_overview": "GreaterManchesterCrime is a geolocated listing of ALL crimes detected and investigated by the Greater Manchester Police Force in the United Kingdom, during August 2018.",
+        "foreign_keys": [],
+        "primary_keys": [
+            1
+        ],
+        "table_names": [
+            "greater manchester crime"
+        ],
+        "table_names_original": [
+            "GreaterManchesterCrime"
+        ],
+        "value_enums": ""
+    }
+]

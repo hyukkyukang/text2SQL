@@ -1,0 +1,3034 @@
+[
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT DISTINCT commod FROM sampledata15",
+        "query_toks": [
+            "SELECT",
+            "DISTINCT",
+            "commod",
+            "FROM",
+            "sampledata15"
+        ],
+        "question": "which foods are captured in the data set?",
+        "question_toks": [
+            "which",
+            "foods",
+            "are",
+            "captured",
+            "in",
+            "the",
+            "data",
+            "set?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                true,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT count(*) FROM sampledata15 WHERE origin = \"3\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "origin",
+            "=",
+            "\"3\""
+        ],
+        "question": "how many samples have unknown countries of origin?",
+        "question_toks": [
+            "how",
+            "many",
+            "samples",
+            "have",
+            "unknown",
+            "countries",
+            "of",
+            "origin?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"3\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT T2.commod FROM resultsdata15 as T2 JOIN sampledata15 as T1 ON T1.sample_pk = T2.sample_pk WHERE T1.year = 15 GROUP BY T2.commod ORDER BY sum(T2.concen) DESC LIMIT 10",
+        "query_toks": [
+            "SELECT",
+            "T2.commod",
+            "FROM",
+            "resultsdata15",
+            "as",
+            "T2",
+            "JOIN",
+            "sampledata15",
+            "as",
+            "T1",
+            "ON",
+            "T1.sample_pk",
+            "=",
+            "T2.sample_pk",
+            "WHERE",
+            "T1.year",
+            "=",
+            "15",
+            "GROUP",
+            "BY",
+            "T2.commod",
+            "ORDER",
+            "BY",
+            "sum(T2.concen)",
+            "DESC",
+            "LIMIT",
+            "10"
+        ],
+        "question": "Which are the top 10 commodities that have the highest residue during 2015?",
+        "question_toks": [
+            "Which",
+            "are",
+            "the",
+            "top",
+            "10",
+            "commodities",
+            "that",
+            "have",
+            "the",
+            "highest",
+            "residue",
+            "during",
+            "2015?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    15.0,
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    20,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            25,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 10,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT commod FROM sampledata15 WHERE origin = 2 AND commod not in (SELECT commod FROM sampledata15 WHERE origin = 1)",
+        "query_toks": [
+            "SELECT",
+            "commod",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "origin",
+            "=",
+            "2",
+            "AND",
+            "commod",
+            "not",
+            "in",
+            "(SELECT",
+            "commod",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "origin",
+            "=",
+            "1)"
+        ],
+        "question": "Name some imported commodities that are not found in the US.",
+        "question_toks": [
+            "Name",
+            "some",
+            "imported",
+            "commodities",
+            "that",
+            "are",
+            "not",
+            "found",
+            "in",
+            "the",
+            "US."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    2.0,
+                    null
+                ],
+                "and",
+                [
+                    true,
+                    8,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    {
+                        "from": {
+                            "table_units": [
+                                [
+                                    "table_unit",
+                                    0
+                                ]
+                            ],
+                            "conds": []
+                        },
+                        "select": [
+                            false,
+                            [
+                                [
+                                    0,
+                                    [
+                                        0,
+                                        [
+                                            0,
+                                            7,
+                                            false
+                                        ],
+                                        null
+                                    ]
+                                ]
+                            ]
+                        ],
+                        "where": [
+                            [
+                                false,
+                                2,
+                                [
+                                    0,
+                                    [
+                                        0,
+                                        10,
+                                        false
+                                    ],
+                                    null
+                                ],
+                                1.0,
+                                null
+                            ]
+                        ],
+                        "groupBy": [],
+                        "having": [],
+                        "orderBy": [],
+                        "limit": null,
+                        "intersect": null,
+                        "union": null,
+                        "except": null
+                    },
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT T1.growst, avg(T2.concen) FROM sampledata15 as T1 JOIN resultsdata15 as T2 ON T1.sample_pk = T2.sample_pk GROUP BY T1.growst",
+        "query_toks": [
+            "SELECT",
+            "T1.growst,",
+            "avg(T2.concen)",
+            "FROM",
+            "sampledata15",
+            "as",
+            "T1",
+            "JOIN",
+            "resultsdata15",
+            "as",
+            "T2",
+            "ON",
+            "T1.sample_pk",
+            "=",
+            "T2.sample_pk",
+            "GROUP",
+            "BY",
+            "T1.growst"
+        ],
+        "question": "Tell me the average pesticide residue for each state in the US where food is grown.",
+        "question_toks": [
+            "Tell",
+            "me",
+            "the",
+            "average",
+            "pesticide",
+            "residue",
+            "for",
+            "each",
+            "state",
+            "in",
+            "the",
+            "US",
+            "where",
+            "food",
+            "is",
+            "grown."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT T1.variety FROM resultsdata15 as T2 JOIN sampledata15 as T1 ON T1.sample_pk = T2.sample_pk WHERE T2.commod = \"AP\" GROUP BY T1.variety ORDER BY sum(T2.concen) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T1.variety",
+            "FROM",
+            "resultsdata15",
+            "as",
+            "T2",
+            "JOIN",
+            "sampledata15",
+            "as",
+            "T1",
+            "ON",
+            "T1.sample_pk",
+            "=",
+            "T2.sample_pk",
+            "WHERE",
+            "T2.commod",
+            "=",
+            "\"AP\"",
+            "GROUP",
+            "BY",
+            "T1.variety",
+            "ORDER",
+            "BY",
+            "sum(T2.concen)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which varieties of apple typically have higher pesticide levels?",
+        "question_toks": [
+            "Which",
+            "varieties",
+            "of",
+            "apple",
+            "typically",
+            "have",
+            "higher",
+            "pesticide",
+            "levels?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"AP\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    9,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            25,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT commod FROM resultsdata15 WHERE concen > lod",
+        "query_toks": [
+            "SELECT",
+            "commod",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "concen",
+            ">",
+            "lod"
+        ],
+        "question": "Which commodities have the pesticides concentration much higher than their limit for detection?",
+        "question_toks": [
+            "Which",
+            "commodities",
+            "have",
+            "the",
+            "pesticides",
+            "concentration",
+            "much",
+            "higher",
+            "than",
+            "their",
+            "limit",
+            "for",
+            "detection?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            26,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT lab FROM resultsdata15 GROUP BY lab ORDER BY count(*) DESC LIMIT 5",
+        "query_toks": [
+            "SELECT",
+            "lab",
+            "FROM",
+            "resultsdata15",
+            "GROUP",
+            "BY",
+            "lab",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "5"
+        ],
+        "question": "Name top 5 labs with the maximum number of testing.",
+        "question_toks": [
+            "Name",
+            "top",
+            "5",
+            "labs",
+            "with",
+            "the",
+            "maximum",
+            "number",
+            "of",
+            "testing."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                22,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    22,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 5,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT T1.country FROM sampledata15 as T1 JOIN resultsdata15 as T2 ON T1.sample_pk = T2.sample_pk GROUP BY T1.country ORDER BY sum(T2.concen) LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T1.country",
+            "FROM",
+            "sampledata15",
+            "as",
+            "T1",
+            "JOIN",
+            "resultsdata15",
+            "as",
+            "T2",
+            "ON",
+            "T1.sample_pk",
+            "=",
+            "T2.sample_pk",
+            "GROUP",
+            "BY",
+            "T1.country",
+            "ORDER",
+            "BY",
+            "sum(T2.concen)",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which country is the safest in terms of the pesticide concentration found in imported foods?",
+        "question_toks": [
+            "Which",
+            "country",
+            "is",
+            "the",
+            "safest",
+            "in",
+            "terms",
+            "of",
+            "the",
+            "pesticide",
+            "concentration",
+            "found",
+            "in",
+            "imported",
+            "foods?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                11,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    11,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            25,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT distst FROM sampledata15 GROUP BY distst ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "distst",
+            "FROM",
+            "sampledata15",
+            "GROUP",
+            "BY",
+            "distst",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which is the most popular state in the US in terms of commodities distribution?",
+        "question_toks": [
+            "Which",
+            "is",
+            "the",
+            "most",
+            "popular",
+            "state",
+            "in",
+            "the",
+            "US",
+            "in",
+            "terms",
+            "of",
+            "commodities",
+            "distribution?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                18,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    18,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(concen) FROM resultsdata15",
+        "query_toks": [
+            "SELECT",
+            "max(concen)",
+            "FROM",
+            "resultsdata15"
+        ],
+        "question": "What is the maximum pesticide concentration ever found in a commodity?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "maximum",
+            "pesticide",
+            "concentration",
+            "ever",
+            "found",
+            "in",
+            "a",
+            "commodity?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT year, month, day FROM sampledata15 WHERE sample_pk = 3763",
+        "query_toks": [
+            "SELECT",
+            "year,",
+            "month,",
+            "day",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "3763"
+        ],
+        "question": "When is sample 3763 collected?",
+        "question_toks": [
+            "When",
+            "is",
+            "sample",
+            "3763",
+            "collected?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    3763.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT distst FROM sampledata15 WHERE commod = \"AP\" GROUP BY distst ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "distst",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "commod",
+            "=",
+            "\"AP\"",
+            "GROUP",
+            "BY",
+            "distst",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has the most apple collected?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "the",
+            "most",
+            "apple",
+            "collected?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                18,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"AP\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    18,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT growst FROM sampledata15 WHERE commod = \"AP\" GROUP BY growst ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "growst",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "commod",
+            "=",
+            "\"AP\"",
+            "GROUP",
+            "BY",
+            "growst",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has grow the most apples?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "grow",
+            "the",
+            "most",
+            "apples?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"AP\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT count(DISTINCT variety) FROM sampledata15",
+        "query_toks": [
+            "SELECT",
+            "count(DISTINCT",
+            "variety)",
+            "FROM",
+            "sampledata15"
+        ],
+        "question": "How many class of products are there?",
+        "question_toks": [
+            "How",
+            "many",
+            "class",
+            "of",
+            "products",
+            "are",
+            "there?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                true
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT site FROM sampledata15 WHERE sample_pk = 3763",
+        "query_toks": [
+            "SELECT",
+            "site",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "3763"
+        ],
+        "question": "what's the 4 digit collection code of sample 3763?",
+        "question_toks": [
+            "what's",
+            "the",
+            "4",
+            "digit",
+            "collection",
+            "code",
+            "of",
+            "sample",
+            "3763?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    3763.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT country FROM sampledata15 WHERE sample_pk = 6480 AND origin = 2",
+        "query_toks": [
+            "SELECT",
+            "country",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "6480",
+            "AND",
+            "origin",
+            "=",
+            "2"
+        ],
+        "question": "If sample 6480 is imported, which country is it originally from?",
+        "question_toks": [
+            "If",
+            "sample",
+            "6480",
+            "is",
+            "imported,",
+            "which",
+            "country",
+            "is",
+            "it",
+            "originally",
+            "from?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                11,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    6480.0,
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    2.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT quantity FROM sampledata15 WHERE sample_pk = 9628",
+        "query_toks": [
+            "SELECT",
+            "quantity",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "9628"
+        ],
+        "question": "How many number of units are there in sample 9628?",
+        "question_toks": [
+            "How",
+            "many",
+            "number",
+            "of",
+            "units",
+            "are",
+            "there",
+            "in",
+            "sample",
+            "9628?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                15,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    9628.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT testclass FROM resultsdata15 WHERE sample_pk = 7498",
+        "query_toks": [
+            "SELECT",
+            "testclass",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "7498"
+        ],
+        "question": "What's the code for test for sample 7498?",
+        "question_toks": [
+            "What's",
+            "the",
+            "code",
+            "for",
+            "test",
+            "for",
+            "sample",
+            "7498?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                24,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ],
+                    7498.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT confmethod FROM resultsdata15 as T2 JOIN sampledata15 as T1 ON T1.sample_pk = T2.sample_pk ORDER BY year, month, day DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "confmethod",
+            "FROM",
+            "resultsdata15",
+            "as",
+            "T2",
+            "JOIN",
+            "sampledata15",
+            "as",
+            "T1",
+            "ON",
+            "T1.sample_pk",
+            "=",
+            "T2.sample_pk",
+            "ORDER",
+            "BY",
+            "year,",
+            "month,",
+            "day",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What's the code for confirmation for the latest sample?",
+        "question_toks": [
+            "What's",
+            "the",
+            "code",
+            "for",
+            "confirmation",
+            "for",
+            "the",
+            "latest",
+            "sample?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                28,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            4,
+                            false
+                        ],
+                        null
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT lab FROM resultsdata15 GROUP BY lab ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "lab",
+            "FROM",
+            "resultsdata15",
+            "GROUP",
+            "BY",
+            "lab",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which lab has analyzed the most sample?",
+        "question_toks": [
+            "Which",
+            "lab",
+            "has",
+            "analyzed",
+            "the",
+            "most",
+            "sample?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                22,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    22,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(testclass) FROM resultsdata15",
+        "query_toks": [
+            "SELECT",
+            "max(testclass)",
+            "FROM",
+            "resultsdata15"
+        ],
+        "question": "What's the majority of test classification result?",
+        "question_toks": [
+            "What's",
+            "the",
+            "majority",
+            "of",
+            "test",
+            "classification",
+            "result?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                24,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT conunit FROM resultsdata15 WHERE sample_pk = 3879",
+        "query_toks": [
+            "SELECT",
+            "conunit",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "sample_pk",
+            "=",
+            "3879"
+        ],
+        "question": "What's the unit of measure for sample 3879?",
+        "question_toks": [
+            "What's",
+            "the",
+            "unit",
+            "of",
+            "measure",
+            "for",
+            "sample",
+            "3879?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                27,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ],
+                    3879.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT conunit FROM resultsdata15 WHERE commod = \"PO\"",
+        "query_toks": [
+            "SELECT",
+            "conunit",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "commod",
+            "=",
+            "\"PO\""
+        ],
+        "question": "What's the unit of measure used for the product commodity code PO?",
+        "question_toks": [
+            "What's",
+            "the",
+            "unit",
+            "of",
+            "measure",
+            "used",
+            "for",
+            "the",
+            "product",
+            "commodity",
+            "code",
+            "PO?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                27,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"PO\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT mean FROM resultsdata15 WHERE commod = \"AP\"",
+        "query_toks": [
+            "SELECT",
+            "mean",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "commod",
+            "=",
+            "\"AP\""
+        ],
+        "question": "What's the mean result finding for product AP?",
+        "question_toks": [
+            "What's",
+            "the",
+            "mean",
+            "result",
+            "finding",
+            "for",
+            "product",
+            "AP?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                32,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"AP\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(extract) FROM resultsdata15",
+        "query_toks": [
+            "SELECT",
+            "max(extract)",
+            "FROM",
+            "resultsdata15"
+        ],
+        "question": "What's the most common extraction method?",
+        "question_toks": [
+            "What's",
+            "the",
+            "most",
+            "common",
+            "extraction",
+            "method?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                33,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT lab FROM resultsdata15 GROUP BY lab ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "lab",
+            "FROM",
+            "resultsdata15",
+            "GROUP",
+            "BY",
+            "lab",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which lab conduct of most number of tests?",
+        "question_toks": [
+            "Which",
+            "lab",
+            "conduct",
+            "of",
+            "most",
+            "number",
+            "of",
+            "tests?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                22,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    22,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT lab FROM resultsdata15 WHERE commod = \"AP\"",
+        "query_toks": [
+            "SELECT",
+            "lab",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "commod",
+            "=",
+            "\"AP\""
+        ],
+        "question": "Which lab is used for testing for prodict AP?",
+        "question_toks": [
+            "Which",
+            "lab",
+            "is",
+            "used",
+            "for",
+            "testing",
+            "for",
+            "prodict",
+            "AP?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                22,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"AP\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT count(*) FROM sampledata15 WHERE origin = \"2\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "origin",
+            "=",
+            "\"2\""
+        ],
+        "question": "How many samples come from other countries?",
+        "question_toks": [
+            "How",
+            "many",
+            "samples",
+            "come",
+            "from",
+            "other",
+            "countries?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"2\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT commod FROM resultsdata15 WHERE mean = \"A\" GROUP BY commod ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "commod",
+            "FROM",
+            "resultsdata15",
+            "WHERE",
+            "mean",
+            "=",
+            "\"A\"",
+            "GROUP",
+            "BY",
+            "commod",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What kind of food has been tested 'detect' most?",
+        "question_toks": [
+            "What",
+            "kind",
+            "of",
+            "food",
+            "has",
+            "been",
+            "tested",
+            "'detect'",
+            "most?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            32,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"A\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    20,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT state FROM sampledata15 WHERE claim = \"PO\" GROUP BY state ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "sampledata15",
+            "WHERE",
+            "claim",
+            "=",
+            "\"PO\"",
+            "GROUP",
+            "BY",
+            "state",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state produce the most organic food?",
+        "question_toks": [
+            "Which",
+            "state",
+            "produce",
+            "the",
+            "most",
+            "organic",
+            "food?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"PO\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    2,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(country) FROM sampledata15",
+        "query_toks": [
+            "SELECT",
+            "max(country)",
+            "FROM",
+            "sampledata15"
+        ],
+        "question": "Where do the US import the most food ?",
+        "question_toks": [
+            "Where",
+            "do",
+            "the",
+            "US",
+            "import",
+            "the",
+            "most",
+            "food",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                11,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(commod) FROM resultsdata15",
+        "query_toks": [
+            "SELECT",
+            "max(commod)",
+            "FROM",
+            "resultsdata15"
+        ],
+        "question": "What kind of food has been test the most?",
+        "question_toks": [
+            "What",
+            "kind",
+            "of",
+            "food",
+            "has",
+            "been",
+            "test",
+            "the",
+            "most?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "Pesticide",
+        "query": "SELECT max(pestcode) FROM resultsdata15",
+        "query_toks": [
+            "SELECT",
+            "max(pestcode)",
+            "FROM",
+            "resultsdata15"
+        ],
+        "question": "Which kind of pesticide is the easiest to be tested?",
+        "question_toks": [
+            "Which",
+            "kind",
+            "of",
+            "pesticide",
+            "is",
+            "the",
+            "easiest",
+            "to",
+            "be",
+            "tested?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                23,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

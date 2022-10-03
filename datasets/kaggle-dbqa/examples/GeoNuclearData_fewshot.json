@@ -1,0 +1,835 @@
+[
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Country FROM nuclear_power_plants WHERE Status = \"Operational\" GROUP BY Country ORDER BY count(Name) DESC LIMIT 10",
+        "query_toks": [
+            "SELECT",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "WHERE",
+            "Status",
+            "=",
+            "\"Operational\"",
+            "GROUP",
+            "BY",
+            "Country",
+            "ORDER",
+            "BY",
+            "count(Name)",
+            "DESC",
+            "LIMIT",
+            "10"
+        ],
+        "question": "What are the top 10 countries with most number of operational plants?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "10",
+            "countries",
+            "with",
+            "most",
+            "number",
+            "of",
+            "operational",
+            "plants?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Operational\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 10,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Name, Country FROM nuclear_power_plants WHERE Status = \"Planned\"",
+        "query_toks": [
+            "SELECT",
+            "Name,",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "WHERE",
+            "Status",
+            "=",
+            "\"Planned\""
+        ],
+        "question": "What are the planed nuclear power plants and their located countries?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "planed",
+            "nuclear",
+            "power",
+            "plants",
+            "and",
+            "their",
+            "located",
+            "countries?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Planned\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT ReactorModel FROM nuclear_power_plants GROUP BY ReactorModel ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "ReactorModel",
+            "FROM",
+            "nuclear_power_plants",
+            "GROUP",
+            "BY",
+            "ReactorModel",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What\u2019s the most used nuclear reactor model?",
+        "question_toks": [
+            "What\u2019s",
+            "the",
+            "most",
+            "used",
+            "nuclear",
+            "reactor",
+            "model?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    8,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Country FROM nuclear_power_plants WHERE Name = \"Kaiga-4\"",
+        "query_toks": [
+            "SELECT",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "WHERE",
+            "Name",
+            "=",
+            "\"Kaiga-4\""
+        ],
+        "question": "Which country is Kaiga-4 built in?",
+        "question_toks": [
+            "Which",
+            "country",
+            "is",
+            "Kaiga-4",
+            "built",
+            "in?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Kaiga-4\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT count(*) FROM nuclear_power_plants WHERE ReactorType = \"PHWR\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "nuclear_power_plants",
+            "WHERE",
+            "ReactorType",
+            "=",
+            "\"PHWR\""
+        ],
+        "question": "How many PHWR are there today?",
+        "question_toks": [
+            "How",
+            "many",
+            "PHWR",
+            "are",
+            "there",
+            "today?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"PHWR\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT count(DISTINCT ReactorModel) FROM nuclear_power_plants",
+        "query_toks": [
+            "SELECT",
+            "count(DISTINCT",
+            "ReactorModel)",
+            "FROM",
+            "nuclear_power_plants"
+        ],
+        "question": "How many kinds of nuclear reactor model in the world?",
+        "question_toks": [
+            "How",
+            "many",
+            "kinds",
+            "of",
+            "nuclear",
+            "reactor",
+            "model",
+            "in",
+            "the",
+            "world?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                true
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT count(*) FROM nuclear_power_plants WHERE Status = \"Shutdown\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "nuclear_power_plants",
+            "WHERE",
+            "Status",
+            "=",
+            "\"Shutdown\""
+        ],
+        "question": "How many nuclear power plants were shut down now?",
+        "question_toks": [
+            "How",
+            "many",
+            "nuclear",
+            "power",
+            "plants",
+            "were",
+            "shut",
+            "down",
+            "now?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Shutdown\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Country FROM nuclear_power_plants Group BY Country HAVING count(Name) > 3",
+        "query_toks": [
+            "SELECT",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "Group",
+            "BY",
+            "Country",
+            "HAVING",
+            "count(Name)",
+            ">",
+            "3"
+        ],
+        "question": "How many countries have at least 3 nuclear power plants?",
+        "question_toks": [
+            "How",
+            "many",
+            "countries",
+            "have",
+            "at",
+            "least",
+            "3",
+            "nuclear",
+            "power",
+            "plants?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [
+                [
+                    false,
+                    3,
+                    [
+                        0,
+                        [
+                            3,
+                            2,
+                            false
+                        ],
+                        null
+                    ],
+                    3.0,
+                    null
+                ]
+            ],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Country FROM nuclear_power_plants GROUP BY Country ORDER BY count(name) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "GROUP",
+            "BY",
+            "Country",
+            "ORDER",
+            "BY",
+            "count(name)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which country has the most nuclear power plants?",
+        "question_toks": [
+            "Which",
+            "country",
+            "has",
+            "the",
+            "most",
+            "nuclear",
+            "power",
+            "plants?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GeoNuclearData",
+        "query": "SELECT Country FROM nuclear_power_plants GROUP BY Country HAVING count(Name) = 1",
+        "query_toks": [
+            "SELECT",
+            "Country",
+            "FROM",
+            "nuclear_power_plants",
+            "GROUP",
+            "BY",
+            "Country",
+            "HAVING",
+            "count(Name)",
+            "=",
+            "1"
+        ],
+        "question": "Which country has only one nuclear power plants?",
+        "question_toks": [
+            "Which",
+            "country",
+            "has",
+            "only",
+            "one",
+            "nuclear",
+            "power",
+            "plants?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            3,
+                            2,
+                            false
+                        ],
+                        null
+                    ],
+                    1.0,
+                    null
+                ]
+            ],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

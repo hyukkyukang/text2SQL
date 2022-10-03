@@ -372,8 +372,4 @@ class PGVisitor(PGVisitorVisitorBase):
             selected_func_class = OP_STR_TO_AST[pg_node.operName[0].val]
             return ASDL_CLASS.All(expr1=selected_func_class(expr1=transform_and_wrap_pg_node(pg_node.testexpr), 
                                                             expr2=subselect_to_ValSql(pg_node.subselect)))
-        elif pg_node.subLinkType == pglast.enums.primnodes.SubLinkType.EXPR_SUBLINK:
-            raise NotImplementedError
-            return transform_and_wrap_pg_node(pg_node.subselect)
-        
         raise RuntimeError(f"SubLink type:({pg_node.subLinkType}) not implemented yet!")

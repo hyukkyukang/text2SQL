@@ -12,10 +12,7 @@ class ASDLVisitorBase(VisitorBase):
             combined_result_list = []
             for o in obj:
                 result = super().visit(o, *args)
-                if isinstance(result, dict):
-                    combined_result_dic.update(result)
-                else:
-                    combined_result_list.append(result)
+                combined_result_list.append(result)
             assert bool(combined_result_dic) != bool(combined_result_list), "Either dict or list should be returned"
             return combined_result_dic if combined_result_dic else tuple(combined_result_list)
         return super().visit(obj, *args)
@@ -186,9 +183,6 @@ class ASDLVisitor(ASDLVisitorBase):
                 raise RuntimeError("Should not be here!")
 
         # Main
-        if ast_node == None:
-            return None
-
         op_type = type(ast_node)
         # Find operator
         if op_type in [ASDL_CLASS.And, ASDL_CLASS.Or, ASDL_CLASS.Not]:
@@ -334,15 +328,7 @@ class ASDLVisitor(ASDLVisitorBase):
             return JOIN_TYPE_AST_TO_PG[type(join_type)]
 
         def join_conds_to_JoinExpr(join_conds, rangeVar_node_list):
-            def get_col_units(ast_node):
-                assert isinstance(ast_node, ASDL_CLASS.expr), f"Expected node type of ASDL_CLASS.cond but found: {type(ast_node)}"
-                if type(ast_node) in [ASDL_CLASS.And, ASDL_CLASS.Or]:
-                    col_unit1 = get_col_units(ast_node.expr1)
-                    return col_unit1
-                elif type(ast_node) == ASDL_CLASS.Eq:
-                    return [ast_node.expr1.col_unit, ast_node.expr2.col_unit]
-                else:
-                    raise RuntimeError(f"Bad AST Node type: {type(ast_node)}")
+
             prev=None
             for join_cond in join_conds:
                 # Get join type

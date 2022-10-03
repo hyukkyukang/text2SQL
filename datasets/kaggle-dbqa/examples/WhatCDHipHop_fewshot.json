@@ -1,0 +1,1248 @@
+[
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT groupName FROM torrents ORDER BY totalSnatched DESC LIMIT 100",
+        "query_toks": [
+            "SELECT",
+            "groupName",
+            "FROM",
+            "torrents",
+            "ORDER",
+            "BY",
+            "totalSnatched",
+            "DESC",
+            "LIMIT",
+            "100"
+        ],
+        "question": "What are the top 100 torrent releases?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "100",
+            "torrent",
+            "releases?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 100,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT artist FROM torrents GROUP BY artist ORDER BY sum(totalSnatched) DESC LIMIT 10",
+        "query_toks": [
+            "SELECT",
+            "artist",
+            "FROM",
+            "torrents",
+            "GROUP",
+            "BY",
+            "artist",
+            "ORDER",
+            "BY",
+            "sum(totalSnatched)",
+            "DESC",
+            "LIMIT",
+            "10"
+        ],
+        "question": "What are name of top 10 artists or groups?",
+        "question_toks": [
+            "What",
+            "are",
+            "name",
+            "of",
+            "top",
+            "10",
+            "artists",
+            "or",
+            "groups?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    3,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 10,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT releaseType FROM torrents GROUP BY releaseType ORDER BY sum(totalSnatched) DESC LIMIT 10",
+        "query_toks": [
+            "SELECT",
+            "releaseType",
+            "FROM",
+            "torrents",
+            "GROUP",
+            "BY",
+            "releaseType",
+            "ORDER",
+            "BY",
+            "sum(totalSnatched)",
+            "DESC",
+            "LIMIT",
+            "10"
+        ],
+        "question": "What are the top 10 torrent release types?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "10",
+            "torrent",
+            "release",
+            "types?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 10,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT T2.groupName FROM torrents as T2 JOIN tags as T1 ON T1.id = T2.id WHERE T1.tag = \"pop\" and T2.releaseType = \"album\" ORDER BY T2.totalSnatched DESC LIMIT 20",
+        "query_toks": [
+            "SELECT",
+            "T2.groupName",
+            "FROM",
+            "torrents",
+            "as",
+            "T2",
+            "JOIN",
+            "tags",
+            "as",
+            "T1",
+            "ON",
+            "T1.id",
+            "=",
+            "T2.id",
+            "WHERE",
+            "T1.tag",
+            "=",
+            "\"pop\"",
+            "and",
+            "T2.releaseType",
+            "=",
+            "\"album\"",
+            "ORDER",
+            "BY",
+            "T2.totalSnatched",
+            "DESC",
+            "LIMIT",
+            "20"
+        ],
+        "question": "What are the top 20 pop albums?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "20",
+            "pop",
+            "albums?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"pop\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"album\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 20,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT T2.groupName FROM torrents as T2 JOIN tags as T1 ON T1.id = T2.id WHERE T1.tag = \"instrumental\" and T2.releaseType = \"album\" and groupYear >= 2000 ORDER BY T2.totalSnatched DESC LIMIT 20",
+        "query_toks": [
+            "SELECT",
+            "T2.groupName",
+            "FROM",
+            "torrents",
+            "as",
+            "T2",
+            "JOIN",
+            "tags",
+            "as",
+            "T1",
+            "ON",
+            "T1.id",
+            "=",
+            "T2.id",
+            "WHERE",
+            "T1.tag",
+            "=",
+            "\"instrumental\"",
+            "and",
+            "T2.releaseType",
+            "=",
+            "\"album\"",
+            "and",
+            "groupYear",
+            ">=",
+            "2000",
+            "ORDER",
+            "BY",
+            "T2.totalSnatched",
+            "DESC",
+            "LIMIT",
+            "20"
+        ],
+        "question": "What are the top 20 instrumental albums since 2000?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "20",
+            "instrumental",
+            "albums",
+            "since",
+            "2000?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"instrumental\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"album\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    5,
+                    [
+                        0,
+                        [
+                            0,
+                            4,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 20,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT T1.tag FROM torrents as T2 JOIN tags as T1 ON T1.id = T2.id WHERE T2.releaseType = \"album\" GROUP BY T1.tag ORDER BY sum(T2.totalSnatched) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T1.tag",
+            "FROM",
+            "torrents",
+            "as",
+            "T2",
+            "JOIN",
+            "tags",
+            "as",
+            "T1",
+            "ON",
+            "T1.id",
+            "=",
+            "T2.id",
+            "WHERE",
+            "T2.releaseType",
+            "=",
+            "\"album\"",
+            "GROUP",
+            "BY",
+            "T1.tag",
+            "ORDER",
+            "BY",
+            "sum(T2.totalSnatched)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What type of musical album is the most popular?",
+        "question_toks": [
+            "What",
+            "type",
+            "of",
+            "musical",
+            "album",
+            "is",
+            "the",
+            "most",
+            "popular?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"album\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    10,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT groupName FROM torrents WHERE releaseType = \"single\" ORDER BY totalSnatched DESC LIMIT 100",
+        "query_toks": [
+            "SELECT",
+            "groupName",
+            "FROM",
+            "torrents",
+            "WHERE",
+            "releaseType",
+            "=",
+            "\"single\"",
+            "ORDER",
+            "BY",
+            "totalSnatched",
+            "DESC",
+            "LIMIT",
+            "100"
+        ],
+        "question": "What are the top 100 single musics?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "100",
+            "single",
+            "musics?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"single\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 100,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT sum(totalSnatched), groupYear FROM torrents GROUP BY groupYear",
+        "query_toks": [
+            "SELECT",
+            "sum(totalSnatched),",
+            "groupYear",
+            "FROM",
+            "torrents",
+            "GROUP",
+            "BY",
+            "groupYear"
+        ],
+        "question": "What is the torrent download statistics for each release year?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "torrent",
+            "download",
+            "statistics",
+            "for",
+            "each",
+            "release",
+            "year?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    4,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT count(*), releaseType FROM torrents GROUP BY releaseType",
+        "query_toks": [
+            "SELECT",
+            "count(*),",
+            "releaseType",
+            "FROM",
+            "torrents",
+            "GROUP",
+            "BY",
+            "releaseType"
+        ],
+        "question": "how many entries are of each type?",
+        "question_toks": [
+            "how",
+            "many",
+            "entries",
+            "are",
+            "of",
+            "each",
+            "type?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT count(*), artist FROM torrents GROUP BY artist",
+        "query_toks": [
+            "SELECT",
+            "count(*),",
+            "artist",
+            "FROM",
+            "torrents",
+            "GROUP",
+            "BY",
+            "artist"
+        ],
+        "question": "how many unique entries are by the same Artist/group?",
+        "question_toks": [
+            "how",
+            "many",
+            "unique",
+            "entries",
+            "are",
+            "by",
+            "the",
+            "same",
+            "Artist/group?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    3,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT groupName FROM torrents ORDER BY totalSnatched DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "groupName",
+            "FROM",
+            "torrents",
+            "ORDER",
+            "BY",
+            "totalSnatched",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "which entry have been downloaded the most?",
+        "question_toks": [
+            "which",
+            "entry",
+            "have",
+            "been",
+            "downloaded",
+            "the",
+            "most?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT groupName FROM torrents ORDER BY totalSnatched LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "groupName",
+            "FROM",
+            "torrents",
+            "ORDER",
+            "BY",
+            "totalSnatched",
+            "LIMIT",
+            "1"
+        ],
+        "question": "which entry have been downloaded the least?",
+        "question_toks": [
+            "which",
+            "entry",
+            "have",
+            "been",
+            "downloaded",
+            "the",
+            "least?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WhatCDHipHop",
+        "query": "SELECT DISTINCT groupName FROM torrents",
+        "query_toks": [
+            "SELECT",
+            "DISTINCT",
+            "groupName",
+            "FROM",
+            "torrents"
+        ],
+        "question": "what are titles for each unique entry?",
+        "question_toks": [
+            "what",
+            "are",
+            "titles",
+            "for",
+            "each",
+            "unique",
+            "entry?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                true,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

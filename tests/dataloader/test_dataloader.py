@@ -1,10 +1,13 @@
 import os
 import torch
 import unittest
-
 from transformers import AutoTokenizer
-from src.dataset.dataloader import SpiderDataset, KaggleDBQADataset, collate_fn
 
+import src.utils.file as file_utils
+from src.data.data import collate_fn
+from src.data.spider_data import SpiderDataset, SpiderSchemaGenerator
+from src.data.kaggleDBQA_data import KaggleDBQADataset
+from src.parser.parser import SQLParser
 class Test_dataloader(unittest.TestCase):    
     def __init__(self, *args, **kwargs):
         super(Test_dataloader, self).__init__(*args, **kwargs)
@@ -14,22 +17,30 @@ class Test_dataloader(unittest.TestCase):
         # Set tokenizer
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+        self.sql_parser = SQLParser("./src/grammar/ratsql_extended.asdl")
 
     def _test_dataset(self, dataset_class, dataset_dir, tokenizer):
         self.assertTrue(os.path.exists(dataset_dir), "Dataset directory does not exist!")
-        dataset = dataset_class(dataset_dir, tokenizer)
+        file_paths = file_utils.get_files_in_directory(dataset_dir, lambda file_name: file_name.startswith('train') and file_name.endswith('.json'))
+        dataset = dataset_class(file_paths, tokenizer, self.sql_parser)
         self.assertTrue(len(dataset) > 0, "Dataset is empty!")
         return dataset
     
     def _test_dataloader(self, dataset):
-        dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=2, num_workers=1, collate_fn=collate_fn)
+        dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=2, num_workers=0, collate_fn=collate_fn)
         item = iter(dataloader).next()
-        self.assertTrue(item is not None, "Dataloader returns None!")
-        
+        self.assertIsNotNone(item, "Dataloader is empty!")
+        self.assertGreater(len(item), 0, "Dataloader is empty!")
+    
+    def _print_success(self, num_of_queries):
+        print(f"Passed loading {num_of_queries} data")
+    
     def test_spider_dataloader(self):
-        # dataset = self._test_dataset(SpiderDataset, self.dataset_dir_map['spider'], self.tokenizer)
-        # self._test_dataloader(dataset)
-        pass
+        dataset_dir = self.dataset_dir_map['spider']
+        SpiderSchemaGenerator.load_schema_from_meta_data_file(os.path.join(dataset_dir, "tables.json"), self.tokenizer)
+        dataset = self._test_dataset(SpiderDataset, dataset_dir, self.tokenizer)
+        self._test_dataloader(dataset)
+        self._print_success(len(dataset))
 
     def test_kaggleDBQA_dataloader(self):
         # dataset = self._test_dataset(KaggleDBQADataset, self.dataset_dir_map['kaggleDBQA'], self.tokenizer)

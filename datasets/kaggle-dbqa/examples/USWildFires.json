@@ -1,0 +1,3434 @@
+[
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT FIRE_YEAR FROM Fires GROUP BY FIRE_YEAR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "FIRE_YEAR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "FIRE_YEAR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which year has the most wildfires?",
+        "question_toks": [
+            "Which",
+            "year",
+            "has",
+            "the",
+            "most",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    1,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT DISCOVERY_TIME FROM Fires GROUP BY DISCOVERY_TIME ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "DISCOVERY_TIME",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "DISCOVERY_TIME",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which time of day has the most wildfires?",
+        "question_toks": [
+            "Which",
+            "time",
+            "of",
+            "day",
+            "has",
+            "the",
+            "most",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    4,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT STAT_CAUSE_DESCR FROM Fires GROUP BY STAT_CAUSE_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "STAT_CAUSE_DESCR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "STAT_CAUSE_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What are the most common causes of the wildfires?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "most",
+            "common",
+            "causes",
+            "of",
+            "the",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    6,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT avg(CONT_DATE - DISCOVERY_DATE) FROM Fires",
+        "query_toks": [
+            "SELECT",
+            "avg(CONT_DATE",
+            "-",
+            "DISCOVERY_DATE)",
+            "FROM",
+            "Fires"
+        ],
+        "question": "How long does it take to control wildfires on average?",
+        "question_toks": [
+            "How",
+            "long",
+            "does",
+            "it",
+            "take",
+            "to",
+            "control",
+            "wildfires",
+            "on",
+            "average?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            1,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            [
+                                0,
+                                2,
+                                false
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT State FROM Fires GROUP BY State ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "State",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "State",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has the most wildfires?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "the",
+            "most",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT State FROM Fires ORDER BY FIRE_SIZE DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "State",
+            "FROM",
+            "Fires",
+            "ORDER",
+            "BY",
+            "FIRE_SIZE",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has the largest wildfire?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "the",
+            "largest",
+            "wildfire?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT OWNER_DESCR FROM Fires GROUP BY OWNER_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "OWNER_DESCR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "OWNER_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What enrity is reponsible for managing the land at the point of origin of the most wildfires?",
+        "question_toks": [
+            "What",
+            "enrity",
+            "is",
+            "reponsible",
+            "for",
+            "managing",
+            "the",
+            "land",
+            "at",
+            "the",
+            "point",
+            "of",
+            "origin",
+            "of",
+            "the",
+            "most",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                15,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    15,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT STAT_CAUSE_DESCR FROM Fires WHERE FIRE_YEAR BETWEEN 2000 AND 2005 GROUP BY STAT_CAUSE_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "STAT_CAUSE_DESCR",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "2000",
+            "AND",
+            "2005",
+            "GROUP",
+            "BY",
+            "STAT_CAUSE_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What was the most common cause of fire between 2000 and 2005?",
+        "question_toks": [
+            "What",
+            "was",
+            "the",
+            "most",
+            "common",
+            "cause",
+            "of",
+            "fire",
+            "between",
+            "2000",
+            "and",
+            "2005?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    1,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    2005.0
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    6,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE FIRE_YEAR = 2006 AND FIRE_SIZE > 100",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "FIRE_YEAR",
+            "=",
+            "2006",
+            "AND",
+            "FIRE_SIZE",
+            ">",
+            "100"
+        ],
+        "question": "How many fires were more than 100 acres in 2006?",
+        "question_toks": [
+            "How",
+            "many",
+            "fires",
+            "were",
+            "more",
+            "than",
+            "100",
+            "acres",
+            "in",
+            "2006?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2006.0,
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    3,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    100.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT State FROM Fires WHERE FIRE_YEAR = 2001 GROUP BY State ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "State",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "FIRE_YEAR",
+            "=",
+            "2001",
+            "GROUP",
+            "BY",
+            "State",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which states had the largest number of fires in 2001?",
+        "question_toks": [
+            "Which",
+            "states",
+            "had",
+            "the",
+            "largest",
+            "number",
+            "of",
+            "fires",
+            "in",
+            "2001?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2001.0,
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT sum(FIRE_SIZE), FIRE_YEAR FROM Fires WHERE State = \"CA\" AND FIRE_YEAR BETWEEN 2000 AND 2005 GROUP BY FIRE_YEAR",
+        "query_toks": [
+            "SELECT",
+            "sum(FIRE_SIZE),",
+            "FIRE_YEAR",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"CA\"",
+            "AND",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "2000",
+            "AND",
+            "2005",
+            "GROUP",
+            "BY",
+            "FIRE_YEAR"
+        ],
+        "question": "How many acres burned in fires in California each year between 2000 and 2005?",
+        "question_toks": [
+            "How",
+            "many",
+            "acres",
+            "burned",
+            "in",
+            "fires",
+            "in",
+            "California",
+            "each",
+            "year",
+            "between",
+            "2000",
+            "and",
+            "2005?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"CA\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    1,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    2005.0
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    1,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT FIRE_YEAR FROM Fires GROUP BY FIRE_YEAR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "FIRE_YEAR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "FIRE_YEAR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which year had the largest number of fires?",
+        "question_toks": [
+            "Which",
+            "year",
+            "had",
+            "the",
+            "largest",
+            "number",
+            "of",
+            "fires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    1,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT * FROM Fires WHERE State = \"TX\" AND STAT_CAUSE_DESCR LIKE \"Campfire\"",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"TX\"",
+            "AND",
+            "STAT_CAUSE_DESCR",
+            "LIKE",
+            "\"Campfire\""
+        ],
+        "question": "Show all fires caused by campfires in Texas.",
+        "question_toks": [
+            "Show",
+            "all",
+            "fires",
+            "caused",
+            "by",
+            "campfires",
+            "in",
+            "Texas."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"TX\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Campfire\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT OWNER_DESCR FROM FIres WHERE State = \"OR\" AND FIRE_YEAR = 2015 ORDER BY FIRE_SIZE DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "OWNER_DESCR",
+            "FROM",
+            "FIres",
+            "WHERE",
+            "State",
+            "=",
+            "\"OR\"",
+            "AND",
+            "FIRE_YEAR",
+            "=",
+            "2015",
+            "ORDER",
+            "BY",
+            "FIRE_SIZE",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Who was responsible for the land of the biggest fire in Oregon in 2015?",
+        "question_toks": [
+            "Who",
+            "was",
+            "responsible",
+            "for",
+            "the",
+            "land",
+            "of",
+            "the",
+            "biggest",
+            "fire",
+            "in",
+            "Oregon",
+            "in",
+            "2015?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                15,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"OR\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2015.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT COUNTY FROM Fires WHERE State = \"WA\" AND FIRE_YEAR = 2012",
+        "query_toks": [
+            "SELECT",
+            "COUNTY",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"WA\"",
+            "AND",
+            "FIRE_YEAR",
+            "=",
+            "2012"
+        ],
+        "question": "Which counties in Washington had fires in 2012?",
+        "question_toks": [
+            "Which",
+            "counties",
+            "in",
+            "Washington",
+            "had",
+            "fires",
+            "in",
+            "2012?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                17,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"WA\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2012.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE FIRE_YEAR = 2010 AND STAT_CAUSE_DESCR LIKE \"%Arson%\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "FIRE_YEAR",
+            "=",
+            "2010",
+            "AND",
+            "STAT_CAUSE_DESCR",
+            "LIKE",
+            "\"%Arson%\""
+        ],
+        "question": "How many arson-related fires were there in 2010?",
+        "question_toks": [
+            "How",
+            "many",
+            "arson-related",
+            "fires",
+            "were",
+            "there",
+            "in",
+            "2010?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2010.0,
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Arson%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(DISTINCT FIRE_YEAR) FROM Fires",
+        "query_toks": [
+            "SELECT",
+            "count(DISTINCT",
+            "FIRE_YEAR)",
+            "FROM",
+            "Fires"
+        ],
+        "question": "How many years of data are recorded in this database?",
+        "question_toks": [
+            "How",
+            "many",
+            "years",
+            "of",
+            "data",
+            "are",
+            "recorded",
+            "in",
+            "this",
+            "database?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                true
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT avg(DISCOVERY_DATE) FROM Fires where FIRE_YEAR BETWEEN 2000 AND 2004",
+        "query_toks": [
+            "SELECT",
+            "avg(DISCOVERY_DATE)",
+            "FROM",
+            "Fires",
+            "where",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "2000",
+            "AND",
+            "2004"
+        ],
+        "question": "Average date of year that fire was discovered from 2000~2004?",
+        "question_toks": [
+            "Average",
+            "date",
+            "of",
+            "year",
+            "that",
+            "fire",
+            "was",
+            "discovered",
+            "from",
+            "2000~2004?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    1,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    2004.0
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT STAT_CAUSE_CODE FROM Fires GROUP BY STAT_CAUSE_CODE ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "STAT_CAUSE_CODE",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "STAT_CAUSE_CODE",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What\u2019s the most common cause of the fire (code) in the database?",
+        "question_toks": [
+            "What\u2019s",
+            "the",
+            "most",
+            "common",
+            "cause",
+            "of",
+            "the",
+            "fire",
+            "(code)",
+            "in",
+            "the",
+            "database?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT FIRE_YEAR FROM Fires ORDER BY FIRE_SIZE DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "FIRE_YEAR",
+            "FROM",
+            "Fires",
+            "ORDER",
+            "BY",
+            "FIRE_SIZE",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What\u2019s the year that have the largest acres in the fire area?",
+        "question_toks": [
+            "What\u2019s",
+            "the",
+            "year",
+            "that",
+            "have",
+            "the",
+            "largest",
+            "acres",
+            "in",
+            "the",
+            "fire",
+            "area?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE OWNER_DESCR = \"MISSING/NOT SPECIFIED\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "OWNER_DESCR",
+            "=",
+            "\"MISSING/NOT",
+            "SPECIFIED\""
+        ],
+        "question": "How many missing / not specified name of the owner are there in the database?",
+        "question_toks": [
+            "How",
+            "many",
+            "missing",
+            "/",
+            "not",
+            "specified",
+            "name",
+            "of",
+            "the",
+            "owner",
+            "are",
+            "there",
+            "in",
+            "the",
+            "database?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"MISSING/NOT SPECIFIED\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT COUNTY FROM Fires GROUP BY COUNTY ORDER BY count(*)",
+        "query_toks": [
+            "SELECT",
+            "COUNTY",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "COUNTY",
+            "ORDER",
+            "BY",
+            "count(*)"
+        ],
+        "question": "What\u2019s the county that contains most recorded burns in 2000 according to the database?",
+        "question_toks": [
+            "What\u2019s",
+            "the",
+            "county",
+            "that",
+            "contains",
+            "most",
+            "recorded",
+            "burns",
+            "in",
+            "2000",
+            "according",
+            "to",
+            "the",
+            "database?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                17,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    17,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(DISTINCT STAT_CAUSE_DESCR) FROM Fires",
+        "query_toks": [
+            "SELECT",
+            "count(DISTINCT",
+            "STAT_CAUSE_DESCR)",
+            "FROM",
+            "Fires"
+        ],
+        "question": "How many distinct cause of the fire descriptions are there in the database?",
+        "question_toks": [
+            "How",
+            "many",
+            "distinct",
+            "cause",
+            "of",
+            "the",
+            "fire",
+            "descriptions",
+            "are",
+            "there",
+            "in",
+            "the",
+            "database?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                true
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT sum(FIRE_SIZE) FROM Fires WHERE State = \"NY\" and FIRE_YEAR = \"2006\"",
+        "query_toks": [
+            "SELECT",
+            "sum(FIRE_SIZE)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"NY\"",
+            "and",
+            "FIRE_YEAR",
+            "=",
+            "\"2006\""
+        ],
+        "question": "Sum of the acres burned in NC state in 2006?",
+        "question_toks": [
+            "Sum",
+            "of",
+            "the",
+            "acres",
+            "burned",
+            "in",
+            "NC",
+            "state",
+            "in",
+            "2006?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"NY\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"2006\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT * FROM Fires WHERE State = \"UT\" AND FIRE_YEAR = 1997 ORDER BY FIRE_SIZE DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"UT\"",
+            "AND",
+            "FIRE_YEAR",
+            "=",
+            "1997",
+            "ORDER",
+            "BY",
+            "FIRE_SIZE",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What was the cause of the largest wildfire in Utah in the year 1997?",
+        "question_toks": [
+            "What",
+            "was",
+            "the",
+            "cause",
+            "of",
+            "the",
+            "largest",
+            "wildfire",
+            "in",
+            "Utah",
+            "in",
+            "the",
+            "year",
+            "1997?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"UT\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    1997.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE COUNTY = \"Gloucester\" AND FIRE_SIZE > 10",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "COUNTY",
+            "=",
+            "\"Gloucester\"",
+            "AND",
+            "FIRE_SIZE",
+            ">",
+            "10"
+        ],
+        "question": "How many wildfires in Gloucester county have been larger than 10 acres?",
+        "question_toks": [
+            "How",
+            "many",
+            "wildfires",
+            "in",
+            "Gloucester",
+            "county",
+            "have",
+            "been",
+            "larger",
+            "than",
+            "10",
+            "acres?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            17,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Gloucester\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    3,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    10.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT State FROM Fires GROUP BY State ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "State",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "State",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state experiences the most wildfires?",
+        "question_toks": [
+            "Which",
+            "state",
+            "experiences",
+            "the",
+            "most",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT STAT_CAUSE_DESCR FROM Fires GROUP BY STAT_CAUSE_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "STAT_CAUSE_DESCR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "STAT_CAUSE_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What is the leading cause of wildfires?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "leading",
+            "cause",
+            "of",
+            "wildfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    6,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT OWNER_DESCR FROM Fires GROUP BY OWNER_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "OWNER_DESCR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "OWNER_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "On what type of land (public or private) do more wildfires occur?",
+        "question_toks": [
+            "On",
+            "what",
+            "type",
+            "of",
+            "land",
+            "(public",
+            "or",
+            "private)",
+            "do",
+            "more",
+            "wildfires",
+            "occur?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                15,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    15,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE STAT_CAUSE_DESCR LIKE \"%Campfire%\" AND FIRE_YEAR = 2014",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "STAT_CAUSE_DESCR",
+            "LIKE",
+            "\"%Campfire%\"",
+            "AND",
+            "FIRE_YEAR",
+            "=",
+            "2014"
+        ],
+        "question": "In 2014, how many wildfires were the result of mismanaged campfires?",
+        "question_toks": [
+            "In",
+            "2014,",
+            "how",
+            "many",
+            "wildfires",
+            "were",
+            "the",
+            "result",
+            "of",
+            "mismanaged",
+            "campfires?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Campfire%\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2014.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT sum(FIRE_SIZE) FROM Fires WHERE State = \"TX\" AND FIRE_YEAR BETWEEN 2000 AND 2010",
+        "query_toks": [
+            "SELECT",
+            "sum(FIRE_SIZE)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "State",
+            "=",
+            "\"TX\"",
+            "AND",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "2000",
+            "AND",
+            "2010"
+        ],
+        "question": "How many total acres of land in Texas have seen a wildfire in the decade between 2000-2010?",
+        "question_toks": [
+            "How",
+            "many",
+            "total",
+            "acres",
+            "of",
+            "land",
+            "in",
+            "Texas",
+            "have",
+            "seen",
+            "a",
+            "wildfire",
+            "in",
+            "the",
+            "decade",
+            "between",
+            "2000-2010?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"TX\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    1,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    2010.0
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT State FROM Fires GROUP BY State ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "State",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "State",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has the most number of fires being recorded?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "the",
+            "most",
+            "number",
+            "of",
+            "fires",
+            "being",
+            "recorded?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    16,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT STAT_CAUSE_DESCR FROM Fires GROUP BY STAT_CAUSE_DESCR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "STAT_CAUSE_DESCR",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "STAT_CAUSE_DESCR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What is the most common reason that causes a fire?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "most",
+            "common",
+            "reason",
+            "that",
+            "causes",
+            "a",
+            "fire?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    6,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT sum(FIRE_SIZE) FROM Fires",
+        "query_toks": [
+            "SELECT",
+            "sum(FIRE_SIZE)",
+            "FROM",
+            "Fires"
+        ],
+        "question": "What is the total area that has been burned until now?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "total",
+            "area",
+            "that",
+            "has",
+            "been",
+            "burned",
+            "until",
+            "now?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT sum(FIRE_SIZE) FROM Fires WHERE STATE = \"TX\" AND FIRE_YEAR BETWEEN 2000 AND 2010  UNION SELECT sum(FIRE_SIZE) FROM Fires WHERE STATE = \"TX\" AND FIRE_YEAR BETWEEN 1990 AND 2000",
+        "query_toks": [
+            "SELECT",
+            "sum(FIRE_SIZE)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "STATE",
+            "=",
+            "\"TX\"",
+            "AND",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "2000",
+            "AND",
+            "2010",
+            "UNION",
+            "SELECT",
+            "sum(FIRE_SIZE)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "STATE",
+            "=",
+            "\"TX\"",
+            "AND",
+            "FIRE_YEAR",
+            "BETWEEN",
+            "1990",
+            "AND",
+            "2000"
+        ],
+        "question": "How many acres burned in 2000s and 1990s?",
+        "question_toks": [
+            "How",
+            "many",
+            "acres",
+            "burned",
+            "in",
+            "2000s",
+            "and",
+            "1990s?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"TX\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    1,
+                    [
+                        0,
+                        [
+                            0,
+                            1,
+                            false
+                        ],
+                        null
+                    ],
+                    2000.0,
+                    2010.0
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            0
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            4,
+                            [
+                                0,
+                                [
+                                    0,
+                                    10,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"TX\"",
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        1990.0,
+                        2000.0
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT count(*) FROM Fires WHERE OWNER_DESCR = \"MISSING/NOT SPECIFIED\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "Fires",
+            "WHERE",
+            "OWNER_DESCR",
+            "=",
+            "\"MISSING/NOT",
+            "SPECIFIED\""
+        ],
+        "question": "How many fire cases occur on the land without any owner?",
+        "question_toks": [
+            "How",
+            "many",
+            "fire",
+            "cases",
+            "occur",
+            "on",
+            "the",
+            "land",
+            "without",
+            "any",
+            "owner?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"MISSING/NOT SPECIFIED\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "USWildFires",
+        "query": "SELECT LATITUDE FROM Fires GROUP BY LATITUDE ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "LATITUDE",
+            "FROM",
+            "Fires",
+            "GROUP",
+            "BY",
+            "LATITUDE",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What is the latitudinal band that is most likely to experience wildfires in the USA?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "latitudinal",
+            "band",
+            "that",
+            "is",
+            "most",
+            "likely",
+            "to",
+            "experience",
+            "wildfires",
+            "in",
+            "the",
+            "USA?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    12,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

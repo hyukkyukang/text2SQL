@@ -56,7 +56,7 @@ def loosely_parse(sql_str):
         return e_args[0] == "subquery in FROM must have an alias"
     def has_join_keyword_without_join_condition(sql, e_args):
         sql = sql.lower()
-        if "syntax error at or near" in e_args[0].lower():
+        if "syntax error at" in e_args[0].lower():
             # Cut off the WHERE clause
             where_start_idx = e_args[1]
             sql_substring = sql[:where_start_idx]

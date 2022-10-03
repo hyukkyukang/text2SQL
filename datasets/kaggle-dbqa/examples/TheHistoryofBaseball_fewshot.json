@@ -1,0 +1,1257 @@
+[
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT T2.birth_state FROM player AS T2 JOIN hall_of_fame as T1 ON T1.player_id = T2.player_id WHERE inducted = \"Y\" GROUP BY T2.birth_state ORDER BY count(T1.player_id) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T2.birth_state",
+            "FROM",
+            "player",
+            "AS",
+            "T2",
+            "JOIN",
+            "hall_of_fame",
+            "as",
+            "T1",
+            "ON",
+            "T1.player_id",
+            "=",
+            "T2.player_id",
+            "WHERE",
+            "inducted",
+            "=",
+            "\"Y\"",
+            "GROUP",
+            "BY",
+            "T2.birth_state",
+            "ORDER",
+            "BY",
+            "count(T1.player_id)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which states have produced the largest number of candidates inducted into the hall of fame?",
+        "question_toks": [
+            "Which",
+            "states",
+            "have",
+            "produced",
+            "the",
+            "largest",
+            "number",
+            "of",
+            "candidates",
+            "inducted",
+            "into",
+            "the",
+            "hall",
+            "of",
+            "fame?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            28,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                33,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Y\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    33,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            1,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT league_id FROM salary GROUP BY league_id ORDER BY sum(salary) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "league_id",
+            "FROM",
+            "salary",
+            "GROUP",
+            "BY",
+            "league_id",
+            "ORDER",
+            "BY",
+            "sum(salary)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What is the top league that pays the most to their players?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "top",
+            "league",
+            "that",
+            "pays",
+            "the",
+            "most",
+            "to",
+            "their",
+            "players?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    25,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            27,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT league_id FROM salary GROUP BY league_id ORDER BY max(salary) - min(salary) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "league_id",
+            "FROM",
+            "salary",
+            "GROUP",
+            "BY",
+            "league_id",
+            "ORDER",
+            "BY",
+            "max(salary)",
+            "-",
+            "min(salary)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which leage have the largest difference in pay among their team players?",
+        "question_toks": [
+            "Which",
+            "leage",
+            "have",
+            "the",
+            "largest",
+            "difference",
+            "in",
+            "pay",
+            "among",
+            "their",
+            "team",
+            "players?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    25,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        1,
+                        [
+                            1,
+                            27,
+                            false
+                        ],
+                        [
+                            2,
+                            27,
+                            false
+                        ]
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT avg(T2.salary) FROM salary as T2 JOIN hall_of_fame as T1 ON T1.player_id = T2.player_id WHERE T1.inducted = \"Y\"",
+        "query_toks": [
+            "SELECT",
+            "avg(T2.salary)",
+            "FROM",
+            "salary",
+            "as",
+            "T2",
+            "JOIN",
+            "hall_of_fame",
+            "as",
+            "T1",
+            "ON",
+            "T1.player_id",
+            "=",
+            "T2.player_id",
+            "WHERE",
+            "T1.inducted",
+            "=",
+            "\"Y\""
+        ],
+        "question": "What is the average pay for players inducted into the hall of fame?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "pay",
+            "for",
+            "players",
+            "inducted",
+            "into",
+            "the",
+            "hall",
+            "of",
+            "fame?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            26,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                27,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Y\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT avg(T2.salary) FROM salary as T2 JOIN hall_of_fame as T1 ON T1.player_id = T2.player_id WHERE T1.inducted = \"N\"",
+        "query_toks": [
+            "SELECT",
+            "avg(T2.salary)",
+            "FROM",
+            "salary",
+            "as",
+            "T2",
+            "JOIN",
+            "hall_of_fame",
+            "as",
+            "T1",
+            "ON",
+            "T1.player_id",
+            "=",
+            "T2.player_id",
+            "WHERE",
+            "T1.inducted",
+            "=",
+            "\"N\""
+        ],
+        "question": "What is the average pay for players not inducted into the hall of fame?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "pay",
+            "for",
+            "players",
+            "not",
+            "inducted",
+            "into",
+            "the",
+            "hall",
+            "of",
+            "fame?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            26,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                27,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"N\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT league_id FROM salary GROUP BY league_id ORDER BY avg(salary) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "league_id",
+            "FROM",
+            "salary",
+            "GROUP",
+            "BY",
+            "league_id",
+            "ORDER",
+            "BY",
+            "avg(salary)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which leage has higher average salaries for player?",
+        "question_toks": [
+            "Which",
+            "leage",
+            "has",
+            "higher",
+            "average",
+            "salaries",
+            "for",
+            "player?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    25,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            5,
+                            27,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT birth_country FROM player GROUP BY birth_country ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "birth_country",
+            "FROM",
+            "player",
+            "GROUP",
+            "BY",
+            "birth_country",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which Country are most baseball players from?",
+        "question_toks": [
+            "Which",
+            "Country",
+            "are",
+            "most",
+            "baseball",
+            "players",
+            "from?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                32,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    32,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT name_first, name_last FROM player ORDER BY birth_year DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "name_first,",
+            "name_last",
+            "FROM",
+            "player",
+            "ORDER",
+            "BY",
+            "birth_year",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Who is the youngest baseball player so far?",
+        "question_toks": [
+            "Who",
+            "is",
+            "the",
+            "youngest",
+            "baseball",
+            "player",
+            "so",
+            "far?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                41,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                42,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            29,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT league_id FROM salary GROUP BY league_id ORDER BY sum(salary) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "league_id",
+            "FROM",
+            "salary",
+            "GROUP",
+            "BY",
+            "league_id",
+            "ORDER",
+            "BY",
+            "sum(salary)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which league gets paid the most?",
+        "question_toks": [
+            "Which",
+            "league",
+            "gets",
+            "paid",
+            "the",
+            "most?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                25,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    25,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            27,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT T2.points_won FROM player_award as T1 JOIN player_award_vote as T2 ON T1.player_id = T2.player_id WHERE T1.league_id = \"NL\" AND T1.award_id = \"Most Valuable Player\" AND T1.year = \"1990\" AND T2.league_id = \"NL\" AND T2.year = \"1990\"",
+        "query_toks": [
+            "SELECT",
+            "T2.points_won",
+            "FROM",
+            "player_award",
+            "as",
+            "T1",
+            "JOIN",
+            "player_award_vote",
+            "as",
+            "T2",
+            "ON",
+            "T1.player_id",
+            "=",
+            "T2.player_id",
+            "WHERE",
+            "T1.league_id",
+            "=",
+            "\"NL\"",
+            "AND",
+            "T1.award_id",
+            "=",
+            "\"Most",
+            "Valuable",
+            "Player\"",
+            "AND",
+            "T1.year",
+            "=",
+            "\"1990\"",
+            "AND",
+            "T2.league_id",
+            "=",
+            "\"NL\"",
+            "AND",
+            "T2.year",
+            "=",
+            "\"1990\""
+        ],
+        "question": "How much points were received by the NL league's most valuable player winner in 1990?",
+        "question_toks": [
+            "How",
+            "much",
+            "points",
+            "were",
+            "received",
+            "by",
+            "the",
+            "NL",
+            "league's",
+            "most",
+            "valuable",
+            "player",
+            "winner",
+            "in",
+            "1990?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"NL\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            11,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Most Valuable Player\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"1990\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            18,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"NL\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            17,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"1990\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT avg( death_year - birth_year) FROM player WHERE birth_country = \"USA\"",
+        "query_toks": [
+            "SELECT",
+            "avg(",
+            "death_year",
+            "-",
+            "birth_year)",
+            "FROM",
+            "player",
+            "WHERE",
+            "birth_country",
+            "=",
+            "\"USA\""
+        ],
+        "question": "What is the average age of players from USA?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "age",
+            "of",
+            "players",
+            "from",
+            "USA?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            1,
+                            [
+                                0,
+                                35,
+                                false
+                            ],
+                            [
+                                0,
+                                29,
+                                false
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            32,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"USA\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "TheHistoryofBaseball",
+        "query": "SELECT avg( death_year - birth_year ) FROM player",
+        "query_toks": [
+            "SELECT",
+            "avg(",
+            "death_year",
+            "-",
+            "birth_year",
+            ")",
+            "FROM",
+            "player"
+        ],
+        "question": "What is the average lifespan of a baseball player?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "lifespan",
+            "of",
+            "a",
+            "baseball",
+            "player?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            1,
+                            [
+                                0,
+                                35,
+                                false
+                            ],
+                            [
+                                0,
+                                29,
+                                false
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

@@ -1,0 +1,2486 @@
+[
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T1.school_district FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code WHERE T2.state = \"Wisconsin\" ORDER BY T1.t_fed_rev DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T1.school_district",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "WHERE",
+            "T2.state",
+            "=",
+            "\"Wisconsin\"",
+            "ORDER",
+            "BY",
+            "T1.t_fed_rev",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which school district receive the most of federal revenue through state in Wisconsin?",
+        "question_toks": [
+            "Which",
+            "school",
+            "district",
+            "receive",
+            "the",
+            "most",
+            "of",
+            "federal",
+            "revenue",
+            "through",
+            "state",
+            "in",
+            "Wisconsin?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Wisconsin\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT avg(T1.c14) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code WHERE T2.state = \"Virginia\"",
+        "query_toks": [
+            "SELECT",
+            "avg(T1.c14)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "WHERE",
+            "T2.state",
+            "=",
+            "\"Virginia\""
+        ],
+        "question": "What is the average Title 1 fund in Virginia?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "Title",
+            "1",
+            "fund",
+            "in",
+            "Virginia?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Virginia\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state, sum(c14),sum(c25) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state GROUP BY T2.state ORDER BY T3.average_scale_score DESC LIMIT 10",
+        "query_toks": [
+            "SELECT",
+            "T2.state,",
+            "sum(c14),sum(c25)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state",
+            "GROUP",
+            "BY",
+            "T2.state",
+            "ORDER",
+            "BY",
+            "T3.average_scale_score",
+            "DESC",
+            "LIMIT",
+            "10"
+        ],
+        "question": "What are the top 10 states that have the highest average math score and federal revenue they got through different categories?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "10",
+            "states",
+            "that",
+            "have",
+            "the",
+            "highest",
+            "average",
+            "math",
+            "score",
+            "and",
+            "federal",
+            "revenue",
+            "they",
+            "got",
+            "through",
+            "different",
+            "categories?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    14,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 10,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T1.school_district, max(T1.c14), T3.average_scale_score FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state UNION SELECT T1.school_district, max(T1.c25), T3.average_scale_score FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state",
+        "query_toks": [
+            "SELECT",
+            "T1.school_district,",
+            "max(T1.c14),",
+            "T3.average_scale_score",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state",
+            "UNION",
+            "SELECT",
+            "T1.school_district,",
+            "max(T1.c25),",
+            "T3.average_scale_score",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state"
+        ],
+        "question": "What are the schools with highest federal revenue in each federal revenue categories and what's their state average scores?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "schools",
+            "with",
+            "highest",
+            "federal",
+            "revenue",
+            "in",
+            "each",
+            "federal",
+            "revenue",
+            "categories",
+            "and",
+            "what's",
+            "their",
+            "state",
+            "average",
+            "scores?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            0
+                        ],
+                        [
+                            "table_unit",
+                            2
+                        ],
+                        [
+                            "table_unit",
+                            1
+                        ]
+                    ],
+                    "conds": [
+                        [
+                            false,
+                            2,
+                            [
+                                0,
+                                [
+                                    0,
+                                    1,
+                                    false
+                                ],
+                                null
+                            ],
+                            [
+                                0,
+                                13,
+                                false
+                            ],
+                            null
+                        ],
+                        "and",
+                        [
+                            false,
+                            2,
+                            [
+                                0,
+                                [
+                                    0,
+                                    14,
+                                    false
+                                ],
+                                null
+                            ],
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    3,
+                                    false
+                                ],
+                                null
+                            ]
+                        ],
+                        [
+                            1,
+                            [
+                                0,
+                                [
+                                    0,
+                                    8,
+                                    false
+                                ],
+                                null
+                            ]
+                        ],
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    12,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state FROM NDECoreExcel_Math_Grade8 ORDER BY average_scale_score DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "ORDER",
+            "BY",
+            "average_scale_score",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "State with highest average math score",
+        "question_toks": [
+            "State",
+            "with",
+            "highest",
+            "average",
+            "math",
+            "score"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T1.school_district, max(T1.t_fed_rev / T3.average_scale_score) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 on T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state",
+        "query_toks": [
+            "SELECT",
+            "T1.school_district,",
+            "max(T1.t_fed_rev",
+            "/",
+            "T3.average_scale_score)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "on",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state"
+        ],
+        "question": "School with highest ratio of total revenue and average scores",
+        "question_toks": [
+            "School",
+            "with",
+            "highest",
+            "ratio",
+            "of",
+            "total",
+            "revenue",
+            "and",
+            "average",
+            "scores"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        1,
+                        [
+                            4,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            [
+                                0,
+                                12,
+                                false
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state, T3.average_scale_score FROM FINREV_FED_KEY_17 as T2 JOIN FINREV_FED_17 as T1 ON T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state GROUP BY T2.state ORDER BY sum(T1.t_fed_rev) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T2.state,",
+            "T3.average_scale_score",
+            "FROM",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "JOIN",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state",
+            "GROUP",
+            "BY",
+            "T2.state",
+            "ORDER",
+            "BY",
+            "sum(T1.t_fed_rev)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state spent the most revenue towards schools and whats the state average score",
+        "question_toks": [
+            "Which",
+            "state",
+            "spent",
+            "the",
+            "most",
+            "revenue",
+            "towards",
+            "schools",
+            "and",
+            "whats",
+            "the",
+            "state",
+            "average",
+            "score"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    14,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T1.school_district, min(T1.t_fed_rev / T3.average_scale_score) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 on T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state",
+        "query_toks": [
+            "SELECT",
+            "T1.school_district,",
+            "min(T1.t_fed_rev",
+            "/",
+            "T3.average_scale_score)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "on",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state"
+        ],
+        "question": "School with lowest ratio of total revenue and average scores",
+        "question_toks": [
+            "School",
+            "with",
+            "lowest",
+            "ratio",
+            "of",
+            "total",
+            "revenue",
+            "and",
+            "average",
+            "scores"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        2,
+                        [
+                            4,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            [
+                                0,
+                                12,
+                                false
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state, T3.average_scale_score FROM FINREV_FED_KEY_17 as T2 JOIN FINREV_FED_17 as T1 ON T1.state_code = T2.state_code JOIN NDECoreExcel_Math_Grade8 as T3 ON T2.state = T3.state GROUP BY T2.state ORDER BY sum(T1.t_fed_rev) LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T2.state,",
+            "T3.average_scale_score",
+            "FROM",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "JOIN",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "JOIN",
+            "NDECoreExcel_Math_Grade8",
+            "as",
+            "T3",
+            "ON",
+            "T2.state",
+            "=",
+            "T3.state",
+            "GROUP",
+            "BY",
+            "T2.state",
+            "ORDER",
+            "BY",
+            "sum(T1.t_fed_rev)",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state spent the least revenue towards schools and whats the state average score",
+        "question_toks": [
+            "Which",
+            "state",
+            "spent",
+            "the",
+            "least",
+            "revenue",
+            "towards",
+            "schools",
+            "and",
+            "whats",
+            "the",
+            "state",
+            "average",
+            "score"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    14,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state FROM NDECoreExcel_Math_Grade8 ORDER BY average_scale_score DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "ORDER",
+            "BY",
+            "average_scale_score",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state has the highest average score in math exam?",
+        "question_toks": [
+            "Which",
+            "state",
+            "has",
+            "the",
+            "highest",
+            "average",
+            "score",
+            "in",
+            "math",
+            "exam?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT average_scale_score FROM NDECoreExcel_Math_Grade8 WHERE state = \"California\"",
+        "query_toks": [
+            "SELECT",
+            "average_scale_score",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "WHERE",
+            "state",
+            "=",
+            "\"California\""
+        ],
+        "question": "What is the average match score of CA?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "match",
+            "score",
+            "of",
+            "CA?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"California\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT count(DISTINCT school_district) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code WHERE T2.state = \"Indiana\"",
+        "query_toks": [
+            "SELECT",
+            "count(DISTINCT",
+            "school_district)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "WHERE",
+            "T2.state",
+            "=",
+            "\"Indiana\""
+        ],
+        "question": "How many unique school districts in Indiana?",
+        "question_toks": [
+            "How",
+            "many",
+            "unique",
+            "school",
+            "districts",
+            "in",
+            "Indiana?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                true
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Indiana\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state_code FROM FINREV_FED_KEY_17 WHERE state = \"Virginia\"",
+        "query_toks": [
+            "SELECT",
+            "state_code",
+            "FROM",
+            "FINREV_FED_KEY_17",
+            "WHERE",
+            "state",
+            "=",
+            "\"Virginia\""
+        ],
+        "question": "What is the state code of VA?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "state",
+            "code",
+            "of",
+            "VA?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                13,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Virginia\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state FROM FINREV_FED_KEY_17 as T2 JOIN FINREV_FED_17 as T1 ON T1.state_code = T2.state_code GROUP BY T2.state ORDER BY sum(t_fed_rev) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "T2.state",
+            "FROM",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "JOIN",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "GROUP",
+            "BY",
+            "T2.state",
+            "ORDER",
+            "BY",
+            "sum(t_fed_rev)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state get the highest revenue?",
+        "question_toks": [
+            "Which",
+            "state",
+            "get",
+            "the",
+            "highest",
+            "revenue?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    14,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT sum(T1.c14), sum(T1.c25) FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code WHERE T2.state = \"Colorado\"",
+        "query_toks": [
+            "SELECT",
+            "sum(T1.c14),",
+            "sum(T1.c25)",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "WHERE",
+            "T2.state",
+            "=",
+            "\"Colorado\""
+        ],
+        "question": "How much funding does Colorado schools receive from Title 1 and the Child Nutrition program respectively?",
+        "question_toks": [
+            "How",
+            "much",
+            "funding",
+            "does",
+            "Colorado",
+            "schools",
+            "receive",
+            "from",
+            "Title",
+            "1",
+            "and",
+            "the",
+            "Child",
+            "Nutrition",
+            "program",
+            "respectively?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            14,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Colorado\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT t_fed_rev FROM FINREV_FED_17 WHERE school_district LIKE \"%Pecatonia Area%\"",
+        "query_toks": [
+            "SELECT",
+            "t_fed_rev",
+            "FROM",
+            "FINREV_FED_17",
+            "WHERE",
+            "school_district",
+            "LIKE",
+            "\"%Pecatonia",
+            "Area%\""
+        ],
+        "question": "How much federal funding does Pecatonia Area School district get?",
+        "question_toks": [
+            "How",
+            "much",
+            "federal",
+            "funding",
+            "does",
+            "Pecatonia",
+            "Area",
+            "School",
+            "district",
+            "get?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Pecatonia Area%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT average_scale_score FROM NDECoreExcel_Math_Grade8 WHERE state = \"North Carolina\" UNION SELECT average_scale_score FROM NDECoreExcel_Math_Grade8 WHERE state = \"South Carolina\"",
+        "query_toks": [
+            "SELECT",
+            "average_scale_score",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "WHERE",
+            "state",
+            "=",
+            "\"North",
+            "Carolina\"",
+            "UNION",
+            "SELECT",
+            "average_scale_score",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "WHERE",
+            "state",
+            "=",
+            "\"South",
+            "Carolina\""
+        ],
+        "question": "What are the student scores on the NAEP math exam for 8th graders in North Carolina and South Carolina?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "student",
+            "scores",
+            "on",
+            "the",
+            "NAEP",
+            "math",
+            "exam",
+            "for",
+            "8th",
+            "graders",
+            "in",
+            "North",
+            "Carolina",
+            "and",
+            "South",
+            "Carolina?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"North Carolina\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            1
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    12,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"South Carolina\"",
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT average_scale_score FROM NDECoreExcel_Math_Grade8 WHERE state = \"North Carolina\" UNION SELECT average_scale_score FROM NDECoreExcel_Math_Grade8 WHERE state = \"New York\"",
+        "query_toks": [
+            "SELECT",
+            "average_scale_score",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "WHERE",
+            "state",
+            "=",
+            "\"North",
+            "Carolina\"",
+            "UNION",
+            "SELECT",
+            "average_scale_score",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "WHERE",
+            "state",
+            "=",
+            "\"New",
+            "York\""
+        ],
+        "question": "What are the averge score of students in NC and in NY?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "averge",
+            "score",
+            "of",
+            "students",
+            "in",
+            "NC",
+            "and",
+            "in",
+            "NY?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"North Carolina\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            1
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    12,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"New York\"",
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT count(*) FROM FINREV_FED_17 WHERE c25 > c14",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "FINREV_FED_17",
+            "WHERE",
+            "c25",
+            ">",
+            "c14"
+        ],
+        "question": "How many schools get higher revenue via Child Nutrition A than revenue via child left school behind act?",
+        "question_toks": [
+            "How",
+            "many",
+            "schools",
+            "get",
+            "higher",
+            "revenue",
+            "via",
+            "Child",
+            "Nutrition",
+            "A",
+            "than",
+            "revenue",
+            "via",
+            "child",
+            "left",
+            "school",
+            "behind",
+            "act?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

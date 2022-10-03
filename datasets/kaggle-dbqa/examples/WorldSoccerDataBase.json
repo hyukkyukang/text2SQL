@@ -1,0 +1,1748 @@
+[
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT PSH FROM football_data WHERE HomeTeam LIKE \"%Arsenal%\" AND FTR = \"H\" UNION SELECT PSA FROM football_data WHERE AwayTeam LIKE \"%Arsenal%\" AND FTR = \"A\"",
+        "query_toks": [
+            "SELECT",
+            "PSH",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "HomeTeam",
+            "LIKE",
+            "\"%Arsenal%\"",
+            "AND",
+            "FTR",
+            "=",
+            "\"H\"",
+            "UNION",
+            "SELECT",
+            "PSA",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "AwayTeam",
+            "LIKE",
+            "\"%Arsenal%\"",
+            "AND",
+            "FTR",
+            "=",
+            "\"A\""
+        ],
+        "question": "What are the Pinnacle odds for Arsenal winning matches?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "Pinnacle",
+            "odds",
+            "for",
+            "Arsenal",
+            "winning",
+            "matches?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                26,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            18,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Arsenal%\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            22,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"H\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            1
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    28,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        9,
+                        [
+                            0,
+                            [
+                                0,
+                                19,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"%Arsenal%\"",
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                22,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"A\"",
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT * FROM football_data WHERE Country = \"Spain\" AND FTR = \"A\"",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "Country",
+            "=",
+            "\"Spain\"",
+            "AND",
+            "FTR",
+            "=",
+            "\"A\""
+        ],
+        "question": "Which matches in Spain did the away team win?",
+        "question_toks": [
+            "Which",
+            "matches",
+            "in",
+            "Spain",
+            "did",
+            "the",
+            "away",
+            "team",
+            "win?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Spain\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            22,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"A\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT * FROM football_data WHERE Season = \"2016\" AND FTR = \"D\" AND League = \"Premier League\"",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "Season",
+            "=",
+            "\"2016\"",
+            "AND",
+            "FTR",
+            "=",
+            "\"D\"",
+            "AND",
+            "League",
+            "=",
+            "\"Premier",
+            "League\""
+        ],
+        "question": "Which Premier League matches ended in a draw in 2016?",
+        "question_toks": [
+            "Which",
+            "Premier",
+            "League",
+            "matches",
+            "ended",
+            "in",
+            "a",
+            "draw",
+            "in",
+            "2016?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"2016\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            22,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"D\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            16,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Premier League\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT * FROM football_data WHERE B365D > 3",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "B365D",
+            ">",
+            "3"
+        ],
+        "question": "Which matches had draw odds from Bet365 higher than 3?",
+        "question_toks": [
+            "Which",
+            "matches",
+            "had",
+            "draw",
+            "odds",
+            "from",
+            "Bet365",
+            "higher",
+            "than",
+            "3?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    3,
+                    [
+                        0,
+                        [
+                            0,
+                            30,
+                            false
+                        ],
+                        null
+                    ],
+                    3.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT DRAW_CLOSING FROM betfront WHERE MATCH LIKE \"%VfB Stuttgart%\"",
+        "query_toks": [
+            "SELECT",
+            "DRAW_CLOSING",
+            "FROM",
+            "betfront",
+            "WHERE",
+            "MATCH",
+            "LIKE",
+            "\"%VfB",
+            "Stuttgart%\""
+        ],
+        "question": "What were the closing odds for a draw in matches with VfB Stuttgart?",
+        "question_toks": [
+            "What",
+            "were",
+            "the",
+            "closing",
+            "odds",
+            "for",
+            "a",
+            "draw",
+            "in",
+            "matches",
+            "with",
+            "VfB",
+            "Stuttgart?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%VfB Stuttgart%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT * FROM football_data WHERE (FTHG + FTAG) = 0",
+        "query_toks": [
+            "SELECT",
+            "*",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "(FTHG",
+            "+",
+            "FTAG)",
+            "=",
+            "0"
+        ],
+        "question": "Which games had no goals scored at full time?",
+        "question_toks": [
+            "Which",
+            "games",
+            "had",
+            "no",
+            "goals",
+            "scored",
+            "at",
+            "full",
+            "time?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        2,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        [
+                            0,
+                            21,
+                            false
+                        ]
+                    ],
+                    0.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT AwayTeam FROM football_data WHERE HomeTeam = \"Omiya Ardija\" AND Season LIKE \"%2018%\"",
+        "query_toks": [
+            "SELECT",
+            "AwayTeam",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "HomeTeam",
+            "=",
+            "\"Omiya",
+            "Ardija\"",
+            "AND",
+            "Season",
+            "LIKE",
+            "\"%2018%\""
+        ],
+        "question": "What is the away team against Omiya Ardija in 2018?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "away",
+            "team",
+            "against",
+            "Omiya",
+            "Ardija",
+            "in",
+            "2018?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                19,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            18,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Omiya Ardija\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%2018%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(*) FROM football_data WHERE Season LIKE \"%2010%\" AND Country = \"Spain\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "Season",
+            "LIKE",
+            "\"%2010%\"",
+            "AND",
+            "Country",
+            "=",
+            "\"Spain\""
+        ],
+        "question": "How many matches in Spain in 2010?",
+        "question_toks": [
+            "How",
+            "many",
+            "matches",
+            "in",
+            "Spain",
+            "in",
+            "2010?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%2010%\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Spain\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT MATCH FROM betfront ORDER BY DRAW_OPENING DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "MATCH",
+            "FROM",
+            "betfront",
+            "ORDER",
+            "BY",
+            "DRAW_OPENING",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which matches has the highest draw opening so far?",
+        "question_toks": [
+            "Which",
+            "matches",
+            "has",
+            "the",
+            "highest",
+            "draw",
+            "opening",
+            "so",
+            "far?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            7,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT YEAR FROM betfront GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "YEAR",
+            "FROM",
+            "betfront",
+            "GROUP",
+            "BY",
+            "YEAR",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which year has most matches?",
+        "question_toks": [
+            "Which",
+            "year",
+            "has",
+            "most",
+            "matches?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    1,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(*) FROM football_data WHERE PSH != \"\" AND PSD != \"\" AND PSA != \"\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "PSH",
+            "!=",
+            "\"\"",
+            "AND",
+            "PSD",
+            "!=",
+            "\"\"",
+            "AND",
+            "PSA",
+            "!=",
+            "\"\""
+        ],
+        "question": "How many matches did Pinnacle have betting records?",
+        "question_toks": [
+            "How",
+            "many",
+            "matches",
+            "did",
+            "Pinnacle",
+            "have",
+            "betting",
+            "records?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            26,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            27,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            28,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(*) FROM football_data WHERE B365H > PSH",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "B365H",
+            ">",
+            "PSH"
+        ],
+        "question": "How many matches did Bet365 gives higher home win odds than Pinnacle?",
+        "question_toks": [
+            "How",
+            "many",
+            "matches",
+            "did",
+            "Bet365",
+            "gives",
+            "higher",
+            "home",
+            "win",
+            "odds",
+            "than",
+            "Pinnacle?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                29,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            26,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(*) FROM football_data WHERE FTHG + FTAG > 5",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "FTHG",
+            "+",
+            "FTAG",
+            ">",
+            "5"
+        ],
+        "question": "How many games that the total number of goals exceed 5?",
+        "question_toks": [
+            "How",
+            "many",
+            "games",
+            "that",
+            "the",
+            "total",
+            "number",
+            "of",
+            "goals",
+            "exceed",
+            "5?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    3,
+                    [
+                        2,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        [
+                            0,
+                            21,
+                            false
+                        ]
+                    ],
+                    5.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT max(B365A) FROM football_data",
+        "query_toks": [
+            "SELECT",
+            "max(B365A)",
+            "FROM",
+            "football_data"
+        ],
+        "question": "What is the highest home losing odds in Bet365 ever?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "highest",
+            "home",
+            "losing",
+            "odds",
+            "in",
+            "Bet365",
+            "ever?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                31,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(*) FROM football_data WHERE FTHG = 0 AND FTAG = 0",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "FTHG",
+            "=",
+            "0",
+            "AND",
+            "FTAG",
+            "=",
+            "0"
+        ],
+        "question": "How many number of games ended in a 0-0 tie?",
+        "question_toks": [
+            "How",
+            "many",
+            "number",
+            "of",
+            "games",
+            "ended",
+            "in",
+            "a",
+            "0-0",
+            "tie?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    0.0,
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            21,
+                            false
+                        ],
+                        null
+                    ],
+                    0.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(Div) FROM football_data",
+        "query_toks": [
+            "SELECT",
+            "count(Div)",
+            "FROM",
+            "football_data"
+        ],
+        "question": "How many league division does football_data database has?",
+        "question_toks": [
+            "How",
+            "many",
+            "league",
+            "division",
+            "does",
+            "football_data",
+            "database",
+            "has?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT count(League) FROM football_data WHERE Country != \"Scotland\" and Country != \"England\" and Referee != \"\"",
+        "query_toks": [
+            "SELECT",
+            "count(League)",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "Country",
+            "!=",
+            "\"Scotland\"",
+            "and",
+            "Country",
+            "!=",
+            "\"England\"",
+            "and",
+            "Referee",
+            "!=",
+            "\"\""
+        ],
+        "question": "Do other leagues have referee name records outside of Scotland and England?",
+        "question_toks": [
+            "Do",
+            "other",
+            "leagues",
+            "have",
+            "referee",
+            "name",
+            "records",
+            "outside",
+            "of",
+            "Scotland",
+            "and",
+            "England?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                16,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Scotland\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"England\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    7,
+                    [
+                        0,
+                        [
+                            0,
+                            17,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "WorldSoccerDataBase",
+        "query": "SELECT B365D FROM football_data WHERE HomeTeam = \"Swindon\" and AwayTeam = \"Millwall\" and Season = \"2016/2017\"",
+        "query_toks": [
+            "SELECT",
+            "B365D",
+            "FROM",
+            "football_data",
+            "WHERE",
+            "HomeTeam",
+            "=",
+            "\"Swindon\"",
+            "and",
+            "AwayTeam",
+            "=",
+            "\"Millwall\"",
+            "and",
+            "Season",
+            "=",
+            "\"2016/2017\""
+        ],
+        "question": "What's the odds for draw on Bet365 for the game Swindon v.s. Millwall for 2016/2017 season?",
+        "question_toks": [
+            "What's",
+            "the",
+            "odds",
+            "for",
+            "draw",
+            "on",
+            "Bet365",
+            "for",
+            "the",
+            "game",
+            "Swindon",
+            "v.s.",
+            "Millwall",
+            "for",
+            "2016/2017",
+            "season?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                30,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            18,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Swindon\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            19,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Millwall\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"2016/2017\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

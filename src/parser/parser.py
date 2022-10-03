@@ -5,6 +5,12 @@ from src.utils.sql import loosely_parse, set_att_value, pprint_parse_tree
 from src.parser.asdl_visitor import ASDLVisitor
 from src.parser.pg_visitor import PGVisitor
 
+
+class BadPostgresSyntax(Exception):
+    """Raised when the input value is too small"""
+    pass
+
+
 class SQLParser():
     """_summary_
     """
@@ -14,7 +20,11 @@ class SQLParser():
     
     def sql2pt(self, sql):
         """Convert SQL to parse tree."""
-        parse_tree = loosely_parse(sql)
+        try:
+            parse_tree = loosely_parse(sql)
+        except Exception as e:
+            if "syntax error at" in str(e.args[0].lower()):
+                raise BadPostgresSyntax(sql)
         set_att_value(parse_tree, "location", None)
         return parse_tree
 
@@ -29,6 +39,11 @@ class SQLParser():
     def pt2sql(self, parse_tree):
         """Convert parse tree to SQL."""
         return stream.RawStream()(parse_tree)
+    
+    def sql2ast(self, sql):
+        """Convert SQL to ASDL format."""
+        return self.pt2ast(self.sql2pt(sql))
+    
     
 if __name__ == "__main__":
     sql_query = "SELECT T2.Lname FROM DEPARTMENT AS T1 JOIN FACULTY AS T2 ON T1.DNO  =  T3.DNO JOIN MEMBER_OF AS T3 ON T2.FacID  =  T3.FacID WHERE T1.DName  =  'Computer Science'"

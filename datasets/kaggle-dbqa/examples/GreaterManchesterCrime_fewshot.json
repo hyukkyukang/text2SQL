@@ -1,0 +1,842 @@
+[
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT Location FROM GreaterManchesterCrime WHERE Location like \"%Street%\" GROUP BY Location ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Location",
+            "FROM",
+            "GreaterManchesterCrime",
+            "WHERE",
+            "Location",
+            "like",
+            "\"%Street%\"",
+            "GROUP",
+            "BY",
+            "Location",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which streets in Manchester have the highest rates of crime?",
+        "question_toks": [
+            "Which",
+            "streets",
+            "in",
+            "Manchester",
+            "have",
+            "the",
+            "highest",
+            "rates",
+            "of",
+            "crime?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Street%\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    3,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT CrimeID FROM GreaterManchesterCrime WHERE Type = \"Violence and sexual offences\" ORDER BY CrimeTS DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "CrimeID",
+            "FROM",
+            "GreaterManchesterCrime",
+            "WHERE",
+            "Type",
+            "=",
+            "\"Violence",
+            "and",
+            "sexual",
+            "offences\"",
+            "ORDER",
+            "BY",
+            "CrimeTS",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "When was the last instance of a violent or sexual offense in Manchester?",
+        "question_toks": [
+            "When",
+            "was",
+            "the",
+            "last",
+            "instance",
+            "of",
+            "a",
+            "violent",
+            "or",
+            "sexual",
+            "offense",
+            "in",
+            "Manchester?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Violence and sexual offences\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT Location FROM GreaterManchesterCrime WHERE Type = \"Violence and sexual offences\" ORDER BY CrimeTS DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Location",
+            "FROM",
+            "GreaterManchesterCrime",
+            "WHERE",
+            "Type",
+            "=",
+            "\"Violence",
+            "and",
+            "sexual",
+            "offences\"",
+            "ORDER",
+            "BY",
+            "CrimeTS",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Where was the last instance of a violent or sexual offense in Manchester?",
+        "question_toks": [
+            "Where",
+            "was",
+            "the",
+            "last",
+            "instance",
+            "of",
+            "a",
+            "violent",
+            "or",
+            "sexual",
+            "offense",
+            "in",
+            "Manchester?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Violence and sexual offences\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            2,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT LSOA FROM GreaterManchesterCrime GROUP BY LSOA ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "LSOA",
+            "FROM",
+            "GreaterManchesterCrime",
+            "GROUP",
+            "BY",
+            "LSOA",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which neighborhood has the highest crime rate?",
+        "question_toks": [
+            "Which",
+            "neighborhood",
+            "has",
+            "the",
+            "highest",
+            "crime",
+            "rate?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    4,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT count(*) FROM GreaterManchesterCrime WHERE Location like \"%Eden Street%\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "GreaterManchesterCrime",
+            "WHERE",
+            "Location",
+            "like",
+            "\"%Eden",
+            "Street%\""
+        ],
+        "question": "What is the crime rate for Eden Street area?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "crime",
+            "rate",
+            "for",
+            "Eden",
+            "Street",
+            "area?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Eden Street%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT Type FROM GreaterManchesterCrime GROUP BY Type ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Type",
+            "FROM",
+            "GreaterManchesterCrime",
+            "GROUP",
+            "BY",
+            "Type",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "What is the most common type of crime?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "most",
+            "common",
+            "type",
+            "of",
+            "crime?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    5,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT Location FROM GreaterManchesterCrime WHERE Type = \"Burglary\" GROUP BY Location ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Location",
+            "FROM",
+            "GreaterManchesterCrime",
+            "WHERE",
+            "Type",
+            "=",
+            "\"Burglary\"",
+            "GROUP",
+            "BY",
+            "Location",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which neighborhood/area has the highest burglary rate?",
+        "question_toks": [
+            "Which",
+            "neighborhood/area",
+            "has",
+            "the",
+            "highest",
+            "burglary",
+            "rate?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Burglary\"",
+                    null
+                ]
+            ],
+            "groupBy": [
+                [
+                    0,
+                    3,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT Location FROM GreaterManchesterCrime GROUP BY Location ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "Location",
+            "FROM",
+            "GreaterManchesterCrime",
+            "GROUP",
+            "BY",
+            "Location",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which area do most of the crimes happen?",
+        "question_toks": [
+            "Which",
+            "area",
+            "do",
+            "most",
+            "of",
+            "the",
+            "crimes",
+            "happen?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    3,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "GreaterManchesterCrime",
+        "query": "SELECT LSOA FROM GreaterManchesterCrime GROUP BY LSOA ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "LSOA",
+            "FROM",
+            "GreaterManchesterCrime",
+            "GROUP",
+            "BY",
+            "LSOA",
+            "ORDER",
+            "BY",
+            "count(*)",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which Lower Layer Output Area do most of the crimes happen?",
+        "question_toks": [
+            "Which",
+            "Lower",
+            "Layer",
+            "Output",
+            "Area",
+            "do",
+            "most",
+            "of",
+            "the",
+            "crimes",
+            "happen?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    4,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

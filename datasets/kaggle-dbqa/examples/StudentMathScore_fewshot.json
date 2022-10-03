@@ -1,0 +1,809 @@
+[
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state FROM FINREV_FED_KEY_17 as T2 JOIN FINREV_FED_17 as T1 ON T1.state_code = T2.State_Code GROUP BY T1.state_code ORDER BY sum(t_fed_rev)",
+        "query_toks": [
+            "SELECT",
+            "T2.state",
+            "FROM",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "JOIN",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.State_Code",
+            "GROUP",
+            "BY",
+            "T1.state_code",
+            "ORDER",
+            "BY",
+            "sum(t_fed_rev)"
+        ],
+        "question": "What are the top five states in descending order in terms of revenue provided to school districts?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "five",
+            "states",
+            "in",
+            "descending",
+            "order",
+            "in",
+            "terms",
+            "of",
+            "revenue",
+            "provided",
+            "to",
+            "school",
+            "districts?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    1,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            4,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT T2.state FROM FINREV_FED_17 as T1 JOIN FINREV_FED_KEY_17 as T2 ON T1.state_code = T2.state_code GROUP BY T2.state ORDER BY count(school_district) DESC LIMIT 5",
+        "query_toks": [
+            "SELECT",
+            "T2.state",
+            "FROM",
+            "FINREV_FED_17",
+            "as",
+            "T1",
+            "JOIN",
+            "FINREV_FED_KEY_17",
+            "as",
+            "T2",
+            "ON",
+            "T1.state_code",
+            "=",
+            "T2.state_code",
+            "GROUP",
+            "BY",
+            "T2.state",
+            "ORDER",
+            "BY",
+            "count(school_district)",
+            "DESC",
+            "LIMIT",
+            "5"
+        ],
+        "question": "What are the top five states in descending order in terms of the number of school districts per state?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "top",
+            "five",
+            "states",
+            "in",
+            "descending",
+            "order",
+            "in",
+            "terms",
+            "of",
+            "the",
+            "number",
+            "of",
+            "school",
+            "districts",
+            "per",
+            "state?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            13,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                14,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    14,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            3,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 5,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state, max(year) FROM NDECoreExcel_Math_Grade8 GROUP BY state",
+        "query_toks": [
+            "SELECT",
+            "state,",
+            "max(year)",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "GROUP",
+            "BY",
+            "state"
+        ],
+        "question": "For each state, when was the last time the average score data was collected?",
+        "question_toks": [
+            "For",
+            "each",
+            "state,",
+            "when",
+            "was",
+            "the",
+            "last",
+            "time",
+            "the",
+            "average",
+            "score",
+            "data",
+            "was",
+            "collected?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    10,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT t_fed_rev FROM FINREV_FED_17 WHERE school_district = \"FAIRFAX CO SCHS\"",
+        "query_toks": [
+            "SELECT",
+            "t_fed_rev",
+            "FROM",
+            "FINREV_FED_17",
+            "WHERE",
+            "school_district",
+            "=",
+            "\"FAIRFAX",
+            "CO",
+            "SCHS\""
+        ],
+        "question": "How much federal funding did Faifaix County, VA schools receive in all forms?",
+        "question_toks": [
+            "How",
+            "much",
+            "federal",
+            "funding",
+            "did",
+            "Faifaix",
+            "County,",
+            "VA",
+            "schools",
+            "receive",
+            "in",
+            "all",
+            "forms?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"FAIRFAX CO SCHS\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT sum(c14) FROM FINREV_FED_17 WHERE yr_data = 17",
+        "query_toks": [
+            "SELECT",
+            "sum(c14)",
+            "FROM",
+            "FINREV_FED_17",
+            "WHERE",
+            "yr_data",
+            "=",
+            "17"
+        ],
+        "question": "How much did the federal government spend in No Child Left Behind funding in 2017?",
+        "question_toks": [
+            "How",
+            "much",
+            "did",
+            "the",
+            "federal",
+            "government",
+            "spend",
+            "in",
+            "No",
+            "Child",
+            "Left",
+            "Behind",
+            "funding",
+            "in",
+            "2017?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        4,
+                        [
+                            0,
+                            [
+                                0,
+                                7,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            5,
+                            false
+                        ],
+                        null
+                    ],
+                    17.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT count(*) FROM FINREV_FED_17 WHERE school_district LIKE \"%Wisconsin%\"",
+        "query_toks": [
+            "SELECT",
+            "count(*)",
+            "FROM",
+            "FINREV_FED_17",
+            "WHERE",
+            "school_district",
+            "LIKE",
+            "\"%Wisconsin%\""
+        ],
+        "question": "How many Wisconsin school districts receive federal funding?",
+        "question_toks": [
+            "How",
+            "many",
+            "Wisconsin",
+            "school",
+            "districts",
+            "receive",
+            "federal",
+            "funding?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    9,
+                    [
+                        0,
+                        [
+                            0,
+                            3,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"%Wisconsin%\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state FROM NDECoreExcel_Math_Grade8 ORDER BY average_scale_score DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "ORDER",
+            "BY",
+            "average_scale_score",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which state performs best on the NAEP 8th grade math test?",
+        "question_toks": [
+            "Which",
+            "state",
+            "performs",
+            "best",
+            "on",
+            "the",
+            "NAEP",
+            "8th",
+            "grade",
+            "math",
+            "test?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT state FROM NDECoreExcel_Math_Grade8 ORDER BY average_scale_score LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "NDECoreExcel_Math_Grade8",
+            "ORDER",
+            "BY",
+            "average_scale_score",
+            "LIMIT",
+            "1"
+        ],
+        "question": "Which federally-funded state performs worst on the NAEP math exam for eighth graders?",
+        "question_toks": [
+            "Which",
+            "federally-funded",
+            "state",
+            "performs",
+            "worst",
+            "on",
+            "the",
+            "NAEP",
+            "math",
+            "exam",
+            "for",
+            "eighth",
+            "graders?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            12,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "StudentMathScore",
+        "query": "SELECT avg(average_scale_score) FROM NDECoreExcel_Math_Grade8",
+        "query_toks": [
+            "SELECT",
+            "avg(average_scale_score)",
+            "FROM",
+            "NDECoreExcel_Math_Grade8"
+        ],
+        "question": "What is the average NAEP math score for all eighth graders in federally-funded states?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            "NAEP",
+            "math",
+            "score",
+            "for",
+            "all",
+            "eighth",
+            "graders",
+            "in",
+            "federally-funded",
+            "states?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                12,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    }
+]

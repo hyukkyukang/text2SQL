@@ -27,3 +27,6 @@ unzip -q kaggle-dbqa-20210726.zip
 # Clean Up
 echo "Cleaning up for KaggleDBQA..."
 rm kaggle-dbqa-20210726.zip
+
+cd ..
+ls -l $DATASET_DIR
