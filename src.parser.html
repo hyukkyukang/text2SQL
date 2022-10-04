@@ -62,10 +62,12 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#module-src.parser.parser">src.parser.parser module</a><ul>
+<li><a class="reference internal" href="#src.parser.parser.BadPostgresSyntax"><code class="docutils literal notranslate"><span class="pre">BadPostgresSyntax</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.parser.SQLParser"><code class="docutils literal notranslate"><span class="pre">SQLParser</span></code></a><ul>
 <li><a class="reference internal" href="#src.parser.parser.SQLParser.ast2pt"><code class="docutils literal notranslate"><span class="pre">SQLParser.ast2pt()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.parser.SQLParser.pt2ast"><code class="docutils literal notranslate"><span class="pre">SQLParser.pt2ast()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.parser.SQLParser.pt2sql"><code class="docutils literal notranslate"><span class="pre">SQLParser.pt2sql()</span></code></a></li>
+<li><a class="reference internal" href="#src.parser.parser.SQLParser.sql2ast"><code class="docutils literal notranslate"><span class="pre">SQLParser.sql2ast()</span></code></a></li>
 <li><a class="reference internal" href="#src.parser.parser.SQLParser.sql2pt"><code class="docutils literal notranslate"><span class="pre">SQLParser.sql2pt()</span></code></a></li>
 </ul>
 </li>
@@ -331,6 +333,13 @@
 </section>
 <section id="module-src.parser.parser">
 <span id="src-parser-parser-module"></span><h2>src.parser.parser module<a class="headerlink" href="#module-src.parser.parser" title="Permalink to this heading"></a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="src.parser.parser.BadPostgresSyntax">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.parser.</span></span><span class="sig-name descname"><span class="pre">BadPostgresSyntax</span></span><a class="headerlink" href="#src.parser.parser.BadPostgresSyntax" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when the input value is too small</p>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.parser.parser.</span></span><span class="sig-name descname"><span class="pre">SQLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asdl_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser" title="Permalink to this definition"></a></dt>
@@ -352,6 +361,12 @@
 <dt class="sig sig-object py" id="src.parser.parser.SQLParser.pt2sql">
 <span class="sig-name descname"><span class="pre">pt2sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.pt2sql" title="Permalink to this definition"></a></dt>
 <dd><p>Convert parse tree to SQL.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.parser.parser.SQLParser.sql2ast">
+<span class="sig-name descname"><span class="pre">sql2ast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.parser.parser.SQLParser.sql2ast" title="Permalink to this definition"></a></dt>
+<dd><p>Convert SQL to ASDL format.</p>
 </dd></dl>
 
 <dl class="py method">
