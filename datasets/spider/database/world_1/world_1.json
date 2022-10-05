@@ -1,0 +1,230 @@
+[
+    {
+        "col_data": [
+            {
+                "column_name": "ID",
+                "data_type": "integer",
+                "default_column_name": "ID",
+                "default_value": null,
+                "not_null": 1,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Name",
+                "data_type": "char(35)",
+                "default_column_name": "Name",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "CountryCode",
+                "data_type": "char(3)",
+                "default_column_name": "CountryCode",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "District",
+                "data_type": "char(20)",
+                "default_column_name": "District",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Population",
+                "data_type": "integer",
+                "default_column_name": "Population",
+                "default_value": "'0'",
+                "not_null": 1,
+                "primary_key": 0
+            }
+        ],
+        "table": "city"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "name",
+                "data_type": "",
+                "default_column_name": "name",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "seq",
+                "data_type": "",
+                "default_column_name": "seq",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "sqlite_sequence"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "Code",
+                "data_type": "char(3)",
+                "default_column_name": "Code",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Name",
+                "data_type": "char(52)",
+                "default_column_name": "Name",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Continent",
+                "data_type": "text",
+                "default_column_name": "Continent",
+                "default_value": "'Asia'",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Region",
+                "data_type": "char(26)",
+                "default_column_name": "Region",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "SurfaceArea",
+                "data_type": "float(10,2)",
+                "default_column_name": "SurfaceArea",
+                "default_value": "'0.00'",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "IndepYear",
+                "data_type": "integer",
+                "default_column_name": "IndepYear",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Population",
+                "data_type": "integer",
+                "default_column_name": "Population",
+                "default_value": "'0'",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "LifeExpectancy",
+                "data_type": "float(3,1)",
+                "default_column_name": "LifeExpectancy",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "GNP",
+                "data_type": "float(10,2)",
+                "default_column_name": "GNP",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "GNPOld",
+                "data_type": "float(10,2)",
+                "default_column_name": "GNPOld",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "LocalName",
+                "data_type": "char(45)",
+                "default_column_name": "LocalName",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "GovernmentForm",
+                "data_type": "char(45)",
+                "default_column_name": "GovernmentForm",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "HeadOfState",
+                "data_type": "char(60)",
+                "default_column_name": "HeadOfState",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Capital",
+                "data_type": "integer",
+                "default_column_name": "Capital",
+                "default_value": "NULL",
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Code2",
+                "data_type": "char(2)",
+                "default_column_name": "Code2",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 0
+            }
+        ],
+        "table": "country"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "CountryCode",
+                "data_type": "char(3)",
+                "default_column_name": "CountryCode",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Language",
+                "data_type": "char(30)",
+                "default_column_name": "Language",
+                "default_value": "''",
+                "not_null": 1,
+                "primary_key": 2
+            },
+            {
+                "column_name": "IsOfficial",
+                "data_type": "text",
+                "default_column_name": "IsOfficial",
+                "default_value": "'F'",
+                "not_null": 1,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Percentage",
+                "data_type": "float(4,1)",
+                "default_column_name": "Percentage",
+                "default_value": "'0.0'",
+                "not_null": 1,
+                "primary_key": 0
+            }
+        ],
+        "table": "countrylanguage"
+    }
+]

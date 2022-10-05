@@ -2,8 +2,8 @@ import os
 import json
 import unittest
 
-from src.parser.parser import SQLParser, BadPostgresSyntax
 from tests.parser import examples
+from src.parser.parser import SQLParser, BadPostgresSyntax
 
 class Test_ratsql_extension_parser(unittest.TestCase):    
     def __init__(self, *args, **kwargs):

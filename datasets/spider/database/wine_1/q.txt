@@ -1,0 +1,25 @@
+List all AVAs located in Monterey county. Output just the names of the AVA appellations
+
+List all white grape varieties for which at least one wine of the 2008 vintage is rated at 90 points or above in the database.
+
+List all Sonoma county appellations for which the database contains at least one rating for a ’Grenache’. For each appellation list its name and county.
+
+List all vintage years in which at least one Zinfandel from Sonoma County (any appellation) scored above 92.
+
+A case of wine is 12 bottles. For each Carlisle (name of the winery) Syrah compute the total revenue assuming that all the wine sold at the specified price.
+
+Find the total revenue from all red wines made by Kosta Browne.
+
+Find the average number of cases of a Pinor Noir produced from grapes sourced from the Central Coast.
+
+For each year, report the total number of red Sonoma County wines whose scores are 90 or above.
+
+Find the most popular red grape (i.e., the grape that is used to make the largest number of white wines) in San Luis Obispo County.
+
+Report the grape with the largest number of high-ranked wines (wines ranked 93 or higher).
+
+Report the appellation responsible for the largest number of high-ranked wines (score of 93 and above). Report just the name of the appellation.
+
+Find if there are any 2008 Zinfandels that scored better than all 2007 Grenaches. Report winery, wine name, score and price.
+
+Find how many cases were produced of the most expensive red wine from Napa county.

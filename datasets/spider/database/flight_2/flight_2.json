@@ -1,0 +1,121 @@
+[
+    {
+        "col_data": [
+            {
+                "column_name": "uid",
+                "data_type": "INTEGER",
+                "default_column_name": "uid",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Airline",
+                "data_type": "TEXT",
+                "default_column_name": "Airline",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Abbreviation",
+                "data_type": "TEXT",
+                "default_column_name": "Abbreviation",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Country",
+                "data_type": "TEXT",
+                "default_column_name": "Country",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "airlines"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "City",
+                "data_type": "TEXT",
+                "default_column_name": "City",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "AirportCode",
+                "data_type": "TEXT",
+                "default_column_name": "AirportCode",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "AirportName",
+                "data_type": "TEXT",
+                "default_column_name": "AirportName",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Country",
+                "data_type": "TEXT",
+                "default_column_name": "Country",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "CountryAbbrev",
+                "data_type": "TEXT",
+                "default_column_name": "CountryAbbrev",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "airports100"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "Airline",
+                "data_type": "INTEGER",
+                "default_column_name": "Airline",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "FlightNo",
+                "data_type": "INTEGER",
+                "default_column_name": "FlightNo",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 2
+            },
+            {
+                "column_name": "SourceAirport",
+                "data_type": "TEXT",
+                "default_column_name": "SourceAirport",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "DestAirport",
+                "data_type": "TEXT",
+                "default_column_name": "DestAirport",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "flights"
+    }
+]

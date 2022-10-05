@@ -4,14 +4,18 @@ from typing import List
 from src.db_connection.connector import DBConnector
 
 class PostgresConnector(DBConnector):
+    connector_cache = DBConnector.connector_cache
     def __init__(self, user_id: str, passwd: str, host: str, port: str, db_id: str):
-        super().__init__()
+        super(PostgresConnector, self).__init__(db_id=db_id)
         self.connect(user_id, passwd, host, port, db_id)
-        self.cur = self.con.cursor()
-        self.db_name= db_id
+        
+        
+    def __new__(cls, user_id, passwd, host, port, db_id):
+        return super(PostgresConnector, cls).__new__(cls)
         
     def connect(self, user_id, passwd, host, port, db_id):
-        self.con = psycopg2.connect(f"user={user_id} password={passwd} host={host} port={port} dbname={db_id}")
+        self.conn = psycopg2.connect(f"user={user_id} password={passwd} host={host} port={port} dbname={db_id}")
+        self.cur = self.conn.cursor()
 
     def fetch_table_names(self) -> List[str]:
         sql = """

@@ -1,0 +1,15 @@
+Find all modern rooms with a base price below $160 and two beds. Report room names and codes
+
+Find all rooms occupied on February 6, 2010. Report full name of the room, the check-in and checkout dates of the reservation.
+
+For each reservation that starts on December 31, 2010 report the room name, nightly rate, number of nights spent and the total amount of money paid.
+
+Find the names of all people1 staying at the inn at the same time as HERBERT FRYDAY.
+
+Find the number of August reservations (both checkin and checkout dates are in August) where two adults are staying with two children.
+
+Find the most popular room in the hotel. The most popular room is the room that had seen the largest number of reservations
+
+Find the room that has been occupied the largest number of days based on the reservations. Report the room name
+
+For each room, report the most expensive reservation. Report the full room name, dates of stay

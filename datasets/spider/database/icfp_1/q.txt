@@ -1,0 +1,9 @@
+q5. Retrieve the titles of all papers with a single author.
+
+q6. Retrieve the titles and number of affiliated institutions of all papers with authors from more than one institution.
+
+q7. Retrieve the title(s) and number of authors of the paper(s) with the most authors in the database instance. For example, if there is one paper with three authors in the whole batch, and every other paper has one or two authors (that's the case in the database you are given), identify that paper.
+
+q8. Retrieve the authors' authID, first and last names, in alphabetical order, and the number of papers on which they have authorship.
+
+q9. Retrieve the authID, first and last name of the author(s) and their number of collaborators (shared authorships), in alphabetical order.

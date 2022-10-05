@@ -1,40 +1,46 @@
 import abc
-import attrs
 import traceback
 
 from typing import Any, List
 
-@attrs.define
 class DBConnector:
-    conn: Any = attrs.field(default=None)
-    cur: Any = attrs.field(default=None)
-    db_name: str = attrs.field(default=None)
-    
-    def execute(self, sql: str):
+    # Static attributes
+    connector_cache = {}
+    def __init__(self, db_id:str):
+        self.db_id = db_id    
+        self.conn = None
+        self.cur = None
+
+    def __new__(cls, db_id):
+        if not db_id in DBConnector.connector_cache.keys():
+            DBConnector.connector_cache[db_id]= super(DBConnector, cls).__new__(cls)
+        return DBConnector.connector_cache[db_id]
+
+    def execute(self, sql: str) -> List[Any]:
         return self.cur.execute(sql)
-    
-    def fetchall(self):
+
+    def fetchall(self) -> List[Any]:
         return self.cur.fetchall()
-    
-    def fetchone(self):
+
+    def fetchone(self) -> List[Any]:
         return self.cur.fetchone()
-    
-    def close(self):
-        self.con.close()
-        
+
+    def close(self) -> None:
+        self.conn.close()
+
     def __enter__(self):
-        return self.con
+        return self.conn
 
     def __exit__(self, exc_type, exc_value, tb):
         if exc_type is not None:
             traceback.print_exception(exc_type, exc_value, tb)
-        self.con.close()
+        self.conn.close()
         return True
-    
+
     @abc.abstractmethod
-    def connect(self, *args, **kwargs):
+    def connect(self, *args, **kwargs) -> None:
         pass
-    
+
     @abc.abstractclassmethod
     def fetch_table_names(self)-> List[str]:
         pass

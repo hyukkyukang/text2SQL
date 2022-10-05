@@ -1,0 +1,25 @@
+Find all students who study in classroom 111. For each student list first and last name.
+
+For each classroom report the grade that is taught in it. Report just the classroom number and the grade number.
+
+Find all teachers who teach fifth grade. Report first and last name of the teachers and the room number.
+
+Find all students taught by OTHA MOYER. Output first and last names of students
+
+For each teacher teaching grades K through 3, report the grade (s)he teaches. Each name has to be reported exactly once.
+
+Find all first-grade students who are NOT taught by OTHA MOYER. Report their first and last names
+
+Find and report the number of students taught by LORIA ONDERSMA.
+
+For each grade, report the number of classrooms in which it is taught and the toal number of students in the grade.
+
+Report the names of teachers who have between seven and eight students in their classes.
+
+For each kindergarden classroom, report the total number of students.
+
+Find the teacher name who teach(es) the largest number of students.
+
+Findallclassroomswhichhavefewerstudentsinthemthantheaverage number of students in a classroom in the school. Report the classroom numbers
+
+For each grade with more than one classroom, report the last name of the teacher who teachers the classroom with the largest number of students in the grade.

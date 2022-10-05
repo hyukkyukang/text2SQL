@@ -1,0 +1,216 @@
+[
+    {
+        "col_data": [
+            {
+                "column_name": "ContId",
+                "data_type": "INTEGER",
+                "default_column_name": "ContId",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Continent",
+                "data_type": "TEXT",
+                "default_column_name": "Continent",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "continents"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "CountryId",
+                "data_type": "INTEGER",
+                "default_column_name": "CountryId",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "CountryName",
+                "data_type": "TEXT",
+                "default_column_name": "CountryName",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Continent",
+                "data_type": "INTEGER",
+                "default_column_name": "Continent",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "countries"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "Id",
+                "data_type": "INTEGER",
+                "default_column_name": "Id",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Maker",
+                "data_type": "TEXT",
+                "default_column_name": "Maker",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "FullName",
+                "data_type": "TEXT",
+                "default_column_name": "FullName",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Country",
+                "data_type": "TEXT",
+                "default_column_name": "Country",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "car-makers"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "MakeId",
+                "data_type": "INTEGER",
+                "default_column_name": "MakeId",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Model",
+                "data_type": "TEXT",
+                "default_column_name": "Model",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Make",
+                "data_type": "TEXT",
+                "default_column_name": "Make",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "car-names"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "Id",
+                "data_type": "INTEGER",
+                "default_column_name": "Id",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "MPG",
+                "data_type": "TEXT",
+                "default_column_name": "MPG",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Cylinders",
+                "data_type": "INTEGER",
+                "default_column_name": "Cylinders",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Edispl",
+                "data_type": "REAL",
+                "default_column_name": "Edispl",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Horsepower",
+                "data_type": "TEXT",
+                "default_column_name": "Horsepower",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Weight",
+                "data_type": "INTEGER",
+                "default_column_name": "Weight",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Accelerate",
+                "data_type": "REAL",
+                "default_column_name": "Accelerate",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Year",
+                "data_type": "INTEGER",
+                "default_column_name": "Year",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "cars-data"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "ModelId",
+                "data_type": "INTEGER",
+                "default_column_name": "ModelId",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "Maker",
+                "data_type": "INTEGER",
+                "default_column_name": "Maker",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "Model",
+                "data_type": "TEXT",
+                "default_column_name": "Model",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "model-list"
+    }
+]

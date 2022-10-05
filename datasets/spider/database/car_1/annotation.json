@@ -1,0 +1,62 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "Find all Reanults (\u2019renault\u2019) in the database. For each, report the name and the year.\n", 
+            "id": 0
+        }, 
+        {
+            "nl": "Find all cars produced by Volvo between 1977 and 1981 (inclusive). Report the name of the car and the year it was produced.\n", 
+            "id": 1
+        }, 
+        {
+            "nl": "Report all Asian automakers. Output the full name of the automaker and the country of origin\n", 
+            "id": 2
+        }, 
+        {
+            "nl": "Find all non-four cylinder cars produced in 1980 that have a better fuel economy better than 20 MPG and that accelerate to 60 mph faster than in 15 seconds. Report the name of the car and the name of the automaker.\n", 
+            "id": 3
+        }, 
+        {
+            "nl": "For each saab released after 1978, compute the ratio between the weight of the car and its number of horsepowers. Report the full name of the car, the year it was produced and the ratio.\n", 
+            "id": 4
+        }, 
+        {
+            "nl": "Find the average, maximum and minimum horsepower for 4-cylinder vehicles manufactured by renault between 1971 and 1976 inclusively.\n", 
+            "id": 5
+        }, 
+        {
+            "nl": "Find how many different car manufacturers produced a vehicle heavier than 4000 lbs.\n", 
+            "id": 6
+        }, 
+        {
+            "nl": "Find the minimum horsepower for 4-cylinder vehicles manufactured by renault between 1971 and 1976 inclusively.\n", 
+            "id": 7
+        }, 
+        {
+            "nl": "For each year when US-manufactured cars averaged less than 100 horsepowers, report the highest and the lowest engine displacement number.\n", 
+            "id": 8
+        }, 
+        {
+            "nl": "For each year in which honda produced more than 2 models, report the best, the worst and the average gas milage of a toyota vehicle.\n", 
+            "id": 9
+        }, 
+        {
+            "nl": "Report all vehicles with the best gas mileage. For each vehicle, report its full name and the year of production.\n", 
+            "id": 10
+        }, 
+        {
+            "nl": "Among the vehicles with the gas mileage, report the one with the best acceleration. Report full name and the year of production.\n", 
+            "id": 11
+        }, 
+        {
+            "nl": "For each country report the automaker with the largest number of cars in the database. Report the name of the country.\n", 
+            "id": 12
+        }, 
+        {
+            "nl": "Find the difference in gas milage between the most fuel-efficient 8-cylinder model and the least fuel-efficient 4-cylinder model. Report just the number.\n", 
+            "id": 13
+        }
+    ], 
+    "review_id": null
+}

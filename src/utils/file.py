@@ -8,6 +8,5 @@ def read_json_file(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
     
-    
 def get_files_in_all_sub_directories(root_dir_path, filter_func):
     return [os.path.join(dp, f) for dp, dn, filenames in os.walk(root_dir_path) for f in filenames if filter_func(f)]

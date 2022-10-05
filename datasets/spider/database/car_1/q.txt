@@ -1,0 +1,27 @@
+Find all Reanults (’renault’) in the database. For each, report the name and the year.
+
+Find all cars produced by Volvo between 1977 and 1981 (inclusive). Report the name of the car and the year it was produced.
+
+Report all Asian automakers. Output the full name of the automaker and the country of origin
+
+Find all non-four cylinder cars produced in 1980 that have a better fuel economy better than 20 MPG and that accelerate to 60 mph faster than in 15 seconds. Report the name of the car and the name of the automaker.
+
+For each saab released after 1978, compute the ratio between the weight of the car and its number of horsepowers. Report the full name of the car, the year it was produced and the ratio.
+
+Find the average, maximum and minimum horsepower for 4-cylinder vehicles manufactured by renault between 1971 and 1976 inclusively.
+
+Find how many different car manufacturers produced a vehicle heavier than 4000 lbs.
+
+Find the minimum horsepower for 4-cylinder vehicles manufactured by renault between 1971 and 1976 inclusively.
+
+For each year when US-manufactured cars averaged less than 100 horsepowers, report the highest and the lowest engine displacement number.
+
+For each year in which honda produced more than 2 models, report the best, the worst and the average gas milage of a toyota vehicle.
+
+Report all vehicles with the best gas mileage. For each vehicle, report its full name and the year of production.
+
+Among the vehicles with the gas mileage, report the one with the best acceleration. Report full name and the year of production.
+
+For each country report the automaker with the largest number of cars in the database. Report the name of the country.
+
+Find the difference in gas milage between the most fuel-efficient 8-cylinder model and the least fuel-efficient 4-cylinder model. Report just the number.

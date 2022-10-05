@@ -162,7 +162,11 @@ cython_debug/
 # Custom
 .vscode/
 .DS_Store
+datasets/spider/database/wta_1/wta_1.sql
 datasets/spider/database/wta_1/wta_1.sqlite
+datasets/spider/database/baseball_1/schema.sql
+datasets/spider/database/baseball_1/schema.sqlite
+datasets/spider/database/soccer_1/schema.sql
 datasets/spider/database/soccer_1/soccer_1.sqlite
 datasets/kaggle-dbqa/databases/USWildFires/USWildFires.sqlite
 datasets/kaggle-dbqa/databases/Pesticide/Pesticide.sqlite

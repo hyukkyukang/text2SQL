@@ -1,0 +1,58 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "List all AVAs located in Monterey county. Output just the names of the AVA appellations\n", 
+            "id": 0
+        }, 
+        {
+            "nl": "List all white grape varieties for which at least one wine of the 2008 vintage is rated at 90 points or above in the database.\n", 
+            "id": 1
+        }, 
+        {
+            "nl": "List all Sonoma county appellations for which the database contains at least one rating for a \u2019Grenache\u2019. For each appellation list its name and county.\n", 
+            "id": 2
+        }, 
+        {
+            "nl": "List all vintage years in which at least one Zinfandel from Sonoma County (any appellation) scored above 92.\n", 
+            "id": 3
+        }, 
+        {
+            "nl": "A case of wine is 12 bottles. For each Carlisle (name of the winery) Syrah compute the total revenue assuming that all the wine sold at the specified price.\n", 
+            "id": 4
+        }, 
+        {
+            "nl": "Find the total revenue from all red wines made by Kosta Browne.\n", 
+            "id": 5
+        }, 
+        {
+            "nl": "Find the average number of cases of a Pinor Noir produced from grapes sourced from the Central Coast.\n", 
+            "id": 6
+        }, 
+        {
+            "nl": "For each year, report the total number of red Sonoma County wines whose scores are 90 or above.\n", 
+            "id": 7
+        }, 
+        {
+            "nl": "Find the most popular red grape (i.e., the grape that is used to make the largest number of white wines) in San Luis Obispo County.\n", 
+            "id": 8
+        }, 
+        {
+            "nl": "Report the grape with the largest number of high-ranked wines (wines ranked 93 or higher).\n", 
+            "id": 9
+        }, 
+        {
+            "nl": "Report the appellation responsible for the largest number of high-ranked wines (score of 93 and above). Report just the name of the appellation.\n", 
+            "id": 10
+        }, 
+        {
+            "nl": "Find if there are any 2008 Zinfandels that scored better than all 2007 Grenaches. Report winery, wine name, score and price.\n", 
+            "id": 11
+        }, 
+        {
+            "nl": "Find how many cases were produced of the most expensive red wine from Napa county.\n", 
+            "id": 12
+        }
+    ], 
+    "review_id": null
+}
