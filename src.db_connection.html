@@ -44,10 +44,8 @@
 <li><a class="reference internal" href="#module-src.db_connection.connector">src.db_connection.connector module</a><ul>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector"><code class="docutils literal notranslate"><span class="pre">DBConnector</span></code></a><ul>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector.close"><code class="docutils literal notranslate"><span class="pre">DBConnector.close()</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.connector.DBConnector.conn"><code class="docutils literal notranslate"><span class="pre">DBConnector.conn</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector.connect"><code class="docutils literal notranslate"><span class="pre">DBConnector.connect()</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.connector.DBConnector.cur"><code class="docutils literal notranslate"><span class="pre">DBConnector.cur</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.connector.DBConnector.db_name"><code class="docutils literal notranslate"><span class="pre">DBConnector.db_name</span></code></a></li>
+<li><a class="reference internal" href="#src.db_connection.connector.DBConnector.connector_cache"><code class="docutils literal notranslate"><span class="pre">DBConnector.connector_cache</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector.execute"><code class="docutils literal notranslate"><span class="pre">DBConnector.execute()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector.fetch_column_names"><code class="docutils literal notranslate"><span class="pre">DBConnector.fetch_column_names()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.connector.DBConnector.fetch_column_types"><code class="docutils literal notranslate"><span class="pre">DBConnector.fetch_column_types()</span></code></a></li>
@@ -62,10 +60,8 @@
 </li>
 <li><a class="reference internal" href="#module-src.db_connection.pg_connector">src.db_connection.pg_connector module</a><ul>
 <li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a><ul>
-<li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.conn"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.conn</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.connect"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.connect()</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.cur"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.cur</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.db_name"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.db_name</span></code></a></li>
+<li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.connector_cache"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.connector_cache</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.fetch_column_names"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.fetch_column_names()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.fetch_column_types"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.fetch_column_types()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.pg_connector.PostgresConnector.fetch_table_names"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.fetch_table_names()</span></code></a></li>
@@ -75,10 +71,8 @@
 </li>
 <li><a class="reference internal" href="#module-src.db_connection.sqlite_connector">src.db_connection.sqlite_connector module</a><ul>
 <li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector"><code class="docutils literal notranslate"><span class="pre">SqliteConnector</span></code></a><ul>
-<li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.conn"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.conn</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.connect"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.connect()</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.cur"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.cur</span></code></a></li>
-<li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.db_name"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.db_name</span></code></a></li>
+<li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.connector_cache"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.connector_cache</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.fetch_column_names"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.fetch_column_names()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.fetch_column_types"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.fetch_column_types()</span></code></a></li>
 <li><a class="reference internal" href="#src.db_connection.sqlite_connector.SqliteConnector.fetch_foreign_keys"><code class="docutils literal notranslate"><span class="pre">SqliteConnector.fetch_foreign_keys()</span></code></a></li>
@@ -126,36 +120,26 @@
 <span id="src-db-connection-connector-module"></span><h2>src.db_connection.connector module<a class="headerlink" href="#module-src.db_connection.connector" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.db_connection.connector.</span></span><span class="sig-name descname"><span class="pre">DBConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.db_connection.connector.</span></span><span class="sig-name descname"><span class="pre">DBConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.conn">
-<span class="sig-name descname"><span class="pre">conn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.connector.DBConnector.conn" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.db_connection.connector.DBConnector.close" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.connect">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector.connect" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.db_connection.connector.DBConnector.connect" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.cur">
-<span class="sig-name descname"><span class="pre">cur</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.connector.DBConnector.cur" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.db_name">
-<span class="sig-name descname"><span class="pre">db_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#src.db_connection.connector.DBConnector.db_name" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.connector_cache">
+<span class="sig-name descname"><span class="pre">connector_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#src.db_connection.connector.DBConnector.connector_cache" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector.execute" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.db_connection.connector.DBConnector.execute" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -185,12 +169,12 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.fetchall">
-<span class="sig-name descname"><span class="pre">fetchall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector.fetchall" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fetchall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.db_connection.connector.DBConnector.fetchall" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.connector.DBConnector.fetchone">
-<span class="sig-name descname"><span class="pre">fetchone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.connector.DBConnector.fetchone" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fetchone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.db_connection.connector.DBConnector.fetchone" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -200,26 +184,16 @@
 <span id="src-db-connection-pg-connector-module"></span><h2>src.db_connection.pg_connector module<a class="headerlink" href="#module-src.db_connection.pg_connector" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.db_connection.pg_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.db_connection.pg_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.db_connection.connector.DBConnector" title="src.db_connection.connector.DBConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">DBConnector</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector.conn">
-<span class="sig-name descname"><span class="pre">conn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector.conn" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector.connect">
 <span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector.connect" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector.cur">
-<span class="sig-name descname"><span class="pre">cur</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector.cur" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector.db_name">
-<span class="sig-name descname"><span class="pre">db_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector.db_name" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="src.db_connection.pg_connector.PostgresConnector.connector_cache">
+<span class="sig-name descname"><span class="pre">connector_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#src.db_connection.pg_connector.PostgresConnector.connector_cache" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -246,24 +220,14 @@
 <dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.db_connection.sqlite_connector.</span></span><span class="sig-name descname"><span class="pre">SqliteConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#src.db_connection.connector.DBConnector" title="src.db_connection.connector.DBConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">DBConnector</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector.conn">
-<span class="sig-name descname"><span class="pre">conn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector.conn" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector.connect">
 <span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector.connect" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector.cur">
-<span class="sig-name descname"><span class="pre">cur</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector.cur" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector.db_name">
-<span class="sig-name descname"><span class="pre">db_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector.db_name" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="src.db_connection.sqlite_connector.SqliteConnector.connector_cache">
+<span class="sig-name descname"><span class="pre">connector_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#src.db_connection.sqlite_connector.SqliteConnector.connector_cache" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
