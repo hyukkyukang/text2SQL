@@ -51,9 +51,22 @@
 <li><a class="reference internal" href="#src.utils.list.flatten_list"><code class="docutils literal notranslate"><span class="pre">flatten_list()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#src-utils-sql-module">src.utils.sql module</a></li>
-<li><a class="reference internal" href="#src-utils-string-module">src.utils.string module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-src.utils.sql">src.utils.sql module</a><ul>
+<li><a class="reference internal" href="#src.utils.sql.add_subquery_alias"><code class="docutils literal notranslate"><span class="pre">add_subquery_alias()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.sql.double_quotes_to_single_quotes"><code class="docutils literal notranslate"><span class="pre">double_quotes_to_single_quotes()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.sql.loosely_parse"><code class="docutils literal notranslate"><span class="pre">loosely_parse()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.sql.pprint_parse_tree"><code class="docutils literal notranslate"><span class="pre">pprint_parse_tree()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.sql.replace_table_or_column_names_with_postgresql_keywords"><code class="docutils literal notranslate"><span class="pre">replace_table_or_column_names_with_postgresql_keywords()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.sql.set_att_value"><code class="docutils literal notranslate"><span class="pre">set_att_value()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.utils.string">src.utils.string module</a><ul>
+<li><a class="reference internal" href="#src.utils.string.is_int"><code class="docutils literal notranslate"><span class="pre">is_int()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.string.is_number"><code class="docutils literal notranslate"><span class="pre">is_number()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.string.multi_space_to_single_space"><code class="docutils literal notranslate"><span class="pre">multi_space_to_single_space()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.utils">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -113,14 +126,71 @@
 <dd></dd></dl>
 
 </section>
-<section id="src-utils-sql-module">
-<h2>src.utils.sql module<a class="headerlink" href="#src-utils-sql-module" title="Permalink to this heading"></a></h2>
+<section id="module-src.utils.sql">
+<span id="src-utils-sql-module"></span><h2>src.utils.sql module<a class="headerlink" href="#module-src.utils.sql" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.add_subquery_alias">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">add_subquery_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.add_subquery_alias" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.double_quotes_to_single_quotes">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">double_quotes_to_single_quotes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.double_quotes_to_single_quotes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.loosely_parse">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">loosely_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.loosely_parse" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_: Parse a SQL string and return a parse tree. If the parsing fails, return None.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>sql_str (str): SQL string to parse</p>
+</dd>
+<dt>Returns:</dt><dd><p>pglast.ast.Node: pglast Node object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.pprint_parse_tree">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">pprint_parse_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.pprint_parse_tree" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_: Print a parse tree in a readable json format.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>parse_tree (pglast.ast.Node): pglast Node object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.replace_table_or_column_names_with_postgresql_keywords">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">replace_table_or_column_names_with_postgresql_keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.replace_table_or_column_names_with_postgresql_keywords" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.sql.set_att_value">
+<span class="sig-prename descclassname"><span class="pre">src.utils.sql.</span></span><span class="sig-name descname"><span class="pre">set_att_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">att_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">att_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.sql.set_att_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="src-utils-string-module">
-<h2>src.utils.string module<a class="headerlink" href="#src-utils-string-module" title="Permalink to this heading"></a></h2>
+<section id="module-src.utils.string">
+<span id="src-utils-string-module"></span><h2>src.utils.string module<a class="headerlink" href="#module-src.utils.string" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.string.is_int">
+<span class="sig-prename descclassname"><span class="pre">src.utils.string.</span></span><span class="sig-name descname"><span class="pre">is_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.string.is_int" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.string.is_number">
+<span class="sig-prename descclassname"><span class="pre">src.utils.string.</span></span><span class="sig-name descname"><span class="pre">is_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.string.is_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.utils.string.multi_space_to_single_space">
+<span class="sig-prename descclassname"><span class="pre">src.utils.string.</span></span><span class="sig-name descname"><span class="pre">multi_space_to_single_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.string.multi_space_to_single_space" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+<section id="module-src.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.utils" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
