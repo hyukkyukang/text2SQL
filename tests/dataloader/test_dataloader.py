@@ -8,6 +8,9 @@ from src.data.data import collate_fn
 from src.parser.parser import SQLParser
 from src.data.spider_data import SpiderDataset, SpiderSchemaGenerator
 
+def data_filter_func(datum: dict) -> bool:
+    return datum['db_id'] not in ["baseball_1", "wta_1", "soccer_1"]
+
 class Test_dataloader(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(Test_dataloader, self).__init__(*args, **kwargs)
@@ -22,7 +25,7 @@ class Test_dataloader(unittest.TestCase):
     def _test_dataset(self, dataset_class, dataset_dir, tokenizer):
         self.assertTrue(os.path.exists(dataset_dir), "Dataset directory does not exist!")
         file_paths = file_utils.get_files_in_directory(dataset_dir, lambda file_name: file_name.startswith('train') and file_name.endswith('.json'))
-        dataset = dataset_class(file_paths, tokenizer, self.sql_parser)
+        dataset = dataset_class(file_paths, tokenizer, self.sql_parser, data_filter_func=data_filter_func)
         self.assertGreater(len(dataset), 0, "Dataset is empty!")
         self.assertIsNotNone(dataset[0].input_tensor)
         self.assertIsNotNone(dataset[0].relation_matrix)
@@ -41,7 +44,7 @@ class Test_dataloader(unittest.TestCase):
         dataset_dir = self.dataset_dir_map['spider']
         SpiderSchemaGenerator.load_schema_from_meta_data_file(os.path.join(dataset_dir, "tables.json"), 
                                                               os.path.join(dataset_dir, "database/"), 
-                                                              self.tokenizer)
+                                                              self.tokenizer, data_filter_func=data_filter_func)
         dataset = self._test_dataset(SpiderDataset, dataset_dir, self.tokenizer)
         self._test_dataloader(dataset)
         self._print_success(len(dataset))

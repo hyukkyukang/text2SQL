@@ -182,7 +182,6 @@ class SchemaGenerator:
     """Wrapper class for generating a schema data structure from a dataset"""
     @staticmethod
     def db_to_schema(db_connector, tokenizer) -> Schema:
-        print("into db_to_schema")
         def add_foreign_key_relations(schema: Schema):
             for table in schema.tables:
                 foreign_key_pairs = db_connector.fetch_foreign_keys(table.name)
@@ -233,7 +232,6 @@ class SchemaGenerator:
                 table.add_column(column)
 
             # Save tables in the schema object
-            print(f'table name: {table.name} {id(schema)}')
             schema.add_table(table)
 
         # Add foreign key relations
