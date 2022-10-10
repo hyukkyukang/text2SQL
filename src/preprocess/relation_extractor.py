@@ -34,6 +34,8 @@ def is_value_match(token: str, schema_item: Union[Column, Table]) -> bool:
         return True
     
     # Matching with DB values
+    if "'" in token:
+        return False
     query_str = f"SELECT {schema_item.ori_name} FROM {schema_item.table.ori_name} WHERE {schema_item.ori_name} like '{token}' or " \
                                                                                 f"{schema_item.ori_name} like '{token} %' or " \
                                                                                 f"{schema_item.ori_name} like '% {token}' or " \

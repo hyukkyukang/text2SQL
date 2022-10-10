@@ -1,0 +1,3 @@
+name: Cross Entropy
+module: torch.nn
+class_name: CrossEntropyLoss

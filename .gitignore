@@ -170,3 +170,4 @@ datasets/spider/database/soccer_1/schema.sql
 datasets/spider/database/soccer_1/soccer_1.sqlite
 datasets/kaggle-dbqa/databases/USWildFires/USWildFires.sqlite
 datasets/kaggle-dbqa/databases/Pesticide/Pesticide.sqlite
+outputs/

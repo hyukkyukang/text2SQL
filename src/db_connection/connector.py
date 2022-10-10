@@ -28,6 +28,9 @@ class DBConnector:
     def close(self) -> None:
         self.conn.close()
 
+    def __del__(self):
+        self.close()
+
     def __enter__(self):
         return self.conn
 

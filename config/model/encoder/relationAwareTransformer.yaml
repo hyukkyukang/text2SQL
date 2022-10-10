@@ -1,0 +1,3 @@
+name: "Relation Aware Transformer"
+module: src.model.encoder.encoder
+class_name: Encoder

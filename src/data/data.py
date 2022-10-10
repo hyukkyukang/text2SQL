@@ -6,7 +6,7 @@ import warnings
 from typing import List, Any
 from torch.utils.data import Dataset
 from src.parser.parser import BadPostgresSyntax
-import src.data.schema as Schema_module
+from src.data.schema import Schema
 import src.utils.tensor as tensor_utils
 import src.preprocess.relation_extractor as relation_extractor
 @attrs.define
@@ -61,11 +61,12 @@ class TextToSQLBatch:
 
 @attrs.define
 class TextToSQLDataset(Dataset):
-    def __init__(self, file_paths, tokenizer, sql_parser):
+    def __init__(self, file_paths, tokenizer, sql_parser, data_filter_func=None):
         super(TextToSQLDataset, self).__init__()
         self.file_paths: str = file_paths
         self.tokenizer: Any = tokenizer
         self.sql_parser: Any = sql_parser
+        self.data_filter_func: Any = data_filter_func
         self.data: List[TextToSQLDatum] = []
         self.apply()
 
@@ -74,14 +75,15 @@ class TextToSQLDataset(Dataset):
 
     def __len__(self) -> int:
         return len(self.data)
-    
+
     def _check_and_warn_on_missing_schema_cache(self):
-        assert len(Schema_module.Schema.schema_cache), "schemaGenerator.schema_cache is empty. Schema information must be cached first before loading the dataset."
-    
+        assert len(Schema.schema_cache), "schemaGenerator.schema_cache is empty. Schema information must be cached first before loading the dataset."
+
     def apply(self):
         raw_data = self._read_in_data_from_files(self.file_paths)
+        filtered_data = list(filter(self.data_filter_func, raw_data)) if self.data_filter_func else raw_data
         self._check_and_warn_on_missing_schema_cache()
-        for idx, datum in enumerate(raw_data):
+        for datum in filtered_data:
             # Pass item that has query with a bad Postgres syntax
             try:
                 self.data.append(self._raw_datum_to_textToSQLDatum(datum))
@@ -102,7 +104,6 @@ class TextToSQLDataset(Dataset):
 
 
 def collate_fn(item_list):
-    
     input_tensor = tensor_utils.zero_pad_batching([item.nl_tensor for item in item_list])
     relation_matrix = tensor_utils.zero_pad_batching([item.relation_matrix for item in item_list])
     return TextToSQLBatch(item_list, input_tensor, relation_matrix)

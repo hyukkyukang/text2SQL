@@ -86,19 +86,21 @@ class SpiderSchemaGenerator(SchemaGenerator):
         return schema
         
     @staticmethod 
-    def load_schema_from_meta_data_file(meta_data_file_path: str, database_dir_path: str, tokenizer: Any) -> List[Schema]:
+    def load_schema_from_meta_data_file(meta_data_file_path: str, database_dir_path: str, tokenizer: Any, data_filter_func=None) -> List[Schema]:
         schemas = []
         with open(meta_data_file_path, "r") as meta_data_file:
             meta_data_of_dbs = json.load(meta_data_file)
-            for meta_data_of_db in meta_data_of_dbs:
-                schema = SpiderSchemaGenerator.meta_data_to_schema(meta_data_of_db, database_dir_path, tokenizer)
+            filtered_meta_data_of_dbs = list(filter(data_filter_func, meta_data_of_dbs)) if data_filter_func else meta_data_of_dbs
+            for filtered_meta_data_of_db in filtered_meta_data_of_dbs:
+                schema = SpiderSchemaGenerator.meta_data_to_schema(filtered_meta_data_of_db, database_dir_path, tokenizer)
                 schemas.append(schema)
         return schemas
 
 #  Spider Dataset
 class SpiderDataset(TextToSQLDataset):
-    def __init__(self, file_paths, tokenizer, sql_parser):
-        super(SpiderDataset, self).__init__(file_paths=file_paths, tokenizer=tokenizer, sql_parser=sql_parser)
+    def __init__(self, file_paths, tokenizer, sql_parser, data_filter_func=None):
+        super(SpiderDataset, self).__init__(file_paths=file_paths, tokenizer=tokenizer, sql_parser=sql_parser,
+                                            data_filter_func=data_filter_func)
 
     def _read_in_data_from_files(self, file_paths):
         data_list = map(file_utils.read_json_file, file_paths)

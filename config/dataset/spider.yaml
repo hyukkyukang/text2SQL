@@ -1,0 +1,17 @@
+name: spider
+module: src.data.spider_data
+class_name: SpiderDataset
+
+dir_path: "datasets/spider"
+database_dir_path: "datasets/spider/database"
+
+schema_file_name: "tables.json"
+
+train_file_names: ["train_spider.json", "train_others.json"]
+val_file_names: ["dev.json"]
+test_file_names: []
+
+schema_preloading:
+    method: from_meta_data
+    module: src.data.spider_data
+    class_name: SpiderSchemaGenerator

@@ -1,0 +1,3 @@
+name: Adam Optimizer
+module: torch.optim
+class_name: Adam
