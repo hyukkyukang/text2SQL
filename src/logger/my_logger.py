@@ -1,11 +1,11 @@
 import attrs
 import logging
 
-from omegaconf import OmegaConf
+from omegaconf import DictConfig
 
 @attrs.define
 class MyLogger():
-    config: OmegaConf = attrs.field()
+    config: DictConfig = attrs.field()
     log_path: str = attrs.field()
     
     def __attrs_post_init__(self):

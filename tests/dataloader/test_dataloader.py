@@ -27,7 +27,7 @@ class Test_dataloader(unittest.TestCase):
         file_paths = file_utils.get_files_in_directory(dataset_dir, lambda file_name: file_name.startswith('train') and file_name.endswith('.json'))
         dataset = dataset_class(file_paths, tokenizer, self.sql_parser, data_filter_func=data_filter_func)
         self.assertGreater(len(dataset), 0, "Dataset is empty!")
-        self.assertIsNotNone(dataset[0].input_tensor)
+        self.assertIsNotNone(dataset[0].input_token)
         self.assertIsNotNone(dataset[0].relation_matrix)
         return dataset
 

@@ -94,7 +94,7 @@ class SchemaLinkingRelations(enum.IntEnum):
             (SchemaLinkingRelations.QT_VALUE_MATCH, SchemaLinkingRelations.TQ_VALUE_MATCH),
         ]
 
-TOTAL_RELATION_TYPES = len(SchemaLinkingRelations) + len(SchemaRelations) + len(QuestionRelations)
+TOTAL_RELATION_NUM = len(SchemaLinkingRelations) + len(SchemaRelations) + len(QuestionRelations)
 ALL_INVERSE_PAIRS = QuestionRelations.inverse_pairs() + SchemaRelations.inverse_pairs() + SchemaLinkingRelations.inverse_pairs()
 
 

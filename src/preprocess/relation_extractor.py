@@ -132,14 +132,14 @@ def get_relation_bw_schema_entities(entity1: Union[Column, Table], entity2: Unio
 
 # Functions to get relation matrix
 def get_relation_matrix_for_schemas(schema_entries):
-    relation_matrix = np.zeros((len(schema_entries), len(schema_entries)), dtype=np.int16)
+    relation_matrix = np.zeros((len(schema_entries), len(schema_entries)), dtype=np.long)
     for idx1, entry1 in enumerate(schema_entries):
         for idx2, entry2 in enumerate(schema_entries):
             relation_matrix[idx1, idx2] = get_relation_bw_schema_entities(entry1, entry2)
     return relation_matrix
 
 def get_relation_matrix_for_tokens_schema(tokens: List[str], schema_entries: List[Union[Column, Table]]):
-    relation_matrix = np.zeros((len(tokens), len(schema_entries)), dtype=np.int16)
+    relation_matrix = np.zeros((len(tokens), len(schema_entries)), dtype=np.long)
     for idx1, token in enumerate(tokens):
         for idx2, entry in enumerate(schema_entries):
            relation_matrix[idx1][idx2] = get_relation_bw_token_schema(token, entry)
@@ -147,7 +147,7 @@ def get_relation_matrix_for_tokens_schema(tokens: List[str], schema_entries: Lis
 
 
 def get_relation_matrix_for_tokens(tokens: List[str]):
-    relation_matrix = np.zeros((len(tokens), len(tokens)), dtype=np.int16)
+    relation_matrix = np.zeros((len(tokens), len(tokens)), dtype=np.long)
     for idx1 in range(len(tokens)):
         for idx2 in range(len(tokens)):
             if idx1 <= idx2-2:
@@ -167,9 +167,9 @@ def get_relation_matrix_for_tokens(tokens: List[str]):
 def inverse_matrix(matrix):
     assert len(matrix.shape) == 2, f"Only support 2D matrix, but found: {matrix.size()}"
     if type(matrix) == np.ndarray:
-        new_matrix = np.zeros((matrix.shape[1], matrix.shape[0]), dtype=np.int16)
+        new_matrix = np.zeros((matrix.shape[1], matrix.shape[0]), dtype=np.long)
     elif type(matrix) == torch.Tensor:
-        new_matrix = torch.zeros((matrix.shape[1], matrix.shape[0]), dtype=torch.int16)
+        new_matrix = torch.zeros((matrix.shape[1], matrix.shape[0]), dtype=torch.long)
     else:
         raise RuntimeError(f"Unsupported matrix type: {type(matrix)}")
     for idx1 in range(matrix.shape[0]):
