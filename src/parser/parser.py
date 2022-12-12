@@ -1,4 +1,5 @@
 import asdl
+import argparse
 
 from pglast import stream
 from src.utils.sql import loosely_parse, set_att_value, pprint_parse_tree
@@ -43,13 +44,19 @@ class SQLParser():
     def sql2ast(self, sql):
         """Convert SQL to ASDL format."""
         return self.pt2ast(self.sql2pt(sql))
-    
-    
+
+def parse_argument():
+    parser = argparse.ArgumentParser(description="SQL Parser")
+    parser.add_argument("--asdl_path", type=str, default="./src/grammar/ratsql_extended.asdl", help="ASDL file path")
+    parser.add_argument("--sql", type=str, default="SELECT T2.Lname FROM DEPARTMENT AS T1 JOIN FACULTY AS T2 ON T1.DNO  =  T3.DNO JOIN MEMBER_OF AS T3 ON T2.FacID  =  T3.FacID WHERE T1.DName  =  'Computer Science'", help="SQL query")
+    return parser.parse_args()
+
 if __name__ == "__main__":
-    sql_query = "SELECT T2.Lname FROM DEPARTMENT AS T1 JOIN FACULTY AS T2 ON T1.DNO  =  T3.DNO JOIN MEMBER_OF AS T3 ON T2.FacID  =  T3.FacID WHERE T1.DName  =  'Computer Science'"
-    parser = SQLParser("./src/grammar/ratsql_extended.asdl")
+    # Parse arguments
+    args = parse_argument()
+    parser = SQLParser(args.asdl_path)
     # Parse string and Generate Parse tree
-    parse_tree = parser.sql2pt(sql_query)
+    parse_tree = parser.sql2pt(args.sql)
     print("\n Parsed parse tree: \n")
     pprint_parse_tree(parse_tree(skip_none=True))
     # Transform parse tree into ASDL AST
