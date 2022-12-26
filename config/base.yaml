@@ -4,8 +4,10 @@ training:
     max_step: 10000
     val_freq: 1000
     test_freq: 2000
-optim_args:
-    lr: 1e-3
+
+hydra:
+    run:
+        dir: ./
 
 defaults:
     - dataset: spider

@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    Text-to-SQL:
+        image: hyukkyukang/text-to-sql:latest
+        stdin_open: true
+        tty: true
+        network_mode: "host"
+        volumes:
+            - .:/home/text-to-sql
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities: [gpu]

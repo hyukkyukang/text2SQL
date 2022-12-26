@@ -84,7 +84,7 @@ class SpiderSchemaGenerator(SchemaGenerator):
         # Add foreign key relations
         schema = add_foreign_key_relations(schema, foreign_key_pairs)
         return schema
-        
+
     @staticmethod 
     def load_schema_from_meta_data_file(meta_data_file_path: str, database_dir_path: str, tokenizer: Any, data_filter_func=None) -> List[Schema]:
         schemas = []

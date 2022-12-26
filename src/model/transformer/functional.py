@@ -21,7 +21,8 @@ def relational_multi_head_attention_forward(
     dropout_p: float,
     out_proj_weight: Tensor,
     out_proj_bias: Optional[Tensor],
-    relation_weight: Tensor,
+    k_relation_weight: Tensor,
+    v_relation_weight: Tensor,
     training: bool = True,
     key_padding_mask: Optional[Tensor] = None,
     need_weights: bool = True,
@@ -277,18 +278,35 @@ def relational_multi_head_attention_forward(
 
     B, Nt, E = q.shape
     q_scaled = q / math.sqrt(E)
-    # Get relational embeddings
-    relational_embeddings = relation_weight[relation_matrix]
+    
+    # Get relational embeddings (bsz, tgt_len, src_len, embed_dim)
+    k_relational_embeddings = k_relation_weight[relation_matrix]
+    v_relational_embeddings = v_relation_weight[relation_matrix]
+    # reshape to (bsz * num_heads, tgt_len, src_len, head_dim)
+    k_relational_embeddings = k_relational_embeddings.view(bsz, tgt_len, src_len, num_heads, E).permute(0,3,1,2,4).reshape(B, tgt_len, src_len, E)
+    v_relational_embeddings = v_relational_embeddings.view(bsz, tgt_len, src_len, num_heads, E).permute(0,3,1,2,4).reshape(B, tgt_len, src_len, E)
+    
+    # reshape q_scaled from (bsz * num_heads, tgt_len, head_dim) to (bsz * num_heads * tgt_len, 1, head_dim)
+    q_scaled_ = q_scaled.unsqueeze(2).reshape(B*Nt, 1, E)
+    # reshape k_relational_embeddings from (bsz * num_heads, tgt_len, src_len, head_dim) to (bsz * num_heads * tgt_len, head_dim, src_len)  
+    k_relational_embeddings = k_relational_embeddings.transpose(-2, -1).reshape(B*Nt, E, src_len)
+    
     if attn_mask is not None:
         attn_output_weights = torch.baddbmm(attn_mask, q_scaled, k.transpose(-2, -1))
-        attn_output_bias = torch.badddmm(attn_mask, q_scaled, relational_embeddings)
-        # shape: (bsz * num_heads, tgt_len, src_len) = (B, Nt, Ns)
+        # reshape attn_mask from (bsz * num_heads, 1, src_len) to (bsz * num_heads * tgt_len, 1, src_len)
+        attn_mask_ = attn_mask.repeat(Nt, 1, 1)
+        # Compute attention bias. Result shape: (bsz * num_heads * tgt_len, 1, src_len)
+        k_attn_output_bias = torch.baddbmm(attn_mask_, q_scaled_, k_relational_embeddings)
     else:
         attn_output_weights = torch.bmm(q_scaled, k.transpose(-2, -1))
-        attn_output_bias = torch.bmm(q_scaled, relational_embeddings)
+        # Compute attention bias. Result shape: (bsz * num_heads * tgt_len, 1, src_len)
+        k_attn_output_bias = torch.bmm(q_scaled_, k_relational_embeddings)
 
-    # Add relational bias
-    attn_output_weights = attn_output_weights + attn_output_bias
+    # Reshape k_attn_output_bias to (bsz, tgt_len, src_len)
+    k_attn_output_bias = k_attn_output_bias.reshape(B, Nt, Nt)
+
+    # Add relational bias for key
+    attn_output_weights = attn_output_weights + k_attn_output_bias
     
     attn_output_weights = softmax(attn_output_weights, dim=-1)
     if dropout_p > 0.0:
@@ -296,10 +314,16 @@ def relational_multi_head_attention_forward(
 
     attn_output = torch.bmm(attn_output_weights, v)
     
-    # Add relational bias
-    attn_output_bias = None
-    attn_output = attn_output + attn_output_bias
-
+    # Reshape attn_output_weights from (bsz * num_heads, tgt_len, src_len) to (bsz * num_heads * tgt_len, 1, src_len)
+    attn_output_weights_ = attn_output_weights.unsqueeze(2).reshape(B*Nt, 1, src_len)
+    # Reshape v_relational_embeddings from (bsz * num_heads, tgt_len, src_len, head_dim) to (bsz * num_heads * tgt_len, src_len, head_dim)
+    v_relational_embeddings = v_relational_embeddings.reshape(B*Nt, src_len, E)
+    v_attn_output_bias = torch.bmm(attn_output_weights_, v_relational_embeddings)
+    # Reshape attn_output_bias to (bsz * num_heads, tgt_len, head_dim)
+    v_attn_output_bias = v_attn_output_bias.reshape(B, Nt, E)
+    
+    # Add relational bias for value
+    attn_output = attn_output + v_attn_output_bias
 
     attn_output = attn_output.transpose(0, 1).contiguous().view(tgt_len * bsz, embed_dim)
     attn_output = linear(attn_output, out_proj_weight, out_proj_bias)

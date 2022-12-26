@@ -11,7 +11,7 @@ import src.utils.module as module_utils
 from src.data.data import TextToSQLDataset, collate_fn
 from src.parser.parser import SQLParser
 from src.data.schema import SchemaGenerator
-from src.model.wrapper_model import Text2SQLModel
+from src.model.enc_dec import Text2SQLModel
 
 @attrs.define
 class Trainer:

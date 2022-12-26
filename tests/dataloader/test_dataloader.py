@@ -33,7 +33,7 @@ class Test_dataloader(unittest.TestCase):
 
     def _test_dataloader(self, dataset):
         dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=2, num_workers=0, collate_fn=collate_fn)
-        mini_batch = iter(dataloader).next()
+        mini_batch = next(iter(dataloader))
         self.assertIsNotNone(mini_batch, "Dataloader is empty!")
         self.assertGreater(len(mini_batch), 0, "Dataloader is empty!")
 

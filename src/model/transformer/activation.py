@@ -108,7 +108,8 @@ class RelationalMultiheadAttention(Module):
             self.bias_k = self.bias_v = None
 
         self.add_zero_attn = add_zero_attn
-        self.relation_weight = Parameter(torch.empty((num_relations*num_heads, self.head_dim), **factory_kwargs))
+        self.relation_weight_k = Parameter(torch.empty((num_relations*num_heads, self.embed_dim), **factory_kwargs))
+        self.relation_weight_v = Parameter(torch.empty((num_relations*num_heads, self.embed_dim), **factory_kwargs))
 
         self._reset_parameters()
 
@@ -119,6 +120,9 @@ class RelationalMultiheadAttention(Module):
             xavier_uniform_(self.q_proj_weight)
             xavier_uniform_(self.k_proj_weight)
             xavier_uniform_(self.v_proj_weight)
+        # Initialize relation weights
+        xavier_uniform_(self.relation_weight_k)
+        xavier_uniform_(self.relation_weight_v)
 
         if self.in_proj_bias is not None:
             constant_(self.in_proj_bias, 0.)
@@ -273,7 +277,7 @@ class RelationalMultiheadAttention(Module):
                 query, key, value, relation_matrix, self.embed_dim, self.num_heads,
                 self.in_proj_weight, self.in_proj_bias,
                 self.bias_k, self.bias_v, self.add_zero_attn,
-                self.dropout, self.out_proj.weight, self.out_proj.bias, self.relation_weight,
+                self.dropout, self.out_proj.weight, self.out_proj.bias, self.relation_weight_k, self.relation_weight_v,
                 training=self.training,
                 key_padding_mask=key_padding_mask, need_weights=need_weights,
                 attn_mask=attn_mask, use_separate_proj_weight=True,
@@ -284,7 +288,7 @@ class RelationalMultiheadAttention(Module):
                 query, key, value, relation_matrix, self.embed_dim, self.num_heads,
                 self.in_proj_weight, self.in_proj_bias,
                 self.bias_k, self.bias_v, self.add_zero_attn,
-                self.dropout, self.out_proj.weight, self.out_proj.bias, self.relation_weight,
+                self.dropout, self.out_proj.weight, self.out_proj.bias, self.relation_weight_k, self.relation_weight_v,
                 training=self.training,
                 key_padding_mask=key_padding_mask, need_weights=need_weights,
                 attn_mask=attn_mask, average_attn_weights=average_attn_weights)
