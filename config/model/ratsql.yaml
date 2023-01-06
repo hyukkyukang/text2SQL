@@ -1,3 +1,7 @@
 defaults:
     - encoder: relationAwareTransformer
     - decoder: grammarBased
+
+memory_attn:
+    num_layers: 3
+    dropout: 0.1

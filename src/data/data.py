@@ -16,7 +16,7 @@ from src.parser.parser import BadPostgresSyntax
 @attrs.define
 class TextToSQLDatum:
     # Init variables
-    schema: str = attrs.field()
+    schema: Schema = attrs.field()
     sql: str = attrs.field()
     parse_tree: Any = attrs.field()
     nl: str = attrs.field()
@@ -40,7 +40,6 @@ class TextToSQLDatum:
     @misc_utils.property_with_cache
     def att_mask_tensor(self) -> torch.Tensor:
         return torch.ones((len(self.input_tok_tensor)), dtype=torch.bool)
-
     @misc_utils.property_with_cache
     def tok_type_tensor(self) -> torch.Tensor:
         return torch.cat([torch.zeros((len(self.nl_tensor)+1), dtype=torch.long), 

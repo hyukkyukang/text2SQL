@@ -23,3 +23,5 @@ python src/parser/parser.py --sql [SQL STRING] --asdl_path [ASDL FILE PATH]
 ```
 
 Note that a ASDL file defining the AST is required. An Example can be found in `src/grammar/ratsql_extended.asdl`.
+
+## Text-to-SQL

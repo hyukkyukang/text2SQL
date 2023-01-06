@@ -26,7 +26,7 @@ class RAEncoder(torch.nn.Module):
     def use_avg_emb(self):
         return self.cfg.use_avg_emb
 
-    def forward(self, input_token, lm_att_mask, lm_tok_type_ids, non_sep_tok_masks, relation_matrix):
+    def forward(self, input_token, lm_att_mask, lm_tok_type_ids, non_sep_tok_masks, relation_matrix) -> torch.Tensor:
         # Encode with Language model
         assert len(input_token) <= self.lm.config.max_position_embeddings, f"Input length {len(input_token)} exceeds maximum length {self.lm.config.max_position_embeddings}"
         encoded_tensor = self.lm(input_token, attention_mask=lm_att_mask, token_type_ids=lm_tok_type_ids)[0]

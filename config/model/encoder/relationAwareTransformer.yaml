@@ -7,8 +7,3 @@ d_model: 1024
 nhead: 8
 num_layers: 8
 use_avg_emb: true
-lstm:
-    - hiddne_size: 128
-    - num_layers: 3
-    - dropout: false
-    - bidirectional: true
