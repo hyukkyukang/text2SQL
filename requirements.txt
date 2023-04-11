@@ -1,6 +1,6 @@
 asdl==0.1.5
 tqdm==4.64.1
-torch==1.12.1
+torch==1.13.1
 transformers==4.22.1
 unittest-xml-reporting==3.2.0
 coverage==6.4.4
