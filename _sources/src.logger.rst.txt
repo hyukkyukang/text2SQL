@@ -1,0 +1,21 @@
+src.logger package
+==================
+
+Submodules
+----------
+
+src.logger.my\_logger module
+----------------------------
+
+.. automodule:: src.logger.my_logger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src.logger
+   :members:
+   :undoc-members:
+   :show-inheritance:

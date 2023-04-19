@@ -1,0 +1,21 @@
+src.model.decoder package
+=========================
+
+Submodules
+----------
+
+src.model.decoder.lstm\_decoder module
+--------------------------------------
+
+.. automodule:: src.model.decoder.lstm_decoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src.model.decoder
+   :members:
+   :undoc-members:
+   :show-inheritance:

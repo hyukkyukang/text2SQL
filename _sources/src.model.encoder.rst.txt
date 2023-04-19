@@ -1,0 +1,21 @@
+src.model.encoder package
+=========================
+
+Submodules
+----------
+
+src.model.encoder.relation\_aware\_encoder module
+-------------------------------------------------
+
+.. automodule:: src.model.encoder.relation_aware_encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src.model.encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:

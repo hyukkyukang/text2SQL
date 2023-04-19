@@ -1,0 +1,37 @@
+src.model.transformer package
+=============================
+
+Submodules
+----------
+
+src.model.transformer.activation module
+---------------------------------------
+
+.. automodule:: src.model.transformer.activation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.model.transformer.encoder module
+------------------------------------
+
+.. automodule:: src.model.transformer.encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.model.transformer.functional module
+---------------------------------------
+
+.. automodule:: src.model.transformer.functional
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src.model.transformer
+   :members:
+   :undoc-members:
+   :show-inheritance:
