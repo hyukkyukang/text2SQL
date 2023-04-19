@@ -6,7 +6,6 @@ import attrs
 import torch
 from torch.utils.data import Dataset
 from hkkang_utils import misc as misc_utils
-
 import src.preprocess.relation_extractor as relation_extractor
 import src.utils.tensor as tensor_utils
 from src.data.schema import Schema
