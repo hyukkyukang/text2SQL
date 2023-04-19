@@ -1,0 +1,3 @@
+name: "RATSQL Extended"
+grammar_dir: "src/grammar/"
+grammar_file: ratsql_extended.asdl

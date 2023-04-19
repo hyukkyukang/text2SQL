@@ -27,13 +27,13 @@ class Test_dataloader(unittest.TestCase):
         file_paths = file_utils.get_files_in_directory(dataset_dir, lambda file_name: file_name.startswith('train') and file_name.endswith('.json'))
         dataset = dataset_class(file_paths, tokenizer, self.sql_parser, data_filter_func=data_filter_func)
         self.assertGreater(len(dataset), 0, "Dataset is empty!")
-        self.assertIsNotNone(dataset[0].input_tensor)
+        self.assertIsNotNone(dataset[0].input_tok_tensor)
         self.assertIsNotNone(dataset[0].relation_matrix)
         return dataset
 
     def _test_dataloader(self, dataset):
         dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=2, num_workers=0, collate_fn=collate_fn)
-        mini_batch = iter(dataloader).next()
+        mini_batch = next(iter(dataloader))
         self.assertIsNotNone(mini_batch, "Dataloader is empty!")
         self.assertGreater(len(mini_batch), 0, "Dataloader is empty!")
 

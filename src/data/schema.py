@@ -2,9 +2,10 @@ import abc
 import enum
 import attrs
 import torch
-from typing import List, Any
+from typing import List, Any, Union
 
 import src.utils.list as list_utils
+from hkkang_utils import misc as misc_utils
 
 class DataTypes(enum.Enum):
     TEXT = 1
@@ -99,6 +100,13 @@ class Schema:
     tables: List[Table] = attrs.field(factory=list)
     db_connector: Any = attrs.field(default=None)
     tokenizer: Any = attrs.field(default=None)
+    # Cached attributes
+    _columns: List[Column] = attrs.field(default=None, init=False)
+    _table_tensors: torch.Tensor = attrs.field(default=None, init=False)
+    _column_tensors: torch.Tensor = attrs.field(default=None, init=False)
+    _tensor_repr: torch.Tensor = attrs.field(default=None, init=False)
+    _relation_matrix: torch.Tensor = attrs.field(default=None, init=False)
+    
     
     @staticmethod
     def has_cache(db_id: str) -> bool:
@@ -125,52 +133,56 @@ class Schema:
     def __len__(self):
         return self.table_len() + self.column_len()
     
-    @property
-    def tables_and_columns(self):
-        return self.tables + self.columns
-    
-    @property
-    def columns(self):
+    @misc_utils.property_with_cache
+    def columns(self) -> List[str]:
         return list_utils.flatten_list([table.columns for table in self.tables])
     
-    @property
-    def tensor_repr(self):
-        sep_tok_id = self.tokenizer.convert_tokens_to_ids(self.tokenizer.sep_token)
-        sep_tok_tensor = torch.tensor([sep_tok_id])
-        # Get all tables
-        table_tensors = torch.cat([torch.cat([table.name_tensor, sep_tok_tensor]) for table in self.tables])
-        # Get all columns
-        column_tensors = torch.cat([torch.cat([column.name_tensor, sep_tok_tensor]) for column in self.columns])
-        return torch.cat([table_tensors,column_tensors])
+    @misc_utils.property_with_cache
+    def table_tensors(self) -> torch.Tensor:
+        sep_tok_tensor = torch.tensor([self.tokenizer.convert_tokens_to_ids(self.tokenizer.sep_token)])
+        return torch.cat([torch.cat([table.name_tensor, sep_tok_tensor]) for table in self.tables])
     
-    @property
-    def relation_matrix(self):
+    @misc_utils.property_with_cache
+    def column_tensors(self) -> torch.Tensor:
+        sep_tok_tensor = torch.tensor([self.tokenizer.convert_tokens_to_ids(self.tokenizer.sep_token)])
+        return torch.cat([torch.cat([column.name_tensor, sep_tok_tensor]) for column in self.columns])
+    
+    @misc_utils.property_with_cache
+    def tensor_repr(self) -> torch.Tensor:
+        return torch.cat([self.table_tensors, self.column_tensors])
+
+    @misc_utils.property_with_cache
+    def relation_matrix(self) -> torch.Tensor:
         # Get all tables
         matrix = relation_extractor.get_relation_matrix_for_schemas(self.tables_and_columns)
         return torch.from_numpy(matrix)
+
+    @property
+    def tables_and_columns(self)-> List[str]:
+        return self.tables + self.columns
     
     @property
-    def column_len(self):
+    def column_len(self) -> int:
         return sum([len(table) for table in self.tables])
     
     @property
-    def table_len(self):
+    def table_len(self) -> int:
         return len(self.tables)
     
-    def add_table(self, table: Table):
+    def add_table(self, table: Table) -> None:
         self.tables.append(table)
         table.schema = self
-    def add_tables(self, tables: List[Table]):
+    def add_tables(self, tables: List[Table]) -> None:
         for table in tables:
             table.schema = self
        
-    def get_table(self, table_name: str):
+    def get_table(self, table_name: str) -> Union[None, str]:
         for table in self.tables:
             if table.name == table_name:
                 return table
         raise ValueError(f"Table {table_name} not found in schema {self.db_id}")
     
-    def get_column(self, table_name: str, column_name: str):
+    def get_column(self, table_name: str, column_name: str) -> Union[None, str]:
         for table in self.tables:
             if table.name == table_name:
                 for column in table:
@@ -250,7 +262,7 @@ class SchemaGenerator:
     
     @staticmethod
     @abc.abstractmethod
-    def load_schema_from_meta_data_file(meta_data_file_path: str) -> None:
+    def load_schema_from_meta_data_file(meta_data_file_path: str, database_dir_path: str, tokenizer: Any, data_filter_func=None) -> None:
         pass
     
 # To avoid circular import, we import the function here

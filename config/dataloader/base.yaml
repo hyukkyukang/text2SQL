@@ -1,0 +1,10 @@
+name: "Default dataloader"
+train:
+    batch_size: 16
+    num_workers: 0
+val:
+    batch_size: 16
+    num_workers: 0
+test:
+    batch_size: 16
+    num_workers: 0

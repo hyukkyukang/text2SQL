@@ -1,5 +1,7 @@
 import os
 import json
+def file_names_to_path(dir_path, file_names):
+    return [os.path.join(dir_path, file_name) for file_name in file_names]
 
 def get_files_in_directory(dir_path, filter_func):
     return [os.path.join(dir_path, f) for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f)) and filter_func(f)]

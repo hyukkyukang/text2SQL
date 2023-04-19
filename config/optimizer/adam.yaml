@@ -1,0 +1,7 @@
+name: Adam Optimizer
+module: torch.optim
+max_estep: 10000
+eval_freq_estep: 1000
+effective_batch_size: 64
+class_name: Adam
+lr: 1e-3

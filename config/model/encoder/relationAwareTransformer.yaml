@@ -1,0 +1,9 @@
+name: "Relation Aware Transformer"
+module: src.model.encoder.encoder
+class_name: Encoder
+lm_model_version: google/electra-large-discriminator
+
+d_model: 1024
+nhead: 8
+num_layers: 8
+use_avg_emb: true
